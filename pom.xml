@@ -9,6 +9,7 @@
     <modules>
         <module>springboot-simple2-mybatis-plus</module>
         <module>springboot-simple2-rabbitmq</module>
+        <module>springboot-simple2-mybatisplus</module>
     </modules>
     <packaging>pom</packaging>
     <parent>
