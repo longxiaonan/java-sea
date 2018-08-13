@@ -1,0 +1,7 @@
+server:
+  port: 8088
+logging:
+  level:
+    root: info
+    org.apache.http.wire: info
+

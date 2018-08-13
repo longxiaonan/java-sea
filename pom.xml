@@ -7,9 +7,12 @@
     <artifactId>springboot-simple2-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>springboot-simple2-mybatis-plus</module>
         <module>springboot-simple2-rabbitmq</module>
         <module>springboot-simple2-mybatisplus</module>
+        <module>springboot-simple2-pagehelper</module>
+        <module>springboot-simple2-mybatisgenerator-pomplugin</module>
+		<module>springboot-simple2-upload-client</module>
+		<module>springboot-simple2-upload-server</module>
     </modules>
     <packaging>pom</packaging>
     <parent>
@@ -24,19 +27,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
 
     <build>
         <plugins>
@@ -59,5 +49,13 @@
             </plugin>
         </plugins>
     </build>
-
+    <repositories>
+        <repository>
+            <id>public</id><!-- 和nexus要一致 -->
+            <name>Public Repositories</name><!-- 和nexus要一致 -->
+            <url>http://183.63.187.150:8081/repository/maven-public/</url>
+            <releases><enabled>true</enabled></releases>
+            <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+    </repositories>
 </project>
