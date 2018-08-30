@@ -9,6 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+
+
     <artifactId>springboot-simple2-mybatisplus</artifactId>
 
     <!-- Mybatis及Mybatis-Spring依赖请勿加入项目配置，以免引起版本冲突！！！Mybatis-Plus会自动帮你维护！ -->
