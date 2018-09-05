@@ -1,0 +1,23 @@
+#### 最上面的未修改，默认就是做的http的代理
+frontend  main *:5000
+    acl url_static       path_beg       -i /static /images /javascript /stylesheets
+    acl url_static       path_end       -i .jpg .gif .png .css .js
+
+    use_backend static          if url_static
+    default_backend             app
+
+#---------------------------------------------------------------------
+# static backend for serving up images, stylesheets and such
+#---------------------------------------------------------------------
+backend static
+    balance     roundrobin
+    server      static 127.0.0.1:4331 check
+
+#---------------------------------------------------------------------
+# round robin balancing between the various backends
+#---------------------------------------------------------------------
+backend app
+    #balance     roundrobin
+    balance source ##基于原地址的负载均衡模式
+    server  app1 localhost:8081 check
+    server  app2 localhost:8082 check

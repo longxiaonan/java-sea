@@ -8,11 +8,13 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>springboot-simple2-rabbitmq</module>
-        <module>springboot-simple2-mybatisplus</module>
-        <module>springboot-simple2-pagehelper</module>
-        <module>springboot-simple2-mybatisgenerator-pomplugin</module>
+        <module>springboot-simple2-orm</module>
 		<module>springboot-simple2-upload-client</module>
 		<module>springboot-simple2-upload-server</module>
+        <module>springboot-simple2-netty-server</module>
+        <module>springboot-simple2-netty-client</module>
+        <module>springboot-simple2-netty-client</module>
+        <module>springboot-simple2-springsession</module>
     </modules>
     <packaging>pom</packaging>
     <parent>
