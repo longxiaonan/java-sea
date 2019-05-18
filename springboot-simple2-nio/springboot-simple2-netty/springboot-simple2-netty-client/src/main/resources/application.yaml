@@ -1,0 +1,10 @@
+
+netty:
+  server:
+    host: 127.0.0.1
+    port: 8712
+
+channel:
+  id: 123456
+server:
+  port: 8081

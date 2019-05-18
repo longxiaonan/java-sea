@@ -12,8 +12,10 @@
     <artifactId>springboot-simple2-nosql</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>springboot-simple2-springdata-redis</module>
+        <module>springboot-simple2-redis-springdata</module>
         <module>springboot-simple2-mongodb</module>
+        <module>springboot-simple2-elasticsearch</module>
+        <module>springboot-simple2-redis-jedis</module>
     </modules>
 
 

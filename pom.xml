@@ -7,14 +7,20 @@
     <artifactId>springboot-simple2-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>springboot-simple2-rabbitmq</module>
         <module>springboot-simple2-orm</module>
 		<module>springboot-simple2-upload-client</module>
 		<module>springboot-simple2-upload-server</module>
-        <module>springboot-simple2-netty-server</module>
-        <module>springboot-simple2-netty-client</module>
-        <module>springboot-simple2-netty-client</module>
         <module>springboot-simple2-springsession</module>
+        <module>springboot-simple2-opc</module>
+        <module>springboot-simple2-nosql</module>
+        <module>springboot-simple2-mq</module>
+        <module>springboot-simple2-common</module>
+        <module>springboot-simple2-nio</module>
+        <module>springboot-simple2-bigdata</module>
+        <module>springboot-simple2-web</module>
+        <module>com.iee.test</module>
+        <module>springboot-simple2-file</module>
+        <module>springboot-simple2-base</module>
     </modules>
     <packaging>pom</packaging>
     <parent>
@@ -29,6 +35,18 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.iee</groupId>-->
+            <!--<artifactId>springboot-simple2-common</artifactId>-->
+            <!--<version>0.0.1-SNAPSHOT</version>-->
+        <!--</dependency>-->
+    </dependencies>
 
     <build>
         <plugins>
@@ -51,13 +69,13 @@
             </plugin>
         </plugins>
     </build>
-    <repositories>
-        <repository>
-            <id>public</id><!-- 和nexus要一致 -->
-            <name>Public Repositories</name><!-- 和nexus要一致 -->
-            <url>http://183.63.187.150:8081/repository/maven-public/</url>
-            <releases><enabled>true</enabled></releases>
-            <snapshots><enabled>true</enabled></snapshots>
-        </repository>
-    </repositories>
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>public</id>&lt;!&ndash; 和nexus要一致 &ndash;&gt;-->
+            <!--<name>Public Repositories</name>&lt;!&ndash; 和nexus要一致 &ndash;&gt;-->
+            <!--<url>http://183.63.187.150:8081/repository/maven-public/</url>-->
+            <!--<releases><enabled>true</enabled></releases>-->
+            <!--<snapshots><enabled>true</enabled></snapshots>-->
+        <!--</repository>-->
+    <!--</repositories>-->
 </project>

@@ -22,7 +22,7 @@ public class UploadController {
     /**
      *
      * @param file
-     *            传入的file对象, 参考测试用例中的whenUploadSuccess方法
+     *     传入的file对象, 参考测试用例中的whenUploadSuccess方法
      * @return
      * @throws IllegalStateException
      */
@@ -38,7 +38,6 @@ public class UploadController {
         System.out.println(split[1]);
         File localFile = new File(folder, new Date().getTime() + "."+split[1]);
         file.transferTo(localFile);
-
         return new FileInfo(localFile.getAbsolutePath());
     }
 }

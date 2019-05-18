@@ -102,7 +102,7 @@ public class TestController {
         return list;
     }
 
-    //实时库存情况
+    //省市实时库存情况
     //Real-timeInventory
     //http://120.79.246.166:5678/realTimeInventory
     @GetMapping("/realTimeInventory")
