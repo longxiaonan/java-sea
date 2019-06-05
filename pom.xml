@@ -21,6 +21,7 @@
         <module>com.iee.test</module>
         <module>springboot-simple2-file</module>
         <module>springboot-simple2-base</module>
+        <module>springboot-simple2-cache</module>
     </modules>
     <packaging>pom</packaging>
     <parent>

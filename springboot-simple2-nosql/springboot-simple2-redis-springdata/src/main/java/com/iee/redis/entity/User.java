@@ -1,4 +1,4 @@
-package com.iee.common.entity;
+package com.iee.redis.entity;
 
 import lombok.Data;
 
@@ -13,17 +13,6 @@ import java.io.Serializable;
 @Data
 public class User implements Serializable {
     private Integer id;
-    private String sex;
     private String name;
     private Integer age;
-    private Short number;
-
-    public User() {
-    }
-
-    public User(Integer id, String name, Integer age) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-    }
 }
