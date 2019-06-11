@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:test;
+    password: root
+    username: root
+    schema: classpath:db/schema.sql
+    data: classpath:db/data.sql
+  thymeleaf:
+    cache: false
+    # 以下是默认配置
+    #    prefix: classpath:/templates/
+    #    suffix: .html
+    #    mode: HTML5
+    #    encoding: UTF-8
+    #    content-type: text/html
+  freemarker:
+    cache: false  #关闭缓存，及时刷新，上线生产环境需要修改为true
+    template-loader-path: classpath:/templates
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    expose-request-attributes: true
+    expose-session-attributes: true
+    request-context-attribute: request
+    suffix: .ftl

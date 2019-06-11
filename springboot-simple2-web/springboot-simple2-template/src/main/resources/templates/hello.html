@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>hello</title>
+</head>
+<body>
+<!-- 拿到后台定义的key去取值 -->
+<!--/*@thymesVar id="name" type="java.lang.String"*/-->
+<h1 th:text="'Hello, ' + ${name}"></h1>
+thymeleaf test page
+</body>
+</html>
