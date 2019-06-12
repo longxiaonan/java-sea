@@ -14,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
  * @Author longxiaonan@163.com
  * @Date 2019/6/11 0011 9:18
  */
-@RequestMapping("/template")
 @Controller
 public class DemoController {
 
@@ -33,5 +32,11 @@ public class DemoController {
         // 添加内容
         model.addAttribute("name", "FreeMarker");
         return "word";
+    }
+
+    @RequestMapping("/index")
+    public String index(Model model){
+        model.addAttribute("content", "Freemarker");
+        return "index";
     }
 }

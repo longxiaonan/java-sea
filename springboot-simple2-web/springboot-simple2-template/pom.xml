@@ -22,9 +22,8 @@
         </dependency>
         <!-- freemarker 做模板引擎需要添加的依赖 -->
         <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
-            <version>2.3.28</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
     </dependencies>
     <build>
