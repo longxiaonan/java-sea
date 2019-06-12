@@ -1,4 +1,4 @@
-package controller;
+package com.iee.template.controller;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -14,7 +14,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 /**
- * @ClassName controller.ControllerTest
+ * @ClassName com.iee.templates.controller.ControllerTest
  * @Description TODO
  * @Author longxiaonan@163.com
  * @Date 2018/8/12 19:25

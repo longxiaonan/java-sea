@@ -22,6 +22,8 @@
         <module>springboot-simple2-file</module>
         <module>springboot-simple2-base</module>
         <module>springboot-simple2-cache</module>
+        <module>springboot-simple2-scene</module>
+        <module>springboot-simple2-rbac</module>
     </modules>
     <packaging>pom</packaging>
     <parent>

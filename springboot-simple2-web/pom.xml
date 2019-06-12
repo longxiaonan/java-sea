@@ -13,6 +13,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>springboot-simple2-webflux</module>
+        <module>springboot-simple2-template</module>
+        <module>springboot-simple2-devtools</module>
     </modules>
 
 
