@@ -47,4 +47,14 @@ public class MailController {
         record.setContent("测试邮件内容");
         mailUtil.sendTemplateMail(record);
     }
+
+    @GetMapping("/send4")
+    public void test4() throws Exception{
+
+        MailBean record = new MailBean();
+        record.setSubject("测试邮件");
+        record.setRecipient("longxiaonan@163.com");
+        record.setContent("测试邮件内容");
+        mailUtil.sendMailByQueue(record);
+    }
 }

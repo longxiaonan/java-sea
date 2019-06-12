@@ -5,3 +5,5 @@ http://localhost:8080/mail/send1
 http://localhost:8080/mail/send2
 freemarker邮件：
 http://localhost:8080/mail/send3
+通过内部队列发送邮件：
+http://localhost:8080/mail/send4

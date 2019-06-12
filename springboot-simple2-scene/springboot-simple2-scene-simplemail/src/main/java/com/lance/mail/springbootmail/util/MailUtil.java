@@ -1,6 +1,7 @@
 package com.lance.mail.springbootmail.util;
 
 import com.lance.mail.springbootmail.bean.MailBean;
+import com.lance.mail.springbootmail.queue.MailQueue;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import org.slf4j.Logger;
@@ -13,6 +14,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
+import org.springframework.util.ResourceUtils;
 
 import javax.mail.internet.MimeMessage;
 import java.io.File;
@@ -69,7 +71,8 @@ public class MailUtil {
         try {
             mimeMailMessage = javaMailSender.createMimeMessage();
             MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMailMessage, true);
-            mimeMessageHelper.setFrom(MAIL_SENDER);
+            //这里可以自定义发信名称比如：爪哇笔记
+            mimeMessageHelper.setFrom(MAIL_SENDER, "爪哇笔记");
             mimeMessageHelper.setTo(mailBean.getRecipient());
             mimeMessageHelper.setSubject(mailBean.getSubject());
             StringBuilder sb = new StringBuilder();
@@ -77,6 +80,16 @@ public class MailUtil {
                     .append("\"<p style='color:#F00'>你是真的太棒了！</p>")
                     .append("<p style='text-align:right'>右对齐</p>");
             mimeMessageHelper.setText(sb.toString(), true);
+            // 发送图片
+            File file = ResourceUtils.getFile("classpath:static"
+                    + Constants.SF_FILE_SEPARATOR + "image"
+                    + Constants.SF_FILE_SEPARATOR + "mail.png");
+            mimeMessageHelper.addInline("springcloud", file);
+            // 发送附件
+            file = ResourceUtils.getFile("classpath:static"
+                    + Constants.SF_FILE_SEPARATOR + "file"
+                    + Constants.SF_FILE_SEPARATOR + "iee.zip");
+            mimeMessageHelper.addAttachment("iee", file);
             javaMailSender.send(mimeMailMessage);
         } catch (Exception e) {
             logger.error("邮件发送失败", e.getMessage());
@@ -159,5 +172,12 @@ public class MailUtil {
 
     }
 
-
+    /**
+     * 将邮件放入队列中进行发送
+     *
+     * @param mailBean
+     */
+    public void sendMailByQueue(MailBean mailBean) throws Exception {
+        MailQueue.getMailQueue().produce(mailBean);
+    }
 }
