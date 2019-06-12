@@ -37,18 +37,20 @@ public class AuthRealm extends AuthorizingRealm {
         Optional<User> user = userService.findUserByUserName(username);
         if(user.isPresent()){
             //放入shiro.调用CredentialsMatcher检验密码
-            return new SimpleAuthenticationInfo(user, user.get().getPassword(),super.getName());
+            return new SimpleAuthenticationInfo(user.get(), user.get().getPassword(),super.getName());
         }
-        throw new AuthenticationException("用户名或者密码错误！");
-
+        throw new AuthenticationException("用户名不存在！");
     }
+
     //授权
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principal) {
-        User user=(User) principal.fromRealm(this.getClass().getName()).iterator().next();//获取session中的用户
-        List<String> permissions = roleService.getModules(user);
+        User user = (User) principal.getPrimaryPrincipal();
+//        User user=(User) principal.fromRealm(this.getClass().getName()).iterator().next();//获取session中的用户
+        Set<String> permissions = roleService.getModulesString(user);
+        Set<String> roles = roleService.getRolesString(user);
         SimpleAuthorizationInfo info=new SimpleAuthorizationInfo();
-//        info.addRoles();
+        info.addRoles(roles);
         info.addStringPermissions(permissions);//将权限放入shiro中.
         return info;
     }

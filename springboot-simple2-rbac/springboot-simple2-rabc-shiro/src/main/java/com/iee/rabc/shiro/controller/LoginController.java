@@ -5,9 +5,8 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.Objects;
@@ -15,11 +14,25 @@ import java.util.Objects;
 @Controller
 public class LoginController {
 
-    @RequestMapping("/login1")
-    public ModelAndView login(ModelAndView model) {
-        model.setViewName("templates/login");
-        return model;
+//    @RequestMapping("/login1")
+//    public ModelAndView login(ModelAndView model) {
+//        model.setViewName("login");
+//        return model;
+//    }
+
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
     }
+
+    @RequestMapping("/index")
+    @ResponseBody
+    public User test() {
+        Subject subject = SecurityUtils.getSubject();
+        User principal = (User) subject.getPrincipal();
+        return principal;
+    }
+
     @RequestMapping("/loginUser")
     public String loginUser(String username, String password, HttpSession session) {
         Objects.requireNonNull(username, "用户名不能为空");

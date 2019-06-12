@@ -1,14 +1,15 @@
 spring:
   freemarker:
     cache: false  #关闭缓存，及时刷新，上线生产环境需要修改为true
-    template-loader-path: classpath:/templates
+    template-loader-path: classpath:/templates #模板加载路径 按需配置 ,默认路径是 classpath:/templates/
     charset: UTF-8
     check-template-location: true
     content-type: text/html
     expose-request-attributes: true
     expose-session-attributes: true
     request-context-attribute: request
-    suffix: .ftl
+    suffix: .html # freemarker模板后缀 默认是 .ftl, 需要跟template-loader-path中的模板文件的后缀名保持一致
+
   ######  sql数据源相关配置 ######
   datasource:
 #    url: jdbc:mysql://192.168.3.207:3306/enerngy3_zhenghe

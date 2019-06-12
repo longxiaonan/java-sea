@@ -30,6 +30,7 @@ public class ShiroConfiguration {
         bean.setLoginUrl("/login");
         bean.setSuccessUrl("/home");
         bean.setUnauthorizedUrl("/templates/error");
+//        bean.setFilters();
         /**
          * 配置shiro拦截器链
          * anon  不需要认证
@@ -43,14 +44,15 @@ public class ShiroConfiguration {
         LinkedHashMap<String, String> filterChainDefinitionMap=new LinkedHashMap<>();
         filterChainDefinitionMap.put("/static/**", "anon");
         filterChainDefinitionMap.put("/templates/error", "anon");
-        filterChainDefinitionMap.put("/**", "user");
-        filterChainDefinitionMap.put("/templates/login.ftl*", "anon"); //表示可以匿名访问
+        filterChainDefinitionMap.put("/templates/hello", "anon");
+        filterChainDefinitionMap.put("/test", "anon");
+        filterChainDefinitionMap.put("/login", "anon"); //表示可以匿名访问
         filterChainDefinitionMap.put("/loginUser", "anon");
         filterChainDefinitionMap.put("/logout*","anon");
         filterChainDefinitionMap.put("/templates/error.jsp*","anon");
-        filterChainDefinitionMap.put("/templates/index.ftl*","authc");
+        filterChainDefinitionMap.put("/templates/index.html*","authc");
+        filterChainDefinitionMap.put("/**", "user");
         filterChainDefinitionMap.put("/*", "authc");//表示需要认证才可以访问
-        filterChainDefinitionMap.put("/**", "authc");//表示需要认证才可以访问
         filterChainDefinitionMap.put("/*.*", "authc");
         bean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return bean;
@@ -65,7 +67,7 @@ public class ShiroConfiguration {
     }
     //配置自定义的权限登录器
     @Bean(name="authRealm")
-    public AuthRealm authRealm(@Qualifier("hashedCredentialsMatcher") HashedCredentialsMatcher matcher) {
+    public AuthRealm authRealm(@Qualifier("hashedCredentialsMatcher") CredentialsMatcher matcher) {
         AuthRealm authRealm=new AuthRealm();
         authRealm.setCredentialsMatcher(matcher);
         return authRealm;
@@ -76,11 +78,12 @@ public class ShiroConfiguration {
      * @return
      */
     @Bean(name="hashedCredentialsMatcher")
-    public HashedCredentialsMatcher hashedCredentialsMatcher() {
-        HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
-        hashedCredentialsMatcher.setHashAlgorithmName("md5");//散列算法:这里使用MD5算法;
-        hashedCredentialsMatcher.setHashIterations(2);//散列的次数，比如散列两次，相当于 md5(md5(""));
-        return hashedCredentialsMatcher;
+    public CredentialsMatcher hashedCredentialsMatcher() {
+        CredentialsMatcher credentialsMatcher = new CredentialsMatcher();
+//        HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
+//        hashedCredentialsMatcher.setHashAlgorithmName("md5");//散列算法:这里使用MD5算法;
+//        hashedCredentialsMatcher.setHashIterations(2);//散列的次数，比如散列两次，相当于 md5(md5(""));
+        return credentialsMatcher;
     }
 
     @Bean

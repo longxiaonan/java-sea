@@ -2,7 +2,7 @@ package com.iee.rabc.shiro.service;
 
 import com.iee.rabc.shiro.entity.User;
 
-import java.util.List;
+import java.util.Set;
 
 /**
  * @ClassName RoleService
@@ -12,5 +12,8 @@ import java.util.List;
  */
 public interface RoleService {
     /** 通过用户获取对应的权限 */
-    public List<String> getModules(User uesr);
+    public Set<String> getModulesString(User user);
+
+    /** 通过用户获取对应的角色 */
+    public Set<String> getRolesString(User user);
 }
