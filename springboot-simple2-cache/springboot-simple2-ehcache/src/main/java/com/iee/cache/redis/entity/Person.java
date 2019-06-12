@@ -1,4 +1,4 @@
-package com.iee.ehcache.redis.entity;
+package com.iee.cache.redis.entity;
 
 import java.io.Serializable;
 

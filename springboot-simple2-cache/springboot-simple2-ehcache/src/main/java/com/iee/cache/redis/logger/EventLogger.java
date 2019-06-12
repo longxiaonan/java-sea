@@ -1,4 +1,4 @@
-package com.iee.ehcache.redis.logger;
+package com.iee.cache.redis.logger;
 
 import org.ehcache.event.CacheEvent;
 import org.ehcache.event.CacheEventListener;

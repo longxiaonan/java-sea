@@ -1,7 +1,7 @@
-package com.iee.ehcache.redis.controller;
+package com.iee.cache.redis.controller;
 
-import com.iee.ehcache.redis.entity.Person;
-import com.iee.ehcache.redis.service.PersonService;
+import com.iee.cache.redis.entity.Person;
+import com.iee.cache.redis.service.PersonService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

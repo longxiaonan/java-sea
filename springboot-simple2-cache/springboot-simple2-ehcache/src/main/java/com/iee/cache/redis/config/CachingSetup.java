@@ -1,4 +1,4 @@
-package com.iee.ehcache.redis.config;
+package com.iee.cache.redis.config;
 
 import org.springframework.boot.autoconfigure.cache.JCacheManagerCustomizer;
 import org.springframework.stereotype.Component;

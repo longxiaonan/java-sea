@@ -1,6 +1,6 @@
-package com.iee.ehcache.redis.service;
+package com.iee.cache.redis.service;
 
-import com.iee.ehcache.redis.entity.Person;
+import com.iee.cache.redis.entity.Person;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
