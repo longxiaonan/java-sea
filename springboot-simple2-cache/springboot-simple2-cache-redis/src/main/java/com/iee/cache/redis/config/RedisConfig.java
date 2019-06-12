@@ -1,4 +1,4 @@
-package com.iee.ehcache.redis.config;
+package com.iee.cache.redis.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
