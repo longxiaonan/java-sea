@@ -1,6 +1,6 @@
-##<center>springboot整合shiro</center>
+## <center>springboot整合shiro</center>
 
-###技术和框架
+### 技术和框架
 1. springboot：基础框架
 2. freemarker：作为前端页面展示，需要配置pom和application.yaml
 3. shiro：权限管理，需要配置pom。其他配置见包`com.iee.rabc.shiro.shiro`
@@ -20,7 +20,7 @@
 shiro-freemarker-tags项目的git地址如下：
 https://github.com/jagregory/shiro-freemarker-tags
 
-###如何使用？
+### 如何使用？
 #### 登陆URL: http://localhost:8800/login
 ![](images/2019-06-12-22-31-19.png)
 #### 主页URL(需要登陆，否则跳转回登陆页面): http://localhost:8800/index
