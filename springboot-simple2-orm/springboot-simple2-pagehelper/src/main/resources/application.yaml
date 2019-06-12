@@ -1,5 +1,3 @@
-
-
 spring:
   ######  sql数据源相关配置 ######
   datasource:
