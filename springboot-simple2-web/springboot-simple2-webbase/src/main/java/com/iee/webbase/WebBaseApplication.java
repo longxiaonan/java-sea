@@ -10,10 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 2019-06-02
  */
 @SpringBootApplication
-public class BestPracticeApplication {
+public class WebBaseApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BestPracticeApplication.class, args);
+        SpringApplication.run(WebBaseApplication.class, args);
     }
 
 }

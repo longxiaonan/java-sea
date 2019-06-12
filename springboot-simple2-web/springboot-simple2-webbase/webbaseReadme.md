@@ -12,15 +12,11 @@
 
 # 启动方式
 
-下载源码：
-
-```shell
-git clone https://github.com/dadiyang/spring-best-practice.git
-cd spring-best-practice
-```
-
-然后直接启动：
+1. 然后直接启动：
 
 `mvn spring-boot:run`
+
+2. 运行主类:
+`WebBaseApplication.java`
 
 启动之后浏览器打开 http://localhost:8082/swagger-ui.html#/ 可以查看 Swagger 文档
