@@ -65,8 +65,8 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'hlhdidi', '123');
-INSERT INTO `user` VALUES ('2', 'xyycici', '1992');
+INSERT INTO `user` VALUES ('1', 'admin', '123');
+INSERT INTO `user` VALUES ('2', 'root', '123');
 
 -- ----------------------------
 -- Table structure for user_role
