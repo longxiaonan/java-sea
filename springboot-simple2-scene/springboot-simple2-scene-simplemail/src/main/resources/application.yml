@@ -1,0 +1,24 @@
+spring:
+  #邮箱配置
+  mail:
+    host: smtp.qq.com
+    username: 593213437@qq.com
+    #QQ邮箱的授权码, 不是登陆密码，在设置》帐号》开启POP3/SMTP服务后，腾讯提供的授权码，用于第三方登陆
+    password: wwrquiluunkgbahg
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+  #freemarker配置
+  freemarker:
+    content-type: text/html
+    #后缀名
+    suffix: .ftl
+    template-loader-path: classpath:/templates
+    charset: UTF-8
+    check-template-location: true
+  # Active Profile Settings
