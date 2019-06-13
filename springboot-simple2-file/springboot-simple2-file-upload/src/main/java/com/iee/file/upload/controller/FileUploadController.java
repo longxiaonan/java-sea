@@ -41,8 +41,6 @@ public class FileUploadController {
         return "uploading success";
     }
 
-
-
     public void  uploadFile(byte[] file, String filePath, String fileName) throws Exception {
         File targetFile = new File(filePath);
         if(!targetFile.exists()){
