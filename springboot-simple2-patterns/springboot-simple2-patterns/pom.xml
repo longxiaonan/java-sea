@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>springboot-simple2-patterns-qinli</artifactId>
+    <artifactId>springboot-simple2-patterns</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
