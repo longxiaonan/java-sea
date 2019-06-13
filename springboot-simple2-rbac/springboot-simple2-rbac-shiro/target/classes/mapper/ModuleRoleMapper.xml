@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.iee.rabc.shiro.mapper.ModuleRoleMapper" >
-  <resultMap id="BaseResultMap" type="com.iee.rabc.shiro.entity.ModuleRole" >
+<mapper namespace="com.iee.rbac.shiro.mapper.ModuleRoleMapper" >
+  <resultMap id="BaseResultMap" type="com.iee.rbac.shiro.entity.ModuleRole" >
     <result column="rid" property="rid" jdbcType="INTEGER" />
     <result column="mid" property="mid" jdbcType="INTEGER" />
   </resultMap>
@@ -66,7 +66,7 @@
   <sql id="Base_Column_List" >
     rid, mid
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.iee.rabc.shiro.entity.ModuleRoleExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.iee.rbac.shiro.entity.ModuleRoleExample" >
     select
     <if test="distinct" >
       distinct
@@ -81,17 +81,17 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="com.iee.rabc.shiro.entity.ModuleRoleExample" >
+  <delete id="deleteByExample" parameterType="com.iee.rbac.shiro.entity.ModuleRoleExample" >
     delete from module_role
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.iee.rabc.shiro.entity.ModuleRole" >
+  <insert id="insert" parameterType="com.iee.rbac.shiro.entity.ModuleRole" >
     insert into module_role (rid, mid)
     values (#{rid,jdbcType=INTEGER}, #{mid,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.iee.rabc.shiro.entity.ModuleRole" >
+  <insert id="insertSelective" parameterType="com.iee.rbac.shiro.entity.ModuleRole" >
     insert into module_role
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="rid != null" >
@@ -110,7 +110,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.iee.rabc.shiro.entity.ModuleRoleExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.iee.rbac.shiro.entity.ModuleRoleExample" resultType="java.lang.Integer" >
     select count(*) from module_role
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
