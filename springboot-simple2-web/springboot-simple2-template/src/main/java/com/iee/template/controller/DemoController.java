@@ -26,7 +26,6 @@ public class DemoController {
         return model;
     }
 
-    //TODO: 无法访问后台报错，试过很多方式无法解决。
     @GetMapping("/freemarker")
     public String helloFreeMarker(ModelMap model){
         // 添加内容
