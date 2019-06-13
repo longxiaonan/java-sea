@@ -1,0 +1,7 @@
+spring:
+  http:
+    multipart:
+      maxFileSize: 100Mb
+      maxRequestSize: 100Mb
+
+filePath: E:/tmp
