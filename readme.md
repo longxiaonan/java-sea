@@ -23,3 +23,8 @@
 ![](images/2019-06-12-11-10-39.png)
 2. 将三级项目的pom.xml中的<parent>修改为springboot的parent，减少对二级和一级项目的依赖。使之就算单独拷贝出去也能独立运行。
 ![](images/2019-06-12-11-15-48.png)
+
+### 相关说明
+fork后如何更新项目问题：
+参考：https://blog.csdn.net/libaineu2004/article/details/83239778
+
