@@ -3,13 +3,13 @@ package com.longxn.mapper;
 import com.longxn.model.SysUser;
 
 public interface SysUserMapper {
-    int deleteByPrimaryKey(String id);
+    int deleteByPrimaryKey(String userId);
 
     int insert(SysUser record);
 
     int insertSelective(SysUser record);
 
-    SysUser selectByPrimaryKey(String id);
+    SysUser selectByPrimaryKey(String userId);
 
     int updateByPrimaryKeySelective(SysUser record);
 

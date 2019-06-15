@@ -3,173 +3,163 @@ package com.longxn.model;
 import java.util.Date;
 
 public class SysUser {
-    private String id;
+    private String userId;
 
-    private String username;
+    private String tenantId;
 
-    private String password;
+    private String name;
 
-    private String nickname;
+    private String email;
 
-    private Integer age;
+    private String mobile;
 
-    private Integer sex;
+    private String telephone;
 
-    private Integer job;
+    private Short sex;
 
-    private String faceImage;
+    private Short status;
 
-    private String province;
+    private String orgId;
 
-    private String city;
+    private String rank;
 
-    private String district;
+    private String remarks;
 
-    private String address;
+    private Short delFlag;
 
-    private String authSalt;
+    private String createBy;
 
-    private String lastLoginIp;
+    private Date createTime;
 
-    private Date lastLoginTime;
+    private String lastUpdateBy;
 
-    private Integer isDelete;
+    private Date lastUpdateTime;
 
-    private Date registTime;
-
-    public String getId() {
-        return id;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setId(String id) {
-        this.id = id == null ? null : id.trim();
+    public void setUserId(String userId) {
+        this.userId = userId == null ? null : userId.trim();
     }
 
-    public String getUsername() {
-        return username;
+    public String getTenantId() {
+        return tenantId;
     }
 
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId == null ? null : tenantId.trim();
     }
 
-    public String getPassword() {
-        return password;
+    public String getName() {
+        return name;
     }
 
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
-    public String getNickname() {
-        return nickname;
+    public String getEmail() {
+        return email;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname == null ? null : nickname.trim();
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
     }
 
-    public Integer getAge() {
-        return age;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setMobile(String mobile) {
+        this.mobile = mobile == null ? null : mobile.trim();
     }
 
-    public Integer getSex() {
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone == null ? null : telephone.trim();
+    }
+
+    public Short getSex() {
         return sex;
     }
 
-    public void setSex(Integer sex) {
+    public void setSex(Short sex) {
         this.sex = sex;
     }
 
-    public Integer getJob() {
-        return job;
+    public Short getStatus() {
+        return status;
     }
 
-    public void setJob(Integer job) {
-        this.job = job;
+    public void setStatus(Short status) {
+        this.status = status;
     }
 
-    public String getFaceImage() {
-        return faceImage;
+    public String getOrgId() {
+        return orgId;
     }
 
-    public void setFaceImage(String faceImage) {
-        this.faceImage = faceImage == null ? null : faceImage.trim();
+    public void setOrgId(String orgId) {
+        this.orgId = orgId == null ? null : orgId.trim();
     }
 
-    public String getProvince() {
-        return province;
+    public String getRank() {
+        return rank;
     }
 
-    public void setProvince(String province) {
-        this.province = province == null ? null : province.trim();
+    public void setRank(String rank) {
+        this.rank = rank == null ? null : rank.trim();
     }
 
-    public String getCity() {
-        return city;
+    public String getRemarks() {
+        return remarks;
     }
 
-    public void setCity(String city) {
-        this.city = city == null ? null : city.trim();
+    public void setRemarks(String remarks) {
+        this.remarks = remarks == null ? null : remarks.trim();
     }
 
-    public String getDistrict() {
-        return district;
+    public Short getDelFlag() {
+        return delFlag;
     }
 
-    public void setDistrict(String district) {
-        this.district = district == null ? null : district.trim();
+    public void setDelFlag(Short delFlag) {
+        this.delFlag = delFlag;
     }
 
-    public String getAddress() {
-        return address;
+    public String getCreateBy() {
+        return createBy;
     }
 
-    public void setAddress(String address) {
-        this.address = address == null ? null : address.trim();
+    public void setCreateBy(String createBy) {
+        this.createBy = createBy == null ? null : createBy.trim();
     }
 
-    public String getAuthSalt() {
-        return authSalt;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setAuthSalt(String authSalt) {
-        this.authSalt = authSalt == null ? null : authSalt.trim();
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public String getLastLoginIp() {
-        return lastLoginIp;
+    public String getLastUpdateBy() {
+        return lastUpdateBy;
     }
 
-    public void setLastLoginIp(String lastLoginIp) {
-        this.lastLoginIp = lastLoginIp == null ? null : lastLoginIp.trim();
+    public void setLastUpdateBy(String lastUpdateBy) {
+        this.lastUpdateBy = lastUpdateBy == null ? null : lastUpdateBy.trim();
     }
 
-    public Date getLastLoginTime() {
-        return lastLoginTime;
+    public Date getLastUpdateTime() {
+        return lastUpdateTime;
     }
 
-    public void setLastLoginTime(Date lastLoginTime) {
-        this.lastLoginTime = lastLoginTime;
-    }
-
-    public Integer getIsDelete() {
-        return isDelete;
-    }
-
-    public void setIsDelete(Integer isDelete) {
-        this.isDelete = isDelete;
-    }
-
-    public Date getRegistTime() {
-        return registTime;
-    }
-
-    public void setRegistTime(Date registTime) {
-        this.registTime = registTime;
+    public void setLastUpdateTime(Date lastUpdateTime) {
+        this.lastUpdateTime = lastUpdateTime;
     }
 }
