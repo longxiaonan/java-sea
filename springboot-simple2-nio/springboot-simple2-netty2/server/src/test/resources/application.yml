@@ -1,0 +1,6 @@
+nettycs:
+  server:
+    port: 9012
+spring:
+    profiles:
+      active: unittest

@@ -1,0 +1,13 @@
+nettycs:
+  server:
+    port: 9022
+spring:
+    profiles:
+      active: dev
+logging:
+    file: ${user.home}/nettycs/log/server.log
+    file.max-size: 50MB
+    file.max-history: 20
+    level:
+        root: INFO
+        com.dadiyang.nettycs: DEBUG

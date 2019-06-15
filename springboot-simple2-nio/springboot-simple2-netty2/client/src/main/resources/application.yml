@@ -1,0 +1,9 @@
+logging:
+    file: ${user.home}/nettycs/log/client.log
+    file.max-size: 50MB
+    file.max-history: 20
+    level:
+        root: INFO
+spring:
+  profiles:
+    active: dev
