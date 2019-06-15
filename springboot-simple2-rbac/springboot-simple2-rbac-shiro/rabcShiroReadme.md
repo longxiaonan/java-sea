@@ -1,4 +1,4 @@
-## <center>springboot整合shiro</center>
+## <center>springboot整合shiro, 且实现热部署</center>
 
 ### 技术和框架
 1. springboot：基础框架

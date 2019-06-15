@@ -12,12 +12,9 @@ spring:
 
   ######  sql数据源相关配置 ######
   datasource:
-#    url: jdbc:mysql://192.168.3.207:3306/enerngy3_zhenghe
-#    url: jdbc:mysql://183.63.187.147:3306/energy2
     url: jdbc:mysql://127.0.0.1:3306/my
     username: root
     password: 123456
-#    password: weitexun@$1#
     driver-class-name: com.mysql.jdbc.Driver
     druid:
       #监控统计拦截的filters，conn, config, stat, slf4j
@@ -57,7 +54,7 @@ spring:
 ## mytatis配置
 mybatis:
     ##定义pojo类
-    type-aliases-package: com.iee.pagehelper.entity
+    type-aliases-package: com.iee.orm.pagehelper.entity
     mapper-locations:
       - classpath:mapper/*.xml
     configuration:
