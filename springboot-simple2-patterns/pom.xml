@@ -13,6 +13,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>springboot-simple2-patterns</module>
+        <module>springboot-simple2-patterns-example</module>
+        <module>springboot-simple2-patterns-base</module>
     </modules>
 
 

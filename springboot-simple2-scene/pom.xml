@@ -12,6 +12,6 @@
     <artifactId>springboot-simple2-scene</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>springboot-simple2-scene-mail</module>
+        <module>springboot-simple2-scene-simplemail</module>
     </modules>
 </project>
