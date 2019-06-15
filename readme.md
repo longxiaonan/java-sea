@@ -29,9 +29,8 @@
 
 #### 项目太多卡顿问题：
 在idea中关闭不启用(加载)的module。<br/>
-![](images/2019-06-15-22-22-51.png)<br/>
+<img src="images/2019-06-15-22-22-51.png" width = 50% height = 50% /><br/>
 将要加载项目移到右边即可。<br/>
-![](images/2019-06-15-22-28-29.png)<br/>
+<img src="images/2019-06-15-22-28-29.png" width = 80% height = 80% /><br/>
 每个节点中的子项目都可以独立运行。<br/>
-![](images/2019-06-15-22-28-57.png)<br/>
-<img src="images/2019-06-15-22-28-57.png" width = 30% height = 30% />
+<img src="images/2019-06-15-22-28-57.png" width = 50% height = 50% /><br/>
