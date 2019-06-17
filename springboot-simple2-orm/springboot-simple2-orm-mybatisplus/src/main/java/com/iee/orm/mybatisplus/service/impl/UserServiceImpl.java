@@ -7,11 +7,15 @@ import com.iee.orm.mybatisplus.entity.User;
 import com.iee.orm.mybatisplus.mapper.UserMapper;
 import com.iee.orm.mybatisplus.service.UserService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
+
+    @Autowired
+    UserMapper userMapper;
 
     // 增
     @Override
@@ -34,12 +38,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     // 查: 普通查
     @Override
     public User findUserByName( String userName ) {
-        return baseMapper.getUserByName( userName );
+        return userMapper.getUserByName( userName );
     }
 
     // 查：分页查
     @Override
     public IPage getUserPage(Page page, User user) {
-        return baseMapper.getUsersPage( page, user );
+        return userMapper.getUsersPage( page, user );
     }
 }
