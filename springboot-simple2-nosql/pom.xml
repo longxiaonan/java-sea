@@ -16,6 +16,8 @@
         <module>springboot-simple2-mongodb</module>
         <module>springboot-simple2-elasticsearch</module>
         <module>springboot-simple2-redis-jedis</module>
+        <module>springboot-simple2-redis-subscription</module>
+        <module>springboot-simple2-redis-distributedlocks</module>
     </modules>
 
 
