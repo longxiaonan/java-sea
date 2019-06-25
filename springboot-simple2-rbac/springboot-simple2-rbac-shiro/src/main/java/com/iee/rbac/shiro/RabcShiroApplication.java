@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.iee.rabc.shiro.mapper")
+@MapperScan("com.iee.rbac.shiro.mapper")
 public class RabcShiroApplication {
 
 	public static void main(String[] args) {

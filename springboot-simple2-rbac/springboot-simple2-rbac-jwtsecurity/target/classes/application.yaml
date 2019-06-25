@@ -1,15 +1,4 @@
 spring:
-  freemarker:
-    cache: false  #关闭缓存，及时刷新，上线生产环境需要修改为true
-    template-loader-path: classpath:/templates #模板加载路径 按需配置 ,默认路径是 classpath:/templates/
-    charset: UTF-8
-    check-template-location: true
-    content-type: text/html
-    expose-request-attributes: true
-    expose-session-attributes: true
-    request-context-attribute: request
-    suffix: .html # freemarker模板后缀 默认是 .ftl, 需要跟template-loader-path中的模板文件的后缀名保持一致
-
   ######  sql数据源相关配置 ######
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/my
@@ -49,23 +38,22 @@ spring:
         username: admin
         password: 123
 
-
 ##################### mybatis 相关配置 ###### start ##################
 ## mytatis配置
 mybatis:
-    ##定义pojo类
-    type-aliases-package: com.iee.rbac.shiro.entity
-    mapper-locations:
-      - classpath:mapper/*.xml
-    configuration:
-      database-id: mysql  # mysql, oracle
+  ##定义pojo类
+  type-aliases-package: com.iee.rbac.security.entity
+  mapper-locations:
+    - classpath:mapper/*.xml
+  configuration:
+    database-id: mysql  # mysql, oracle
 
 ## github pagehelper配置
 pagehelper:
-    helperDialect: mysql
-    reasonable: true
-    supportMethodsArguments: true
-    params: count=countSql
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
 ##################### mybatis 相关配置 ###### end ###################
 
 
