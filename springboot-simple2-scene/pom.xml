@@ -13,5 +13,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>springboot-simple2-scene-simplemail</module>
+        <module>springboot-simple-scene-repeatsubmit</module>
     </modules>
 </project>

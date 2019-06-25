@@ -15,7 +15,7 @@ public class ReadFileClient {
     public static void main(String s[]) throws IOException
     {
 
-//        String urlOrPath="C:\\Users\\jingtiancai\\Pictures\\kaola.jpg";
+//        String urlOrPath="C:\\userdetails\\jingtiancai\\Pictures\\kaola.jpg";
         String urlOrPath="C:\\jiyi\\00-99";
         //String urlOrPath="http://pic4.nipic.com/20091217/3885730_124701000519_2.jpg";
 
