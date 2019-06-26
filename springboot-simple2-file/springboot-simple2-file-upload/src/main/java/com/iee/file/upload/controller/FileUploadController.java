@@ -13,6 +13,11 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.FileOutputStream;
 
+/**
+ * @Description 通过getBytes的字节流写入到目标目录
+ * @Author longxiaonan@163.com
+ * @Date 23:05 2019/6/26 0026
+ **/
 @Controller
 public class FileUploadController {
 

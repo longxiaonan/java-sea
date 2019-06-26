@@ -1,3 +1,6 @@
+DiskLocation:
+  C:\temp\
+
 server:
   port: 8080
 

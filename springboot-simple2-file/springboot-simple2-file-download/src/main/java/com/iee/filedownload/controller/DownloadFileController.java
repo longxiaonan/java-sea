@@ -1,14 +1,11 @@
 package com.iee.filedownload.controller;
 
-import com.iee.common.utils.FileHelper;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
+import com.iee.filedownload.common.FileHelper;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.io.IOUtils;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,7 +21,6 @@ import java.io.*;
  */
 @RestController
 @Slf4j
-@Api(value = "下载模板", tags = { "" })
 public class DownloadFileController {
 
     @Value("${local.folder}")
@@ -43,9 +39,6 @@ public class DownloadFileController {
      * @param response
      */
     @GetMapping("/downTempleFileCommon")
-    @ApiOperation(value = "下载模版", notes = "下载模版")
-    @ApiImplicitParams({
-            @ApiImplicitParam(paramType = "query", name = "branchId", value = "网点ID", dataType = "String", required = true) })
     public void downTempleFileCommon(HttpServletRequest request, HttpServletResponse response) {
         try {
             response.reset();
@@ -89,17 +82,20 @@ public class DownloadFileController {
      * @param request
      * @param response
      */
-    @GetMapping("/downTempleFileCommon2")
-    @ApiOperation(value = "下载模版", notes = "下载模版")
-    @ApiImplicitParams({
-            @ApiImplicitParam(paramType = "query", name = "filename", value = "本次下载的文件名", dataType = "String", required = true),
-            @ApiImplicitParam(paramType = "query", name = "partname", value = "模块对应的模板文件名", dataType = "String", required = true)})
-    public void downTempleFileCommon2(@RequestParam String filename, @RequestParam String partname, HttpServletRequest request, HttpServletResponse response) {
-        try(InputStream inputStream = new FileInputStream(new File(templatePath,partname + ".xlsx"));
+    @GetMapping("/downTempleFileCommon2/{filename}/{rename}")
+    public void downTempleFileCommon2(@PathVariable String filename, @PathVariable String rename, HttpServletRequest request, HttpServletResponse response) {
+        try(InputStream inputStream = new FileInputStream(new File(templatePath,filename + ".xlsx"));
             OutputStream outputStream = response.getOutputStream()) {
             response.reset();
             //设置ContentType字段值“text/html”，“application/json”
+
             response.setContentType("application/x-download;charset=UTF-8");
+            //服务端向客户端游览器发送文件时，如果是浏览器支持的文件类型，一般会默认使用浏览器打开，比如txt、jpg等，
+            // 会直接在浏览器中显示，如果需要提示用户保存，就要利用Content-Disposition进行一下处理，
+            // 关键在于一定要加上attachment：
+            //Response.AppendHeader("Content-Disposition","attachment;filename=FileName.txt");
+            response.addHeader("Content-Disposition",
+                    "attachment;filename=" + rename + ".xlsx");
 
             //通知浏览器以下载的方式打开
             /*********** Content-Type: application/octet-stream
@@ -115,11 +111,11 @@ public class DownloadFileController {
              表示“这是一个PNG图像，除非你不知道如何显示PNG图像，否则请显示它，如果用户选择保存它，我们建议文件名保存为picture.png”。
              ****/
 
-            response.addHeader("Content-type", "application/octet-stream;charset=UTF-8");
-            log.info("-------------downTempleFileCommon path----------" + templatePath + partname + ".xlsx");
-            //filename:重新设置下载后的文件名
-            response.addHeader("Content-Disposition",
-                    "attachment;filename=" + filename + ".xlsx");
+            //content-type属性的"application/octet-stream"，这个属性值表示是任意的字节流，
+            // 会强制浏览器打开save as对话框来保存文件，这个在你对mime类型并不了解时可以使用，
+            // 这样就不用担心每种文件类型的mime类型是什么了.在使用这个属性值的时候，效果和使用content-disposition是一样的
+//            response.addHeader("Content-type", "application/octet-stream;charset=UTF-8");
+
             IOUtils.copy(inputStream, outputStream);
             outputStream.flush();
         } catch (IOException e) {
