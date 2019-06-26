@@ -12,8 +12,9 @@
     <artifactId>springboot-simple2-rbac</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>springboot-simple2-rabc-shiro</module>
-        <module>springboot-simple2-security</module>
+        <module>springboot-simple2-rbac-shiro</module>
+        <module>springboot-simple2-rbac-jwtsecurity</module>
+        <module>springboot-simple2-rbac-jwtsecurity-sso</module>
     </modules>
 
 
