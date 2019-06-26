@@ -5,7 +5,6 @@ gitee地址为：https://gitee.com/baomidou/mybatis-plus
 官网为：https://mp.baomidou.com/
 
 ### 测试
->根据名称查询和分页查询有问题，待解决！！！
 #### 插入：
 `POST: http://localhost:8800/user/insert`
 参数：
@@ -37,4 +36,8 @@ gitee地址为：https://gitee.com/baomidou/mybatis-plus
 }
 
 
+
+
+参考：
+https://juejin.im/post/5d1241fbf265da1bc85437fc?utm_source=gold_browser_extension
 

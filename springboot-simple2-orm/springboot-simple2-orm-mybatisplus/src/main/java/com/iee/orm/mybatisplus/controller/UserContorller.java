@@ -1,10 +1,13 @@
 package com.iee.orm.mybatisplus.controller;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.iee.orm.mybatisplus.common.PageInfo;
 import com.iee.orm.mybatisplus.entity.User;
 import com.iee.orm.mybatisplus.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/user")
@@ -12,6 +15,12 @@ public class UserContorller {
 
     @Autowired
     private UserService userService;
+
+    // 查
+    @GetMapping( value = "/selectAll")
+    public List<User> selectAll() {
+        return userService.selectAll();
+    }
 
     // 增
     @PostMapping( value = "/insert")
@@ -37,8 +46,16 @@ public class UserContorller {
         return userService.findUserByName( username );
     }
 
+    // 分页
     @GetMapping( value = "/page")
-    public Object getUserPage(Page page, User user ) {
-        return userService.getUserPage( page, user );
+    public List<User> getUserPage(PageInfo pageInfo, User user ) {
+        pageInfo.setPageIndex(1);
+        pageInfo.setPageSize(3);
+        IPage userPage = userService.getUserPage(pageInfo, user);
+        List<User> records = userPage.getRecords();
+        long total = userPage.getTotal();
+        System.out.println("total: "+total);
+        System.out.println("records: "+records);
+        return records;
     }
 }

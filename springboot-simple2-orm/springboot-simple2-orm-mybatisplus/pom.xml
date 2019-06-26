@@ -21,7 +21,10 @@
         <!--<artifactId>mybatis-plus</artifactId>-->
         <!--<version>2.3</version>-->
         <!--</dependency>-->
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
         <!-- mysql驱动 -->
         <dependency>
             <groupId>mysql</groupId>
