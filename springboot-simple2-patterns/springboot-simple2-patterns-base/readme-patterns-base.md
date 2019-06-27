@@ -13,8 +13,10 @@
 代码见decorate
 参考自：https://juejin.im/post/5d005f8ff265da1bd1464fc7
 
-
-
+## 代理模式
+代理模式就是客户端（Client）并不直接调用真实对象，而是调用代理对象，
+通过代理对象调用真实对象，从而可以在代理对象实现扩展功能。
+参考自：https://juejin.im/post/5cea0180e51d4550bf1ae7db
 
 
 
