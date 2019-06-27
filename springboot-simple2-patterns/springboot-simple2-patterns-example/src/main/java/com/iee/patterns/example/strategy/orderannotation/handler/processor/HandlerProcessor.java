@@ -1,9 +1,9 @@
-package com.iee.patterns.example.strategy.order.handler.processor;
+package com.iee.patterns.example.strategy.orderannotation.handler.processor;
 
 import com.google.common.collect.Maps;
 import com.iee.patterns.example.common.utils.ClassScaner;
-import com.iee.patterns.example.strategy.order.annotation.HandlerType;
-import com.iee.patterns.example.strategy.order.handler.HandlerContext;
+import com.iee.patterns.example.strategy.orderannotation.annotation.HandlerType;
+import com.iee.patterns.example.strategy.orderannotation.handler.HandlerContext;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
@@ -19,7 +19,7 @@ import java.util.Map;
  */
 @Component
 public class HandlerProcessor implements BeanFactoryPostProcessor {
-    private static final String HANDLER_PACKAGE = "com.iee.patterns.example.strategy.order.handler.handler";
+    private static final String HANDLER_PACKAGE = "com.iee.patterns.example.strategy.orderannotation.handler.handler";
     /**
      * 扫描@HandlerType，初始化HandlerContext，将其注册到spring容器
      *

@@ -1,7 +1,7 @@
-package com.iee.patterns.example.strategy.order.handler.handler;
+package com.iee.patterns.example.strategy.orderannotation.handler.handler;
 
-import com.iee.patterns.example.strategy.order.model.OrderDTO;
-import com.iee.patterns.example.strategy.order.annotation.HandlerType;
+import com.iee.patterns.example.strategy.orderannotation.model.OrderDTO;
+import com.iee.patterns.example.strategy.orderannotation.annotation.HandlerType;
 import org.springframework.stereotype.Component;
 
 

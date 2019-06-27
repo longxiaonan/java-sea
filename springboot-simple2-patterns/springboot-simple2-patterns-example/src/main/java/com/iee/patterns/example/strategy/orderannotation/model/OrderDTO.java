@@ -1,4 +1,4 @@
-package com.iee.patterns.example.strategy.order.model;
+package com.iee.patterns.example.strategy.orderannotation.model;
 
 import lombok.Data;
 

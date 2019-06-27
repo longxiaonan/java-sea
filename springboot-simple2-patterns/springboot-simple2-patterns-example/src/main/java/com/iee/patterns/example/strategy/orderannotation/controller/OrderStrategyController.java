@@ -1,7 +1,7 @@
-package com.iee.patterns.example.strategy.order.controller;
+package com.iee.patterns.example.strategy.orderannotation.controller;
 
-import com.iee.patterns.example.strategy.order.model.OrderDTO;
-import com.iee.patterns.example.strategy.order.service.IOrderStrategyService;
+import com.iee.patterns.example.strategy.orderannotation.model.OrderDTO;
+import com.iee.patterns.example.strategy.orderannotation.service.IOrderStrategyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

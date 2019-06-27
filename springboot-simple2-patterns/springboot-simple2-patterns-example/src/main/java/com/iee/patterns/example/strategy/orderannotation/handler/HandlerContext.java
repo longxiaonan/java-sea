@@ -1,7 +1,7 @@
-package com.iee.patterns.example.strategy.order.handler;
+package com.iee.patterns.example.strategy.orderannotation.handler;
 
 import com.iee.patterns.example.common.utils.BeanTool;
-import com.iee.patterns.example.strategy.order.handler.handler.AbstractHandler;
+import com.iee.patterns.example.strategy.orderannotation.handler.handler.AbstractHandler;
 
 import java.util.Map;
 

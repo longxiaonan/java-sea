@@ -1,6 +1,6 @@
-package com.iee.patterns.example.strategy.order.service;
+package com.iee.patterns.example.strategy.orderannotation.service;
 
-import com.iee.patterns.example.strategy.order.model.OrderDTO;
+import com.iee.patterns.example.strategy.orderannotation.model.OrderDTO;
 
 public interface IOrderStrategyService {
     /**

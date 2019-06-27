@@ -1,9 +1,9 @@
-package com.iee.patterns.example.strategy.order.service.impl;
+package com.iee.patterns.example.strategy.orderannotation.service.impl;
 
-import com.iee.patterns.example.strategy.order.model.OrderDTO;
-import com.iee.patterns.example.strategy.order.service.IOrderStrategyService;
-import com.iee.patterns.example.strategy.order.handler.HandlerContext;
-import com.iee.patterns.example.strategy.order.handler.handler.AbstractHandler;
+import com.iee.patterns.example.strategy.orderannotation.model.OrderDTO;
+import com.iee.patterns.example.strategy.orderannotation.service.IOrderStrategyService;
+import com.iee.patterns.example.strategy.orderannotation.handler.HandlerContext;
+import com.iee.patterns.example.strategy.orderannotation.handler.handler.AbstractHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

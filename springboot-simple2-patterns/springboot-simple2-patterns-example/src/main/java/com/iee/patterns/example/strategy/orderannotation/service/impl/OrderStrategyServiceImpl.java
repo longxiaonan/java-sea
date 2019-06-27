@@ -1,8 +1,7 @@
-package com.iee.patterns.example.strategy.order.service.impl;
+package com.iee.patterns.example.strategy.orderannotation.service.impl;
 
-import com.iee.patterns.example.strategy.order.model.OrderDTO;
-import com.iee.patterns.example.strategy.order.service.IOrderStrategyService;
-import org.springframework.stereotype.Service;
+import com.iee.patterns.example.strategy.orderannotation.model.OrderDTO;
+import com.iee.patterns.example.strategy.orderannotation.service.IOrderStrategyService;
 
 /**
  * @Description 传统方式实现

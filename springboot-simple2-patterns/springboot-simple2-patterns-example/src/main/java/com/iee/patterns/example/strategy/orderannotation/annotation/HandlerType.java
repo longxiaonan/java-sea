@@ -1,4 +1,4 @@
-package com.iee.patterns.example.strategy.order.annotation;
+package com.iee.patterns.example.strategy.orderannotation.annotation;
 
 import java.lang.annotation.*;
 
