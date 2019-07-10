@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @ClassName DemoController
- * @Description 由于要返回模板页面文件，所以我们只能使用@Controller 而不可以使用@RestController
+ * @Description 由于要返回模板页面文件，所以我们只能使用@controller 而不可以使用@RestController
  * @Author longxiaonan@163.com
  * @Date 2019/6/11 0011 9:18
  */

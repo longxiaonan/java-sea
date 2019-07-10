@@ -1,10 +1,11 @@
-package com.iee.patterns.example.strategy.orderregister.solver;
+package com.iee.patterns.example.strategy.orderregister.solver.impl;
 
 import com.iee.patterns.example.strategy.orderregister.common.InspectionConstant;
+import com.iee.patterns.example.strategy.orderregister.solver.InspectionSolver;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ChangeShippingSolver extends InspectionSolver{
+public class ChangeShippingSolver extends InspectionSolver {
 
     @Override
     public void solve(Long orderId, Long userId) {
