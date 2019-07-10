@@ -15,6 +15,9 @@
         <module>springboot-simple2-webflux</module>
         <module>springboot-simple2-template</module>
         <module>springboot-simple2-devtools</module>
+        <module>javasea-web-rxjava</module>
+        <module>javasea-web-schedule</module>
+        <module>javasea-web-threadpool</module>
     </modules>
 
 

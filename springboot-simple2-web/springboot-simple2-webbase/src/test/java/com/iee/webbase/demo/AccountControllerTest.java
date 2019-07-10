@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 
 /**
- * Controller 层单测
+ * controller 层单测
  *
  * @author dadiyang
  * @since 2019-06-02

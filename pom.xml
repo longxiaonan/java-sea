@@ -77,7 +77,7 @@
         <!--<repository>-->
             <!--<id>public</id>&lt;!&ndash; 和nexus要一致 &ndash;&gt;-->
             <!--<name>Public Repositories</name>&lt;!&ndash; 和nexus要一致 &ndash;&gt;-->
-            <!--<url>http://183.63.187.150:8081/repository/maven-public/</url>-->
+            <!--<url>http://127.0.0.1:8081/repository/maven-public/</url>-->
             <!--<releases><enabled>true</enabled></releases>-->
             <!--<snapshots><enabled>true</enabled></snapshots>-->
         <!--</repository>-->
