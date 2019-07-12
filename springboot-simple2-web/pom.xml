@@ -18,6 +18,7 @@
         <module>javasea-web-rxjava</module>
         <module>javasea-web-schedule</module>
         <module>javasea-web-threadpool</module>
+        <module>javasea-web-log</module>
     </modules>
 
 
