@@ -28,6 +28,10 @@ public class SwaggerConfig {
                 .select()
                 // 设置基包，只扫描这个包及其子包的接口
                 .apis(RequestHandlerSelectors.basePackage("com.iee.webbase"))
+//                //为有@Api注解的Controller生成API文档
+//                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
+//                //为有@ApiOperation注解的方法生成API文档
+//                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
                 .paths(PathSelectors.any())
                 .build();
     }
