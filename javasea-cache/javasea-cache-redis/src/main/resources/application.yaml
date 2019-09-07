@@ -1,0 +1,16 @@
+#### springcache启用ehcache ####
+spring:
+  cache:
+    type: redis #默认就是jcache，可以配置为redis
+    jcache:
+      config: classpath:ehcache.xml
+  redis:  #如果spring.cache.type为redis，就需要配置redis的配置
+    database: 1
+    host: 127.0.0.1
+    port: 6379
+    password: zhirui888
+    max-active: 8
+    max-wait: -1
+    max-idle: 8
+    min-idle: 0
+    timeout: 50 #过小可能导致异常：io.lettuce.core.RedisCommandTimeoutException: Command timed out

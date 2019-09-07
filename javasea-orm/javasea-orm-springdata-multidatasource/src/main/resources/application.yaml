@@ -1,0 +1,57 @@
+spring:
+  ######  sql数据源相关配置 ######
+  datasource:
+    first:
+#      jdbc-url: jdbc:mysql://127.0.0.1:3306/my #Hikari datasource， jdbc-url会自动转换成url
+      url: jdbc:mysql://127.0.0.1:3306/my?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+      username: root
+      password: 123456
+#      driver-class-name: com.mysql.jdbc.Driver  #spring2.0 可以根据url自动判断驱动类型，如果报错，用新的驱动类型：com.mysql.cj.jdbc.Driver
+      configuration:
+        maximum-pool-size: 30
+    second:
+      url: jdbc:mysql://127.0.0.1:3306/my?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+      username: root
+      password: 123456
+#      driver-class-name: com.mysql.jdbc.Driver
+      configuration:
+        maximum-pool-size: 30
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL55Dialect
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+#    generate-ddl: true   不开启可能导致不生成建表语句
+
+##################### mybatis 相关配置 ###### start ##################
+## mytatis配置
+mybatis:
+    ##定义pojo类
+    type-aliases-package: com.iee.pagehelper.entity
+    mapper-locations:
+      - classpath:mapper/*.xml
+      - classpath:com/wtx/mgt/mapper/*.xml
+    configuration:
+      database-id: mysql  # mysql, oracle
+
+## github pagehelper配置
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+##################### mybatis 相关配置 ###### end ###################
+
+
+server:
+  port: 8800
+
+logging:
+  level:
+    # 打印sql的log
+    com.iee.pagehelper.mapper: debug
+    org.springframework.web: debug

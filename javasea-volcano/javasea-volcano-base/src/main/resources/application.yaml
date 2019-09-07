@@ -1,0 +1,59 @@
+server:
+  port: 8801
+
+business:
+  tenant-id: b45551e5f8de4efc800e3677ef68cb39
+
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+##    instance-id: ${spring.cloud.client.ipAddress}:${server.port} # springboot2.0 中无法通过该方式获取到ip
+#    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+#  client:
+#    healthcheck:
+#      enabled: true
+#    service-url:
+#      defaultZone: ${WMS_EUREKA_SERVER_URL}
+
+spring:
+  application:
+    name: zhirui-lmwy2-wms${WMS_DEVELOPER_NAME:}
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/my?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+#    url: jdbc:mysql://192.168.1.230:3306/lmwy2?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver  #com.mysql.jdbc.Driver
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: zhirui888
+    timeout: 2000
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: 1
+        max-idle: 8
+        min-idle: 0
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: AUTO
+
+swagger:
+  #  open: true              #是否开启swagger,在生产环境下需要关闭
+  protocol: http          #协议，http或https
+  base-package: com.zhirui.lmwy.wms   #一定要写对，会在这个路径下扫描controller定义
+  title: volcano-base项目
+  version: 1.0
+  description: volcano-base项目丝袜哥测试
+
+logging:
+  level:
+    root: warn #warn
+    # 打印sql的log
+    com.zhirui.lmwy.wms: warn
+    org.springframework.web: debug
+

@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:test;
+    password: sa
+    username: sa
+    schema: classpath:/db/schema.sql
+    data: classpath:/db/data.sql
+  h2:
+    # h2 web consloe 是一个数据库GUI管理应用，程序运行时，会自动启动h2 web consloe
+    console:
+      path: /h2-console
+      # 开启 h2 web console ，默认开启
+      enabled: true
+      settings:
+        # 配置后 h2 web console 就可以在远程访问，否则只能在本机访问
+        web-allow-others: true

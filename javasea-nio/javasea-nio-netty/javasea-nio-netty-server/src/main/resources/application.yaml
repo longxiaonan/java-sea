@@ -1,0 +1,24 @@
+netty:
+  server:
+    host: 127.0.0.1
+    port: 8712
+
+channel:
+  id: 123456
+
+monitor:
+  channel:
+    map:
+      key: channelMap
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["*"]  # monitor all
+
+spring:
+  ### Spring Boot Admin Client redis
+  boot:
+    admin:
+      client:
+        url: http://localhost:20002

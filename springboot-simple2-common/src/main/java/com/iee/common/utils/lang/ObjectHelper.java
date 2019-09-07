@@ -1,1 +1,0 @@
-package com.iee.common.utils.lang;/** * description: * author:          包维君 * createDate:      2017/10/19 */public class ObjectHelper {    public static String asEmpty(Object object) {        return object == null ? StringHelper.getEmpty() : object.toString();    }}

@@ -4,33 +4,31 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.iee</groupId>
-    <artifactId>springboot-simple2-parent</artifactId>
+    <artifactId>javasea-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>springboot-simple2-orm</module>
-		<module>springboot-simple2-upload-client</module>
-		<module>springboot-simple2-upload-server</module>
-        <module>springboot-simple2-springsession</module>
-        <module>springboot-simple2-opc</module>
-        <module>springboot-simple2-nosql</module>
-        <module>springboot-simple2-mq</module>
-        <module>springboot-simple2-common</module>
-        <module>springboot-simple2-nio</module>
-        <module>springboot-simple2-bigdata</module>
-        <module>springboot-simple2-web</module>
-        <module>com.iee.test</module>
-        <module>springboot-simple2-file</module>
-        <module>springboot-simple2-base</module>
-        <module>springboot-simple2-cache</module>
-        <module>springboot-simple2-scene</module>
-        <module>springboot-simple2-rbac</module>
-        <module>springboot-simple2-patterns</module>
+        <module>javasea-orm</module>
+        <module>javasea-opc</module>
+        <module>javasea-nosql</module>
+        <module>javasea-mq</module>
+        <module>javasea-nio</module>
+        <module>javasea-bigdata</module>
+        <module>javasea-web</module>
+        <module>javasea-file</module>
+        <module>javasea-base</module>
+        <module>javasea-cache</module>
+        <module>javasea-scene</module>
+        <module>javasea-rbac</module>
+        <module>javasea-patterns</module>
+        <module>javasea-workflow</module>
+        <module>javasea-schedule</module>
+        <module>javasea-volcano</module>
     </modules>
     <packaging>pom</packaging>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.4.RELEASE</version>
+        <version>2.1.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -45,13 +43,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.iee</groupId>-->
-            <!--<artifactId>springboot-simple2-common</artifactId>-->
-            <!--<version>0.0.1-SNAPSHOT</version>-->
-        <!--</dependency>-->
     </dependencies>
-
     <build>
         <plugins>
             <plugin>

@@ -1,0 +1,20 @@
+spring:
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch #集群名,默认即为 elasticsearch
+      #默认 9300 是 Java 客户端的端口。9200 是支持 Restful HTTP 的接口
+      cluster-nodes: 127.0.0.1:9300 #集群节点地址列表, 配置es节点信息，逗号分隔，如果没有指定，则启动ClientNode
+#      properties:    #用来配置客户端的额外属性
+      repositories:
+        enabled: true   #开启 Elasticsearch 仓库。(默认值:true。)
+        path:
+          logs: ./elasticsearch/log #elasticsearch日志存储目录
+          data: ./elasticsearch/data #elasticsearch数据存储目录
+
+swagger:
+  #  open: true              #是否开启swagger,在生产环境下需要关闭
+  protocol: http          #协议，http或https
+  base-package: com.iee.es.modelConvertDemo   #一定要写对，会在这个路径下扫描controller定义
+  title: elasticsearch REST API
+  version: 1.0
+  description: elasticsearch项目RESTful API

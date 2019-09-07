@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iee.webbase.demo.mapper.AccountMapper">
+    <resultMap id="BaseResultMap" type="com.iee.webbase.demo.Account">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="balance" jdbcType="DOUBLE" property="balance"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        `id`, `name`, balance
+    </sql>
+    <select id="selectById" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from `account` where `id` = #{id}
+    </select>
+
+    <insert id="insert"
+            keyColumn="id"
+            keyProperty="id"
+            parameterType="com.iee.webbase.demo.Account"
+            useGeneratedKeys="true">
+        insert into `account` (`name`, `balance`)
+        values (#{name,jdbcType=VARCHAR}, #{balance,jdbcType=DOUBLE})
+    </insert>
+</mapper>

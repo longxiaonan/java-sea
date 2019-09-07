@@ -1,0 +1,18 @@
+server:
+  port: 8082
+spring:
+  profiles:
+    active: dev
+logging:
+  level:
+    io.swagger.models.parameters.AbstractSerializableParameter: ERROR
+
+
+info:
+  address: USA
+  company: Spring
+  degree: high
+  opc:
+    aa: [11,222,33,45]
+
+
