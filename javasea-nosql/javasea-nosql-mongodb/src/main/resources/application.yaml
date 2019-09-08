@@ -1,0 +1,9 @@
+###################  spring配置  ###################
+spring:
+  profiles:
+    active: dev
+  data:
+    mongodb:
+#      uri: mongodb://root:root@localhost:27017/test
+#      uri: mongodb://192.168.3.206:27017/test
+      uri: mongodb://root:awatime@dds-wz910f0f27cf3e641551-pub.mongodb.rds.aliyuncs.com:3717,dds-wz910f0f27cf3e642656-pub.mongodb.rds.aliyuncs.com:3717/admin?replicaSet=mgset-4724587

@@ -14,6 +14,6 @@ import java.io.IOException;
  */
 public class FileDemo {
     public static void main(String[] args) throws IOException {
-        FileInputStream test = FileUtils.openInputStream(new File("test"));
+        FileInputStream test = FileUtils.openInputStream(new File("ApplicationLoad"));
     }
 }

@@ -4,7 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
-    * @ClassName: test
+    * @ClassName: ApplicationLoad
 	* @Description:
     * @author 龙小南
     * @email longxiaonan@163.com

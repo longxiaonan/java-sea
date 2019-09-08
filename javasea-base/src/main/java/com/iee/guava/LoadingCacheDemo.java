@@ -21,7 +21,7 @@ public class LoadingCacheDemo {
 					}
 				});
 
-		System.out.println(loadingCache.get("test"));
+		System.out.println(loadingCache.get("ApplicationLoad"));
 		System.err.println(loadingCache.get("test2"));
 		// 方法二
 		// 创建缓存对像

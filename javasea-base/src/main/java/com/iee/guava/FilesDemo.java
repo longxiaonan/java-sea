@@ -26,7 +26,7 @@ import java.util.Properties;
 public class FilesDemo {
 	public static void main(String[] args) throws UnsupportedEncodingException, IOException {
 		/** 谷歌的Files可以将配置文件读取的一个List中 */
-		File file = new File("test.txt");
+		File file = new File("ApplicationLoad.txt");
 		List<String> list = null;
 		List<String> readAllLines = java.nio.file.Files.readAllLines(Paths.get("test1.txt"));
 		System.out.println(readAllLines);

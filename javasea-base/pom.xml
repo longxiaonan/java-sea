@@ -97,4 +97,88 @@
             <version>3.6.7</version>
         </dependency>
     </dependencies>
+
+    <!-- maven插件配置, 指定启动类 -->
+    <build>
+        <plugins>
+            <!-- maven编译插件, 指定jdk为1.8 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.imooc.FirstAppDemoApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+    </build>
+
+    <!-- 仓库和nexus相关 start -->
+    <!--  首先我们看到pom文件中version的定义是采用占位符的形式，这样的好处是可以根据不同的profile来替换版本信息，比如maven默认是使用0.0.1-SNAPSHOT作为该模块的版本。
+
+1、如果在发布时使用mvn deploy -P release 的命令，那么会自动使用0.0.1作为发布版本，那么根据maven处理snapshot和release的规则，由于版本号后不带-SNAPSHOT故当成是正式发布版本，会被发布到release仓库；
+
+2、如果发布时使用mvn deploy命令，那么就会使用默认的版本号0.1-SNAPSHOT，此时maven会认为是快照版本，会自动发布到快照版本库。
+    -->
+    <profiles>
+        <profile>
+            <id>release</id>
+            <properties>
+                <project.release.version>0.0.1</project.release.version>
+            </properties>
+        </profile>
+    </profiles>
+
+    <repositories>
+        <!-- 指定阿里云maven仓库 -->
+        <!--<repository>-->
+        <!--<id>alimaven</id>-->
+        <!--<name>aliyun maven</name>-->
+        <!--<url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
+        <!--<layout>default</layout>-->
+        <!--<snapshots>-->
+        <!--<enabled>false</enabled>-->
+        <!--</snapshots>-->
+        <!--</repository>-->
+        <!-- 指定nexus仓库 -->
+        <repository>
+            <id>public</id><!-- 和nexus要一致 -->
+            <name>Public Repositories</name><!-- 和nexus要一致 -->
+            <url>http://183.63.187.150:8082/nexus/content/groups/public/</url>
+            <releases><enabled>true</enabled></releases>
+            <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+    </repositories>
+
+    <!-- maven在deploy的时候会自动根据当前版本后是RELEASE还是SNAPSHOT部署到不同的仓库 -->
+    <distributionManagement>
+        <repository>
+            <id>wtx_Releases</id><!-- 和nexus要一致 -->
+            <url>
+                http://183.63.187.150:8082/nexus/content/repositories/wtx_Releases/
+            </url>
+        </repository>
+        <snapshotRepository>
+            <id>wtx_Snapshots</id><!-- 和nexus要一致 -->
+            <url>
+                http://183.63.187.150:8082/nexus/content/repositories/wtx_Snapshots/
+            </url>
+        </snapshotRepository>
+    </distributionManagement>
+    <!-- 仓库和nexus相关 end -->
+
 </project>

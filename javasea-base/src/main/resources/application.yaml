@@ -1,0 +1,194 @@
+##########################################################
+##################  所有profile共有的配置  #################
+##########################################################
+# profile测试 ### 开始 ######
+redis:
+  enabled: ture
+profile:
+  test:
+    userName: admin
+    passWord: 123
+# profile测试 ### 结束 ######
+
+### PropsLoad ApplicationLoad start ###
+# 之前的名称叫做containerConfig, 导致一直无法读取到配置!!!!!
+containerconfig:
+  msgqueue:
+    enabled: true
+    component: rabbitmq
+  memory:
+    enabled: true
+    component: redis
+  storage:
+    enabled: trueacme2
+    component: mysql
+  archive:
+    enabled: true
+    component: mongodb    #elasticsearch
+
+acme:
+  list:
+    - name: my name
+      description: my description
+    - name: you name
+      description: you description
+acme1:
+  list1:
+    - name: my name
+      description: my description
+acme2:
+  hehe: #bean的名字
+    name: my name
+    description: fail  #测试了将enum类型变量进行加载, 这里的值, 参考DescpEnum.java类中的值
+acme3:
+  array:
+    - role11
+    - role22
+SC:
+  ###SC服务中的线程数等
+  server:
+    despatch:
+      threadNum: 1
+      queueDepth: 10000
+    resend:
+      threadNum: 1
+      queueDepth: 1000
+    ### message despatch pre-process threads number
+    preprocess:
+      threadNum: 1
+      # message despatch pre-process threads queue depth
+      queueDepth: 100000
+    ### 车机连接
+    devconnect:
+      agentUrl: netty#127.0.0.1:8702:120
+      cmdUrl: mina#127.0.0.1:8703:120
+    ###透传车机数据包到指定的nio服务器, 目前有透传到南瑞项目, 在DevAdaptor.java进行开启和过滤
+    transparentTransfer:
+      #是否开启透传,false:关闭,true:开启
+      open: false
+      #透传的nio服务器地址
+      tthost: minafactory#183.63.187.147:19900
+      #透传时需要过滤掉的车机号通配符(目前未实现,请填写.*)
+      ids: .*
+
+### PropsLoad ApplicationLoad end ###
+
+###################  服务端相关配置  ###################
+server:
+  port: 8081
+#  context-path: /SC
+  session-timeout: 60
+  #### tomcat 相关设置 ####
+  tomcat:
+    uri-encoding: UTF-8
+#    basedir: /var/logs/SC/
+    #打开Tomcat的日志, 并可以设置日志格式的方法
+    access-log-enabled: true
+#    access-log-pattern:
+    #accesslog目录, 默认在basedir/logs下
+#    accesslog.directory=
+
+# 日志文件目录
+#logging.path=H:/springboot-tomcat-tmp
+# 日志文件名称, 默认为spring.log
+#logging.file=myapp.log
+###################  spring配置  ###################
+spring:
+  profiles:
+    active: dev
+  rabbitmq:
+    enabled: true
+#    host: 192.168.3.19
+    host: 183.63.187.147
+    username: admin
+    password: admin
+    publisherConfirms: true
+    queueName: testQueue
+#    keys:
+#      orderRouting: order
+#      orderBounding: order
+#    exchange: testExchange
+  ######数据源相关配置######
+  datasource:
+#    url: jdbc:mysql://192.168.3.207:3306/
+    url: jdbc:mysql://183.63.187.147:3306/energy2
+    username: thinkgem
+#    password: weitexun@3309
+    password: weitexun@$1#
+    driver-class-name: com.mysql.jdbc.Driver
+    druid.initial-size: 1
+    druid.min-idle: 1
+    druid.max-active: 20
+    druid.test-on-borrow: true
+    druid.stat-view-servlet.allow: true
+  data:
+    mongodb:
+#      uri: mongodb://root:root@localhost:27017/ApplicationLoad
+#      uri: mongodb://192.168.3.206:27017/ApplicationLoad
+      uri: mongodb://root:awatime@dds-wz910f0f27cf3e641551-pub.mongodb.rds.aliyuncs.com:3717,dds-wz910f0f27cf3e642656-pub.mongodb.rds.aliyuncs.com:3717/admin?replicaSet=mgset-4724587
+#  security:
+#    user:
+#      name: admin
+#      password: 123
+###################  热部署相关配置  ###################
+#热部署生效
+#  devtools:
+#    restart:
+#      enabled: true
+      #设置重启的目录,添加那个目录的文件需要restart
+#      additional-paths: src/main/java
+      #排除那个目录的文件不需要restart
+      #exclude: static/**,public/**
+      #classpath目录下的WEB-INF文件夹内容修改不重启
+      #exclude: WEB-INF/**
+
+# 为mybatis设置，生产环境可删除
+#restart:
+#  include:
+#    mapper: /mapper-[\\w-\\.]+jar
+#    pagehelper: /pagehelper-[\\w-\\.]+jar
+
+
+###################  mybatis-plus配置  ###################
+## mytatis配置
+mybatis:
+    ##定义pojo类
+    type-aliases-package: com.vdp.mybatis.pojo
+    mapper-locations: classpath:mapper/*.xml
+    configuration:
+      database-id:
+## github pagehelper配置
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+## mybatis-plus配置
+mapper:
+    mappers:
+        - com.vdp.mybatis.utils.MyMapper
+    not-empty: false
+    identity: MYSQL
+
+---
+
+##########################################################
+###################  开发环境的profile  ###################
+##########################################################
+spring:
+  profiles: dev
+server:
+  port: 8081
+profile:
+  test:
+    userName: admindev
+    passWord: 123dev
+---
+
+##########################################################
+###################  正式环境的profile  ###################
+##########################################################
+spring:
+  profiles: prod
+server:
+  port: 8080
