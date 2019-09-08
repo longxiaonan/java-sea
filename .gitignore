@@ -1,19 +1,28 @@
-# Java
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
-# Windows:
-Thumbs.db
-ehthumbs.db
-Desktop.ini
+### IntelliJ IDEA ###
+.idea
+*/target/
+*/*/target/
+cpsslogs
+local-configuration/
+.iws
+*.iml
+.ipr
+.yml
 
-# Python:
-*.py[cod]
-*.so
-*.egg
-*.egg-info
-dist
-build
-logs
-
-# My configurations:
-db.ini
-deploy_key_rsa
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+.DS_Store
