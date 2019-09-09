@@ -180,7 +180,7 @@ java后台的权限模块相关项目，如shiro，springdata，sso，oauth2等�
 
 * [**javasea-schedule-quartz**](javasea-schedule\javasea-schedule-quartz\readme-schedule-quartz.md)
 
-### ![](https://game.gtimg.cn/images/yxzj/img201606/heroimg/115/115.jpg)javasea-volcano](javasea-volcano\zhirui-lmwy2-readme.md)
+### ![](https://game.gtimg.cn/images/yxzj/img201606/heroimg/115/115.jpg)[javasea-volcano](javasea-volcano\zhirui-lmwy2-readme.md)
 
 该项目是基于springboot和SSM后台的开发脚手架，已经整合了工具类，通过mybatis-plus实现ORM操作。定义了异常出来，参数校验等示例。
 
