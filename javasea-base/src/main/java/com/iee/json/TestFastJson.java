@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
-import com.iee.entity.Student;
+import com.iee.common.entity.Student;
 
 import java.util.ArrayList;
 import java.util.HashMap;

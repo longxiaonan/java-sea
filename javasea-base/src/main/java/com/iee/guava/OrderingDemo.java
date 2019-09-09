@@ -2,7 +2,7 @@ package com.iee.guava;
 
 import com.google.common.base.Function;
 import com.google.common.collect.Ordering;
-import com.iee.entity.User;
+import com.iee.common.entity.User;
 
 /**排序器[Ordering]是Guava流畅风格比较器[Comparator]的实现，它可以用来为构建复杂的比较器，以完成集合排序的功能。
  *

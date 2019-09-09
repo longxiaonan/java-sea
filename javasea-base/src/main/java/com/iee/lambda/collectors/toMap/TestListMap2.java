@@ -1,7 +1,7 @@
 package com.iee.lambda.collectors.toMap;
 
 import com.google.common.collect.Lists;
-import com.iee.entity.Student;
+import com.iee.common.entity.Student;
 
 import java.util.ArrayList;
 import java.util.HashMap;

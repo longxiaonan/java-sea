@@ -1,7 +1,7 @@
 package com.iee.guava;
 
 import com.google.common.base.MoreObjects;
-import com.iee.entity.User;
+import com.iee.common.entity.User;
 
 import java.util.Objects;
 

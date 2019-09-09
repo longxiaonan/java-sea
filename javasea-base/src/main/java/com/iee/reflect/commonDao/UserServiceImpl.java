@@ -1,6 +1,7 @@
 package com.iee.reflect.commonDao;
 
-import com.iee.entity.User;
+
+import com.iee.common.entity.User;
 
 /**
     * @ClassName: Test

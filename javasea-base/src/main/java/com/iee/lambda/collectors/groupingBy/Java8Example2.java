@@ -1,7 +1,8 @@
 package com.iee.lambda.collectors.groupingBy;
 
 
-import com.iee.entity.Student;
+
+import com.iee.common.entity.Student;
 
 import java.util.Arrays;
 import java.util.LinkedHashMap;

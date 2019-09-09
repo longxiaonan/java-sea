@@ -7,12 +7,10 @@ import org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfig
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import tk.mybatis.spring.annotation.MapperScan;
 
 @SpringBootApplication
 //扫描mapper类
-@MapperScan(basePackages = "com.vdp.mybatis.mapper")
-@ComponentScan(basePackages= {"com.vdp"})//当前main方法和其下的包
+@ComponentScan(basePackages= {"com.iee"})//当前main方法和其下的包
 //开启定时任务
 @EnableScheduling
 //开启异步调用方法

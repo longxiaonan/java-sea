@@ -1,6 +1,6 @@
 package com.iee.lambda;
 
-import com.iee.entity.User;
+import com.iee.common.entity.User;
 import org.junit.Test;
 
 import java.util.*;

@@ -1,6 +1,6 @@
 package com.iee.file.propsLoad.bean;
 
-import com.vdp.common.entity.MyPojo;
+import com.iee.common.entity.MyPojo;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 

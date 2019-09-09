@@ -2,7 +2,7 @@ package com.iee.json;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.iee.entity.User;
+import com.iee.common.entity.User;
 
 import java.util.*;
 

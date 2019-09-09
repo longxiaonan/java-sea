@@ -1,7 +1,7 @@
 package com.iee.lambda;
 
 import com.google.common.collect.Lists;
-import com.iee.entity.Student;
+import com.iee.common.entity.Student;
 
 import java.util.List;
 import java.util.Optional;

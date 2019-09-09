@@ -1,7 +1,8 @@
 package com.iee.lambda.collectors.toMap;
 
 
-import com.iee.entity.Student;
+
+import com.iee.common.entity.Student;
 
 import java.util.ArrayList;
 import java.util.List;
