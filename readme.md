@@ -1,4 +1,7 @@
 # JAVA SEA
+![](https://img.shields.io/badge/jdk-1.8-brightgreen.svg?style=plastic)
+![](https://img.shields.io/badge/maven-3.5.2-brightgreen.svg?style=plastic)
+![](https://img.shields.io/badge/springboot-2.1.5.RELEASE-brightgreen.svg?style=plastic)
 ## 概述
 
 希望打造一个基于springboot的java全知识栈项目，都是总结好的代码，拿去即用，提高开发效率。因为整个`java`的知识体系很庞大，为了方便整理，所以一些设计到的知识点都整合到了该项目下，项目模块较多，每个知识点都是一个独立的项目（具体看pom的配置）。后期如果代码过大会考虑每个知识点独立成一个项目，该项目作为索引。
@@ -7,7 +10,7 @@
 
 ## 项目目录结构
 
-项目名称：java-sea，子模块下是二级和三级项目。
+子模块下是针对各个知识点的项目。知识点直接的项目无直接依赖。
 
 ### ![](https://game.gtimg.cn/images/yxzj/img201606/heroimg/166/166.jpg)javasea-base
 
