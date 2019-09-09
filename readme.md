@@ -118,7 +118,7 @@ springboot集成orm相关框架
 
   springboot集成mybatis，且通过pom插件的方式集成mybatis-generator代码生成器。
 
-* [**javasea-orm-mybatisplus**]()
+* [**javasea-orm-mybatisplus**](javasea-orm\javasea-orm-mybatisplus\readme-mybatisplus.md)
 
   [mybatis-plus](<https://mp.baomidou.com/>)是目前很火的一个mybatis的扩展，极大的简化了对ORM的操作，该项目集成了mybatis-plus，且提供了一些curd的相关示例。
 
