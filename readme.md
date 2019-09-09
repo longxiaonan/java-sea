@@ -114,7 +114,7 @@ springboot整合nosql的项目项目集
 
 springboot集成orm相关框架
 
-* [**javasea-orm-mybatisgenerator-pomplugin**](javasea-orm\javasea-orm-mybatisgenerator-pomplugin\readme-mybatisgenerator.md)
+* [**javasea-orm-mybatisgenerator-pomplugin**](javasea-orm/javasea-orm-mybatisgenerator-pomplugin/readme-mybatisgenerator.md)
 
   springboot集成mybatis，且通过pom插件的方式集成mybatis-generator代码生成器。
 
