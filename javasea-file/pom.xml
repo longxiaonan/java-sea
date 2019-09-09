@@ -19,6 +19,7 @@
         <module>javasea-file-poi</module>
         <module>javasea-upload-server</module>
         <module>javasea-upload-client</module>
+        <module>javasea-upload</module>
     </modules>
 
 

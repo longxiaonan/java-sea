@@ -1,14 +1,12 @@
-package com.iee.devtools.controller;
+package com.javasea.web.schedule.springtask.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.context.request.async.WebAsyncTask;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Callable;
 
 /**
  * WebAsyncTask
