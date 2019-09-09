@@ -22,11 +22,11 @@ javase基础知识测试的demo，具有参考意义。当知识点忘记细节�
 
 java缓存相关的项目， 在service层通过注解`@Cacheable`和`@CacheEvict`实现。
 
-* [**javasea-cache-ehcache**]()
+* **javasea-cache-ehcache**
 
   通过ehcache实现缓存
 
-* [**javasea-cache-redis**]()
+* **javasea-cache-redis**
 
   通过redis实现缓存
 
