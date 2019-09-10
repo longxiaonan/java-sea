@@ -31,8 +31,9 @@ java缓存相关的项目， 在service层通过注解`@Cacheable`和`@CacheEvic
   通过redis实现缓存
 
 ### ![](https://game.gtimg.cn/images/yxzj/img201606/heroimg/156/156.jpg)javasea-file
+> 头像是张良，他技能是放几本书（file）作为法阵，大招还是用线连着敌人定住人（io）
 
-文件或者文档相关处理项目
+文件或者文档相关处理项目，基本IO流项目
 
 * **javasea-file-archive**
 
