@@ -64,7 +64,7 @@ java缓存相关的项目， 在service层通过注解`@Cacheable`和`@CacheEvic
 
   opc的测试demo，opc虽然是比较旧的工业化控制技术，但是我也把它归属到了物联网中的一部分。
 
-### ![](https://game.gtimg.cn/images/yxzj/img201606/heroimg/187/187.jpg)javasea-mq
+### ![](https://game.gtimg.cn/images/yxzj/img201606/heroimg/501/501.jpg)javasea-mq
 
 消息队列相关的项目
 
