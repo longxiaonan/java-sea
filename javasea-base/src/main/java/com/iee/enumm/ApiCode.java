@@ -1,5 +1,5 @@
 /**
- * Copyright 2019-2029 geekidea(https://github.com/geekidea)
+ * Copyright 2019-2029 longxiaonan(https://github.com/longxiaonan)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ package com.iee.enumm;
  * REST API 响应码
  * </p>
  *
- * @author geekidea
+ * @author longxiaonan
  * @since 2018-11-08
  */
 public enum ApiCode {
