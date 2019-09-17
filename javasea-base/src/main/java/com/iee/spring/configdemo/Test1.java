@@ -1,4 +1,4 @@
-package com.zhirui.lmwy.wms.demo.config;
+package com.iee.spring.configdemo;
 
 import org.springframework.stereotype.Service;
 

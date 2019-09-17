@@ -16,10 +16,9 @@
         <module>javasea-file-archive</module>
         <module>javasea-file-download</module>
         <module>javasea-file-upload</module>
-        <module>javasea-file-poi</module>
         <module>javasea-upload-server</module>
         <module>javasea-upload-client</module>
-        <module>javasea-upload</module>
+        <module>javasea-file-excel</module>
     </modules>
 
 

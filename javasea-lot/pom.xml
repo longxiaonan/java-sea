@@ -13,7 +13,7 @@
     <artifactId>javasea-opc</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>javasea-opc-utgard</module>
+        <module>javasea-lot-opc-utgard</module>
     </modules>
 
 

@@ -13,6 +13,7 @@
     <artifactId>javasea-web</artifactId>
     <packaging>pom</packaging>
     <modules>
+        <module>javasea-web-webbase</module>
         <module>javasea-web-webflux</module>
         <module>javasea-web-template</module>
         <module>javasea-web-devtools</module>

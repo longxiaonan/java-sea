@@ -16,11 +16,6 @@
         <module>javasea-bigdata-datav</module>
     </modules>
     <dependencies>
-        <dependency>
-            <groupId>com.iee</groupId>
-            <artifactId>javasea-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 
 </project>

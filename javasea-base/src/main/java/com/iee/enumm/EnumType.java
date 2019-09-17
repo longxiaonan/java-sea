@@ -46,6 +46,11 @@ public enum EnumType {
         return null;
     }
 
+    public static void main(String[] args) {
+        String value = getValue("01");
+        System.out.println(value);
+    }
+
     // 把 enum 转为 list 使用
     public static List<Map> getList() {
         List<Map> list = new ArrayList();
