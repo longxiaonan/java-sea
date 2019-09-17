@@ -1,5 +1,45 @@
+# common config
 server:
-  port: 8801
+  port: 8080
+  servlet:
+    context-path: /
+  tomcat:
+    max-threads: 1000
+    min-spare-threads: 30
+    uri-encoding: UTF-8
+
+custom:
+  isEnableAnsi: true  # 在类AnsiUtil中有使用, 在prod环境需要设置为false
+  #配置缓存相关
+  cache:
+    default:
+      expire-time: 200
+    user:
+      expire-time: 180
+      name: test
+  login:
+    token:
+      valid:
+        time:
+          minute: 3600
+  jwt:
+    header: token
+    secret: 666666          #密码，用于生成签名
+    issuer: volcano         #签发人
+    subject: volcano-jwt    #主题
+    audience: web           #签发的目标
+    expire-minutes: 20      #过期时间
+  interceptor:
+    jwt:
+      exclude:
+        path: /swagger-resources/**,/api-docs/**,/v2/api-docs/**,/login,/verificationCode,/doc/**,/error/**,/docs,/test/**
+    permission:
+      exclude:
+        path: /swagger-resources/**,/api-docs/**,/v2/api-docs/**,/adminLogin,/sysLogin,/login.html,/verificationCode,/doc/**,/error/**,/docs
+    token-timeout:
+      exclude:
+        path: /swagger-resources/**,/api-docs/**,/v2/api-docs/**,/docs
+
 
 business:
   tenant-id: b45551e5f8de4efc800e3677ef68cb39
@@ -8,7 +48,8 @@ business:
 #  instance:
 #    prefer-ip-address: true
 ##    instance-id: ${spring.cloud.client.ipAddress}:${server.port} # springboot2.0 中无法通过该方式获取到ip
-#    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+#     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}} # zuul无法跳转
+#     instance-id: ${spring.cloud.client.ip-address}:${server.port}
 #  client:
 #    healthcheck:
 #      enabled: true
@@ -18,6 +59,9 @@ business:
 spring:
   application:
     name: zhirui-lmwy2-wms${WMS_DEVELOPER_NAME:}
+  banner:
+    charset: UTF-8
+    location: classpath:config/banner.txt
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/my?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
 #    url: jdbc:mysql://192.168.1.230:3306/lmwy2?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
@@ -29,6 +73,7 @@ spring:
     port: 6379
     password: zhirui888
     timeout: 2000
+    database: 6
     lettuce:
       pool:
         max-active: 8
@@ -42,18 +87,19 @@ mybatis-plus:
     db-config:
       id-type: AUTO
 
+# 丝袜哥的配置，访问地址为：`ip:port/swagger-ui.html`
 swagger:
   #  open: true              #是否开启swagger,在生产环境下需要关闭
   protocol: http          #协议，http或https
   base-package: com.zhirui.lmwy.wms   #一定要写对，会在这个路径下扫描controller定义
   title: volcano-base项目
   version: 1.0
-  description: volcano-base项目丝袜哥测试
+  description: volcano-base项目丝袜哥测试，项目github地址：https://github.com/longxiaonan/java-sea/tree/master/javasea-volcano
 
-logging:
-  level:
-    root: warn #warn
-    # 打印sql的log
-    com.zhirui.lmwy.wms: warn
-    org.springframework.web: debug
+#logging:
+#  level:
+#    root: debug #warn
+#    # 打印sql的log
+#    com.zhirui.lmwy.wms: debug
+#    org.springframework.web: debug
 

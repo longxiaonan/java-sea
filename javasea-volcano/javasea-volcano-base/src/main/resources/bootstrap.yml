@@ -1,0 +1,8 @@
+#spring:
+#  cloud:
+#    config:
+#      uri: ${WMS_CONFIG_SERVER_URL}
+#      name: zhirui-lmwy2-wms${WMS_DEVELOPER_NAME:}
+#      profile: ${config.profile:dev}
+#
+

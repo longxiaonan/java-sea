@@ -4,13 +4,10 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.support.SFunction;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.google.common.collect.Maps;
-import com.zhirui.lmwy.common.model.ResultModel;
+import com.zhirui.lmwy.common.persistence.model.result.ResultModel;
 import com.zhirui.lmwy.wms.demo.web.entity.User;
 import com.zhirui.lmwy.wms.demo.web.service.UserService;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,6 +25,7 @@ import java.util.Map;
  */
 @RequestMapping("sys")
 @RestController
+@Api(tags = { "一个用来测试curd和swagger注解的控制器" })
 public class TestCurdController {
 
     @Autowired
@@ -54,8 +52,10 @@ public class TestCurdController {
     public ResultModel save(@Valid @RequestBody User user){
         //如果大于1条会报错，所有，第三个参数为false
         User user1 = User.builder().username("刘备").age(30).build();
+        user1.setUid(Long.MAX_VALUE - 1);
         boolean save = this.userService.save(user1);
-        return save ? ResultModel.insertSuccess() : ResultModel.insertFail();
+//        return save ? ResultModel.insertSuccess() : ResultModel.insertFail();
+        return ResultModel.result(save);
     }
 
     @PostMapping("/users")

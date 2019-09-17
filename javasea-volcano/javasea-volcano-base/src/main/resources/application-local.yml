@@ -1,0 +1,21 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/my?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+
+  redis:
+    database: 0
+    host: localhost
+    password: zhirui888
+    port: 6379
+
+  rabbitmq:
+    host: 192.168.1.231
+    port: 5672
+    username: admin
+    password: admin

@@ -3,7 +3,8 @@ package com.zhirui.lmwy.common.exception;
 import com.zhirui.lmwy.common.exception.impl.AuthenticationException;
 import com.zhirui.lmwy.common.exception.impl.BusinessException;
 import com.zhirui.lmwy.common.exception.impl.ParamException;
-import com.zhirui.lmwy.common.model.ResultModel;
+import com.zhirui.lmwy.common.persistence.model.result.ResultCodeEnum;
+import com.zhirui.lmwy.common.persistence.model.result.ResultModel;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -54,7 +55,8 @@ public class GlobalExceptionHandler {
     public Object commonExceptionHandler(HttpServletRequest reqest,
                                          HttpServletResponse response, Exception e) {
         log.error("", e);
-        return ResultModel.error(ReturnCodeEnum.SERVER_ERROR.getCode(), e.getMessage(), e.getStackTrace());
+//        return ResultModel.error(ResultCodeEnum.SERVER_ERROR, e.getMessage(), e.getStackTrace());
+        return ResultModel.error(ResultCodeEnum.SERVER_ERROR, e.getMessage(), null);
     }
 
     /**
@@ -75,7 +77,7 @@ public class GlobalExceptionHandler {
     public Object businessExceptionHandler(HttpServletRequest reqest,
                                           HttpServletResponse response, Exception ex) {
 
-        return ResultModel.error(ReturnCodeEnum.OTHER.getCode(), ex.getMessage());
+        return ResultModel.error(ResultCodeEnum.OTHER, ex.getMessage());
     }
 
     /**
@@ -118,10 +120,10 @@ public class GlobalExceptionHandler {
             msg = t.getVariableName() + " 不能为空";
         } else {
             // 其他类型的错误当成未知异常处理
-            return ResultModel.error(ReturnCodeEnum.PARAM_CHECK_ERROR.getCode(), e.getMessage());
+            return ResultModel.error(ResultCodeEnum.PARAM_CHECK_ERROR, e.getMessage());
         }
         log.warn("参数校验不通过, {}, msg: {}", logMsg, msg);
-        return ResultModel.error(ReturnCodeEnum.PARAM_CHECK_ERROR.getCode(), msg);
+        return ResultModel.error(ResultCodeEnum.PARAM_CHECK_ERROR, msg);
     }
 
     /**

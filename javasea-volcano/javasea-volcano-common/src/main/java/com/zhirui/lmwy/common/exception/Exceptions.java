@@ -3,6 +3,7 @@ package com.zhirui.lmwy.common.exception;
 import com.zhirui.lmwy.common.exception.impl.AuthenticationException;
 import com.zhirui.lmwy.common.exception.impl.BusinessException;
 import com.zhirui.lmwy.common.exception.impl.ParamException;
+import org.springframework.util.Assert;
 
 /**
  * @ClassName Exceptions
@@ -40,16 +41,6 @@ public class Exceptions {
      */
     public static RuntimeException throwBusinessException(String msg) {
         throw new BusinessException(msg);
-    }
-
-    /**
-     * 通用抛出异常方式
-     * 如果是真，是true的话，则抛出：RunTimeException(message)
-     */
-    public static void isTrueThenThrow(boolean isTrue, String message) {
-        if (isTrue) {
-            throw new RuntimeException(message);
-        }
     }
 
 }
