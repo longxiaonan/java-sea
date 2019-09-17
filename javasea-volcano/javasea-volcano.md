@@ -1,3 +1,21 @@
+# Volcano
+
+![](https://img.shields.io/badge/JDK-1.8-brightgreen.svg?style=plastic)
+
+![](https://img.shields.io/badge/Spring Boot-2.1.5.RELEASE-brightgreen.svg?style=plastic)
+
+![](https://img.shields.io/badge/MySQL-5.6-brightgreen.svg?style=plastic)
+
+![](https://img.shields.io/badge/Redis-3.2-brightgreen.svg?style=plastic)
+
+![](https://img.shields.io/badge/Mybatis Plus-3.2.0-brightgreen.svg?style=plastic)
+
+![](https://img.shields.io/badge/JWT-0.9.1-brightgreen.svg?style=plastic)
+
+![](https://img.shields.io/badge/Swagger-2.9.2-brightgreen.svg?style=plastic)
+
+[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
+
 ## 概述
 
 Volcano是一个基于springboot后台开发简易脚手架。能实现当作一个单独项目或者作为微服务的一个节点进行快速开发和部署。
