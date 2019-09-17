@@ -18,7 +18,7 @@ import java.util.List;
  * @Date 2019/8/21 0021 21:38
  */
 @RestController
-public class HistoryQuery {
+public class HistoryQueryController {
 
     @Autowired
     StandaloneProcessEngineConfiguration standaloneProcessEngineConfiguration;

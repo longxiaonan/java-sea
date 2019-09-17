@@ -18,7 +18,7 @@ import java.util.Map;
  * @Date 2019/8/20 0020 22:14
  */
 @RestController
-public class ActivitiStartInstance {
+public class StartInstanceController {
 
     @Autowired
     StandaloneProcessEngineConfiguration standaloneProcessEngineConfiguration;

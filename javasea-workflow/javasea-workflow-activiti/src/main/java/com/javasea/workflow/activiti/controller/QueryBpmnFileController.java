@@ -20,7 +20,7 @@ import java.util.List;
  * @Date 2019/8/21 0021 20:44
  */
 @RestController
-public class QueryBpmnFile {
+public class QueryBpmnFileController {
 
     @Autowired
     StandaloneProcessEngineConfiguration standaloneProcessEngineConfiguration;

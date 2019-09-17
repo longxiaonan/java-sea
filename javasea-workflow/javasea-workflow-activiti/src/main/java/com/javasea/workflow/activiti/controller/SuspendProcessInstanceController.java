@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date 2019/8/21 0021 23:27
  */
 @RestController
-public class SuspendProcessInstance {
+public class SuspendProcessInstanceController {
 
     @Autowired
     StandaloneProcessEngineConfiguration standaloneProcessEngineConfiguration;
