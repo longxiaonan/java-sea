@@ -43,9 +43,9 @@ public class ProcessDefinitionController {
 
         //3.进行部署
         Deployment deploy = repositoryService.createDeployment()
-                .addClasspathResource("diagram/holiday2.bpmn")//添加bpmn资源
-                .addClasspathResource("diagram/holiday2.png") //添加png资源
-                .name("请假流程2")//部署的名字
+                .addClasspathResource("diagram/holiday4.bpmn")//添加bpmn资源
+                .addClasspathResource("diagram/holiday4.png") //添加png资源
+                .name("请假流程-流程变量")//部署的名字
                 .deploy();//执行部署
         System.out.println(deploy.getId());
         System.out.println(deploy.getName());

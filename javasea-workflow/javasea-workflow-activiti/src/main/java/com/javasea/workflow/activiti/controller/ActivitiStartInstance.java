@@ -66,6 +66,5 @@ public class ActivitiStartInstance {
         System.out.println("流程实例id："+ instance.getId());//5005 见表`act_hi_taskinst`
         System.out.println("活动id："+instance.getActivityId());//null
         System.out.println("流程实例name："+instance.getName());//null
-
     }
 }
