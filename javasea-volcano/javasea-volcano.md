@@ -75,10 +75,10 @@ Optional.ofNullable(order).filter(o -> {
 > ```java
 > @GetMapping("testDateConverter")
 > public Student testDateConverter(@RequestParam Student student){...}
-> 
+>
 > @GetMapping("testDateConverter")
 > public Student testDateConverter(Student student){...}
-> 
+>
 > @GetMapping("testDateConverter/{id}")
 > public Student testDateConverter(@PathVariable Integer id){...}
 > ```
@@ -162,35 +162,30 @@ controller的返回前端使用`ResultModel`类进行封装，里面有`code`，
 ```java
     //插入后返回方式， msg：插入成功；插入失败
     public ResultModel resultInsert(){
-        //插入后返回值
         boolean flag = false;
         return ResultModel.resultInsert(flag);
     }
 
     //更新后返回方式， msg：更新成功；更新失败
     public ResultModel resultUpdate(){
-        //插入后返回值
         boolean flag = false;
         return ResultModel.resultUpdate(flag);
     }
 
     //删除后返回方式， msg：删除成功；删除失败
     public ResultModel resultDelete(){
-        //插入后返回值
         boolean flag = false;
         return ResultModel.resultDelete(flag);
     }
 
     //删除后返回方式， msg：操作成功；操作失败
     public ResultModel result(){
-        //插入后返回值
         boolean flag = false;
         return ResultModel.result(flag);
     }
 
     //认证失败返回方式， msg：认证信息异常
     public ResultModel errorTokenMsg(){
-        //插入后返回值
         boolean flag = false;
         //如果msg参数为null，那么是默认的msg：认证信息异常
         return ResultModel.errorTokenMsg(null);
@@ -277,7 +272,7 @@ swagger:
 
 5. 通过swagger进行http请求
 
-   * <http://localhost:8080/swagger-ui.html#/> 
+   * <http://localhost:8080/swagger-ui.html#/>
 
      丝袜哥默认的访问方式
 
@@ -347,7 +342,7 @@ swagger:
            public Expression getTenantId(boolean where) {
                return new StringValue(tenantId);
            }
-   
+
            @Override
            public String getTenantIdColumn() {
                //指定表中的租户列
@@ -373,11 +368,11 @@ swagger:
 采用了MP的代码生成器，实现了两个代码生成器。
 > 在`javasea-volcano-base`项目的`src/test/java`目录的 com.zhirui.lmwy.wms包下，按照注释修改为自己需要的配置运行即可。看个人习惯，推荐用`PrimaryCodeGenerator `。
 
-- SencondCodeGenerator 
+- SencondCodeGenerator
 
   通过数据库表生成基本的entity，mapper，controller和service类等基本类。
 
-- PrimaryCodeGenerator 
+- PrimaryCodeGenerator
 
   在 `SencondCodeGenerator` 功能的基础上，controller，entity中生成swagger的注解。controller、service生成常用的crud方法。
 
@@ -415,7 +410,7 @@ spring:
 
    * 定义redis的RedisTemplate
 
-     > 详见：com.zhirui.lmwy.common.redis.RedisTemplateConfig 
+     > 详见：com.zhirui.lmwy.common.redis.RedisTemplateConfig
 
    * 开启springcache
 
