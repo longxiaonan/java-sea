@@ -28,7 +28,7 @@ Redis | 3.2+ |  |
 
 > `spring-boot-starter-web`已经默认集成了JSR303校验，只需要直接使用注解校验即可。
 
-参考： com.zhirui.lmwy.wms.demo.web.controller.TestCheckParamController
+参考测试类： com.zhirui.lmwy.wms.demo.web.controller.TestCheckParamController
 
 #### 手动校验
 
@@ -53,7 +53,7 @@ Optional.ofNullable(order).filter(o -> {
 
 ### 参数转换
 
-测试参考：TestDateConverterAndJson
+参考测试类：TestDateConverterAndJson
 
 #### URL方式传值到后端转换
 
