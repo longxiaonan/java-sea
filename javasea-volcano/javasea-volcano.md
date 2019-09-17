@@ -32,7 +32,9 @@ Redis | 3.2+ |  |
 
 #### 手动校验
 
-采用Spring的Assert进行校验
+`Assert`类定义了不满足条件后快速断言的方式，可以在校验参数中使用。
+
+还可以采用Spring的Assert进行校验
 
 ```java
 //第一个参数为false则抛出IllegalArgumentException异常
@@ -40,7 +42,7 @@ Assert.isTrue(concurrentConsumers > 0, "'concurrentConsumers' value must be at l
 Assert.isTrue(!this.exclusive || concurrentConsumers == 1,"When the consumer is exclusive, the concurrency must be 1");
 ```
 
-复杂校验通过Optional
+也可以采用Optional进行校验
 
 ```java
 ZOrder order = this.getOrderByOrderNum(orderNum);
@@ -97,11 +99,11 @@ Optional.ofNullable(order).filter(o -> {
 
 * deserializer 包下的序列化类
 
-  在@RequestBody接参时候，会调用该包中的类将JSON转换成实体接参。
+  在@RequestBody接参时候，会调用该包中的`序列化类`将JSON转换成实体接参。
 
 * serializer 包下的序列化类
 
-  用于后端传值给前端
+  用于后端传值给前端。
 
 #### 后端传值给前端
 
@@ -111,8 +113,8 @@ Optional.ofNullable(order).filter(o -> {
 
 如果是返回值是对象或者集合，会用序列化类进行参数类型转换。
 
-如下列子中，Student中的日期会转换成serializer 定义的格式“yyyy-MM-dd HH:mm:ss”
-
+如下列子中，Student中的两个属性日期会转换成serializer 定义的格式“yyyy-MM-dd HH:mm:ss”。
+> `序列化类``JacksonDateSerializer`的作用相当于在属性上添加了`@JsonFormat(pattern="yyyy-MM-dd")`，实现将Date类型转换成String，但是添加`JacksonDateSerializer`后 `@JsonFormat(pattern="yyyy-MM-dd")`失效。
 ```java
     @PostMapping("testDateConverter2")
     public Student testDateConverter2(@RequestBody Student student){
@@ -193,7 +195,7 @@ controller的返回前端使用`ResultModel`类进行封装，里面有`code`，
 
 ### AOP 日志输出
 
-#### 添加坐标
+1. 添加坐标
 
 ```xml
 <!-- AOP -->
@@ -209,7 +211,7 @@ controller的返回前端使用`ResultModel`类进行封装，里面有`code`，
 </dependency>
 ```
 
-#### 定义AOP类实现彩色日志输出
+2. 定义AOP类实现彩色日志输出
 
 参考：`com.zhirui.lmwy.common.aop.LogAop`
 
@@ -242,7 +244,7 @@ controller的返回前端使用`ResultModel`类进行封装，里面有`code`，
 
    com.zhirui.lmwy.common.swagger.SwaggerProperties
 
-3.  设置自定义显示参数
+3. 设置自定义显示参数
 
    在base项目的`application.yaml`中添加如下配置进行设置：
 
@@ -272,9 +274,9 @@ swagger:
 
      通过controller 重定向后的访问方式
 
-### 集成 mybatis-plus（MP）
+### 集成 mybatis-plus（下文中称为MP）
 
-> ORM框架使用mybatis-plus，简便了CURD操作
+> ORM框架使用[mybatis-plus](https://mp.baomidou.com/)，简便了CURD操作
 
 1. 添加pom
 
@@ -353,11 +355,12 @@ swagger:
 
 #### 通过MP进行CRUD操作
 
-参考：`com.zhirui.lmwy.wms.demo.web.controller.TestCurdController`
+参考测试类和[官网](https://mp.baomidou.com/)：`com.zhirui.lmwy.wms.demo.web.controller.TestCurdController`
 
 #### 代码生成器
 
-代码生成器在有两个，在`javasea-volcano-base`项目的`src/test/java`目录的 com.zhirui.lmwy.wms包下，按照注释修改为自己需要的配置运行即可。看个人习惯，推荐用`PrimaryCodeGenerator `
+采用了MP的代码生成器，实现了两个代码生成器。
+> 在`javasea-volcano-base`项目的`src/test/java`目录的 com.zhirui.lmwy.wms包下，按照注释修改为自己需要的配置运行即可。看个人习惯，推荐用`PrimaryCodeGenerator `。
 
 - SencondCodeGenerator 
 
@@ -464,7 +467,7 @@ custom:
 Jws<Claims> jws = JwtUtil.verify(token);
 ```
 
-token未过期且合法的才能校验通过，否则抛出异常。
+token未过期且合法的才能校验通过，否则抛出401异常。
 
 > 详见jwt拦截器：com.zhirui.lmwy.wms.security.interceptor.JwtInterceptor
 
@@ -517,7 +520,7 @@ token未过期且合法的才能校验通过，否则抛出异常。
    > #
    > ```
 
-2. base项目的pom中开启对应eureka client的坐标，启动类通过注解`@EnableDiscoveryClient`开启eureka client。
+2. base项目的pom中开启对应eureka client的坐标，启动类`WmsApplication`通过注解`@EnableDiscoveryClient`启用eureka client。
 
    ```xml
    <!-- springboot 1.X -->
