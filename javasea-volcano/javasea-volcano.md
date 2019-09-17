@@ -1,19 +1,12 @@
 # Volcano
 
 ![](https://img.shields.io/badge/JDK-1.8-brightgreen.svg?style=plastic)
-
 ![](https://img.shields.io/badge/SpringBoot-2.1.5.RELEASE-brightgreen.svg?style=plastic)
-
 ![](https://img.shields.io/badge/MySQL-5.6-brightgreen.svg?style=plastic)
-
 ![](https://img.shields.io/badge/Redis-3.2-brightgreen.svg?style=plastic)
-
 ![](https://img.shields.io/badge/MybatisPlus-3.2.0-brightgreen.svg?style=plastic)
-
 ![](https://img.shields.io/badge/JWT-0.9.1-brightgreen.svg?style=plastic)
-
 ![](https://img.shields.io/badge/Swagger-2.9.2-brightgreen.svg?style=plastic)
-
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 ## 概述
