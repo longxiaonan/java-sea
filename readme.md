@@ -6,7 +6,7 @@
 ![](https://img.shields.io/badge/springboot-2.1.5.RELEASE-brightgreen.svg?style=plastic)
 ## 概述
 
-希望打造一个基于springboot的java全知识栈项目，都是总结好的代码，拿去即用，提高开发效率。因为整个`java`的知识体系很庞大，为了方便整理，所以一些设计到的知识点都整合到了该项目下，项目模块较多，每个知识点都是一个独立的项目（具体看pom的配置）， $\color{red}{请在IDE中单独打开子模块中的项目，否则会加载和编译较长时间}$。后期如果代码过大会考虑每个知识点独立成一个项目，该项目作为索引。
+希望打造一个基于springboot的java全知识栈项目，都是总结好的代码，拿去即用，提高开发效率。因为整个`java`的知识体系很庞大，为了方便整理，所以一些设计到的知识点都整合到了该项目下，项目模块较多，每个知识点都是一个独立的项目（具体看pom的配置）， <font color=red>**请在IDE中单独打开子模块中的项目，直接打开`java-sea`项目会加载和编译较长时间**</font>。后期如果代码过大会考虑每个知识点独立成一个项目，该项目作为索引。
 
 项目下很多知识点未完善，正在持续优化中。
 
@@ -274,7 +274,7 @@ java后台的权限模块相关项目，如shiro，springdata，sso，oauth2等�
 
 #### 第一次打开项目卡顿问题
 
-先用[TortoiseGit小乌龟](https://tortoisegit.org/download/)下载整个项目(大概50M)后。因为每个二级module是一个独立项目，在IDEA中请独立打开二级module，或者别的独立的子模块。$\color{red}{请不要一下子打开父项目`java-sea`}$，因为`java-sea`是整个java体系的全知识栈项目，已经收集了30多个子项目，第一次加载需要下载依赖花费很长时间。有耐心的可以试试，哈哈。
+先用[TortoiseGit小乌龟](https://tortoisegit.org/download/)下载整个项目(大概50M)后。<font color=red>打开项目时，在IDEA中请独立打开二级module，或者别的独立的子模块。**请不要一下子打开父项目`java-sea`**</font>，因为`java-sea`是整个java体系的全知识栈项目，已经收集了30多个子项目，第一次加载需要下载依赖花费很长时间。有耐心的可以试试，哈哈。
 
 下图是打开`java-sea`中的其中一个子模块项目示例：
 
