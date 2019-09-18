@@ -34,7 +34,8 @@ public class SwaggerConfiguration {
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .protocols(Sets.newHashSet(swaggerProperties.getProtocol())) //协议，http或https
+                //协议，http或https
+                .protocols(Sets.newHashSet(swaggerProperties.getProtocol()))
                 .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage(swaggerProperties.getBasePackage()))
