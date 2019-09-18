@@ -271,10 +271,17 @@ java后台的权限模块相关项目，如shiro，springdata，sso，oauth2等�
 ![](images/2019-06-12-11-15-48.png)
 
 ### 相关说明
-#### fork后如何更新项目问题
-参考：https://blog.csdn.net/libaineu2004/article/details/83239778
 
-#### 项目太多卡顿问题
+#### 第一次打开项目卡顿问题
+
+先用[TortoiseGit小乌龟](https://tortoisegit.org/download/)下载整个项目(大概50M)后。因为每个二级module是一个独立项目，在IDEA中请独立打开二级module，不要一下子打开父项目`java-sea`，因为`java-sea`是整个java体系的全知识栈项目，已经收集了30多个子项目，第一次加载需要下载依赖花费很长时间。有耐心的可以试试，哈哈。
+
+下图是打开`java-sea`中的其中一个子模块项目示例：
+
+![1568773988059](images/1568773988059.png)
+
+#### 已经打开`java-sea`项目卡顿问题
+
 在idea中关闭不启用(加载)的module。<br/>
 <img src="images/2019-06-15-22-22-51.png" width = 50% height = 50% /><br/>
 将要加载项目移到右边即可。<br/>
