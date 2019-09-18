@@ -103,3 +103,5 @@ swagger:
 #    com.zhirui.lmwy.wms: debug
 #    org.springframework.web: debug
 
+local:
+  uploadFilesFolder: f://lmwy/upload/

@@ -16,6 +16,7 @@
 
 package com.zhirui.lmwy.common.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,6 +33,8 @@ import javax.servlet.MultipartConfigElement;
 @Configuration
 public class MultipartConfig {
 
+    public static String uploadFilesFolder;
+
     /**
      * 文件上传配置
      * @return
@@ -46,6 +49,11 @@ public class MultipartConfig {
 //        factory.setMaxRequestSize("100MB");
         factory.setMaxRequestSize(DataSize.of(100, DataUnit.MEGABYTES));
         return factory.createMultipartConfig();
+    }
+
+    @Value("${local.uploadFilesFolder}")
+    public void setUploadFilesFolder(String str) {
+        uploadFilesFolder = str;
     }
 
 }
