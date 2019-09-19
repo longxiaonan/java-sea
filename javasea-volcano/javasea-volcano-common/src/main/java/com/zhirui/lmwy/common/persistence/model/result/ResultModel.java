@@ -37,18 +37,18 @@ import java.util.Date;
 @ApiModel(value="返回值类型对象")
 public class ResultModel<T> implements Serializable {
 
-    // 定义jackson对象
+    /** 定义jackson对象 */
 //    private static final ObjectMapper MAPPER = new ObjectMapper();
 
-    // 响应业务状态
+    /** 响应业务状态 */
     @ApiModelProperty(value="返回的code" ,required=true)
     private Integer code;
 
-    // 响应消息
+    /** 响应消息 */
     @ApiModelProperty(value="响应的消息")
     private String msg;
 
-    // 响应中的数据
+    /** 响应中的数据 */
     private T data;
 
     private Date time;
@@ -126,6 +126,9 @@ public class ResultModel<T> implements Serializable {
                 .build();
     }
 
+    public static ResultModel resultQuery(boolean flag){
+        return resultMsg(flag, flag ? ResultMsg.QUERY_SUCCESS : ResultMsg.QUERY_FAIL);
+    }
     public static ResultModel resultInsert(boolean flag){
         return resultMsg(flag, flag ? ResultMsg.INSERT_SUCCESS : ResultMsg.INSERT_FAIL);
     }
