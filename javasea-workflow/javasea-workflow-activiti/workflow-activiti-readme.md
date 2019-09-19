@@ -1,3 +1,9 @@
+流程变量设置方式：
+
+![1568801494196](media/1568801494196.png)
+
+
+
 ## 先进行流程定义和部署
 
 > 参考：com.javasea.workflow.activiti.controller.ProcessDefinitionController
@@ -37,4 +43,12 @@ public void deploy(){
 > 参考：com.javasea.workflow.activiti.controller.StartInstanceController
 >
 > url：<http://localhost:8080/startInstance>
+
+## 查询任务和完成任务
+
+> 参考：com.javasea.workflow.activiti.controller.TaskController
+>
+> 查询url：http://localhost:8080/taskQueryAndComplate
+
+
 

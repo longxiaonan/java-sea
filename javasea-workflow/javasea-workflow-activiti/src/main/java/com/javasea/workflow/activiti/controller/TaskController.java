@@ -1,5 +1,6 @@
 package com.javasea.workflow.activiti.controller;
 
+import com.javasea.workflow.activiti.entity.Holiday;
 import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
@@ -10,11 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName ActivitiTaskQuery
- * @Description TODO
+ * @Description 进行任务的查询和完成
  * @Author longxiaonan@163.com
  * @Date 2019/8/20 0020 22:14
  */
@@ -76,7 +79,7 @@ public class TaskController {
     }
 
 
-    @GetMapping("/taskBusinessKey")
+    @GetMapping("/taskQueryAndComplate")
     public void test(){
         //1.得到processEngine
         ProcessEngine processEngine = standaloneProcessEngineConfiguration.buildProcessEngine();
@@ -87,27 +90,43 @@ public class TaskController {
 
         //3.根据流程定义的key, 流程节点的负责人，实现当前用户的任务列表查询。可以打开bpmn文件，在左边的id位置找到key,
         // 也可以在数据的`act_re_procdef`表的KEY_列中找到。查询的表是act_hi_taskinst
-        Task task = taskService.createTaskQuery()
-                .processDefinitionKey("holiday2")
-                .taskAssignee("zhangsan")
-                .singleResult();
+        List<Task> taskList = taskService.createTaskQuery()
+                .processDefinitionKey("myProcess_1")
+                .taskAssignee("wangwu")
+//                .singleResult();
+                .list();
 
-        //4.得到任务的流程实例id
-        String processInstanceId = task.getProcessInstanceId();
+        for(Task task : taskList) {
+            //通过任务id设置流程变量
+//            taskService.setVariable(task.getId(), map);
+            //通过任务id设置局部流程变量
+//            taskService.setVariableLocal();
+            //4.得到任务的流程实例id
+            String processInstanceId = task.getProcessInstanceId();
 
-        //5.通过流程实例id得到流程实例对象。查询的表是act_hi_procinst
-        ProcessInstance processInstance = runtimeService.createProcessInstanceQuery().processInstanceId(processInstanceId).singleResult();
+            //5.通过流程实例id得到流程实例对象。查询的表是act_hi_procinst
+            ProcessInstance processInstance = runtimeService.createProcessInstanceQuery().processInstanceId(processInstanceId).singleResult();
 
-        //6.通过流程实例对象得到BusinessKey
-        String businessKey = processInstance.getBusinessKey();
+            //6.通过流程实例对象得到BusinessKey
+            String businessKey = processInstance.getBusinessKey();
 
-        //7.根据businessKey可以得到请假单信息
-        System.out.println("businessKey: "+businessKey);
+            //7.根据businessKey可以得到请假单信息
+            System.out.println("businessKey: " + businessKey);
 
-        //8.任务完结
-        if(task != null){
-            taskService.complete(task.getId());
-            System.out.println("任务完成！！！");
+            //8.任务完结
+            if (task != null) {
+                taskService.complete(task.getId());
+                //还可以在执行任务的时候设置流程变量
+//                Map<String,Object> map = new HashMap<>();
+//                Holiday holiday = new Holiday();
+//                holiday.setNum(1F);
+//                map.put("holiday", holiday);
+//                taskService.complete(task.getId(),map);
+
+                System.out.println("任务完成！！！");
+            }else{
+                System.out.println("未查到任务！！！");
+            }
         }
     }
 
