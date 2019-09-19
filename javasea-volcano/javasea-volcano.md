@@ -15,9 +15,9 @@ Volcano是一个基于springboot后台开发简易脚手架。能实现当作一
 
 ## 项目结构
 
-javasea-volcano 父类, 用于springcloud和springboot的版本管控, maven插件, 仓库统一管控等.
+javasea-volcano 父项目, 用于springcloud和springboot的版本管控, maven插件, 仓库统一管控等.
 
-|--javasea-volcano-base:  测试类和相关配置
+|--javasea-volcano-base:  测试类和相关业务配置， 依赖`common`项目中的组件，开发的时候在该项目的基础上添                            加添加业务代码即可。
 
 |--javasea-volcano-common:常用组件和工具类
 
@@ -512,7 +512,13 @@ token未过期且合法的才能校验通过，否则抛出401异常。
 
 ## 项目启动和部署
 
+### 单独作为项目使用
+
+`javasea-volcano`默认是一个独立的springboot项目，可以直接启动`javasea-volcano-base`项目，在`base`项目的基础上，直接编写业务代码即可。
+
 ### 集成到现有的springcloud中
+
+默认是独立项目，但是也可以轻松的集成到现有的springcloud环境中，只需要放开部分注释即可。
 
 1. 启用bootstrap.yml的配置(放开注释)
 
