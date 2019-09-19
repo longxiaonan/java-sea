@@ -92,11 +92,19 @@ public class TaskController {
         // 也可以在数据的`act_re_procdef`表的KEY_列中找到。查询的表是act_hi_taskinst
         List<Task> taskList = taskService.createTaskQuery()
                 .processDefinitionKey("myProcess_1")
+                //通过负责人来查询
                 .taskAssignee("wangwu")
+//                .taskCandidateOrAssigned("zhangsan")//通过候选用户组的人员来查询
 //                .singleResult();
                 .list();
 
+
         for(Task task : taskList) {
+            //组任务时，给某个用户领取任务, param1：taskId；assigness：候选人。将候选用户变成负责人的过程
+//            taskService.claim(taskId, "zhangsan");
+            //组任务时，给某个用户领取任务后，想要退回, 直接设置assignee为null就可以了。如果交接给别的候选人，那么用别的候选人(如lisi)替换掉null即可
+//            taskService.setAssignee(taskId, null);
+
             //通过任务id设置流程变量
 //            taskService.setVariable(task.getId(), map);
             //通过任务id设置局部流程变量
