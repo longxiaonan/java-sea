@@ -62,6 +62,7 @@ public class SwaggerConfiguration {
                 .forPaths(PathSelectors.any())
                 .build());
     }
+
     /** 配置默认认证信息 */
     private List<SecurityReference> defaultAuth() {
         AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
