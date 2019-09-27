@@ -5,19 +5,19 @@
     <parent>
         <artifactId>javasea-volcano</artifactId>
         <groupId>com.javasea</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1-RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <version>0.0.1-RELEASE</version>
     <artifactId>javasea-volcano-base</artifactId>
     <packaging>jar</packaging>
-
     <modelVersion>4.0.0</modelVersion>
 
     <dependencies>
         <dependency>
             <groupId>com.javasea</groupId>
             <artifactId>javasea-volcano-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.1-RELEASE</version>
             <scope>compile</scope>
         </dependency>
 
