@@ -2,16 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<version>0.0.1-RELEASE</version>
+    <groupId>com.javasea</groupId>
+    <artifactId>javasea-volcano</artifactId>
+    <packaging>pom</packaging>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-	<version>0.0.1-SNAPSHOT</version>
-    <groupId>com.javasea</groupId>
-    <artifactId>javasea-volcano</artifactId>
-    <packaging>pom</packaging>
     <modules>
         <module>javasea-volcano-base</module>
         <module>javasea-volcano-common</module>
@@ -48,4 +49,17 @@
             </plugin>
         </plugins>
     </build>
+    <!--定义snapshots库和releases库的nexus地址-->
+    <distributionManagement>
+        <repository>
+            <id>3rd-repo-Releases</id>
+            <name>Local Nexus Repository</name>
+            <url>http://192.168.1.254:8081/repository/3rd-repo/</url>
+        </repository>
+        <snapshotRepository>
+            <id>3rd-repo-Snapshots</id>
+            <name>Local Nexus Repository</name>
+            <url>http://192.168.1.254:8081/repository/3rd-repo-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
