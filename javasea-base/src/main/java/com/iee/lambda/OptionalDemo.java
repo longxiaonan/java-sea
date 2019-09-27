@@ -49,6 +49,9 @@ public class OptionalDemo {
 			System.out.println(name.get());
 		}
 
+		Optional<Object> o = Optional.ofNullable(null);
+		o.ifPresent(a ->{});
+
 		try {
 			// 在Optional实例上调用get()抛出NoSuchElementException。
 			System.out.println(empty.get());
