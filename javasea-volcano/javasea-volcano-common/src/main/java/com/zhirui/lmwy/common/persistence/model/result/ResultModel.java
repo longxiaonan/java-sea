@@ -81,6 +81,10 @@ public class ResultModel<T> implements Serializable {
         return ResultModel.build(ResultCodeEnum.SERVER_ERROR, msg, null);
     }
 
+    public static ResultModel error(String msg, Object data) {
+        return ResultModel.build(ResultCodeEnum.SERVER_ERROR, msg, data);
+    }
+
     public static ResultModel error(ResultCodeEnum codeEnum) {
         return ResultModel.build(codeEnum, null, null);
     }
@@ -126,8 +130,8 @@ public class ResultModel<T> implements Serializable {
                 .build();
     }
 
-    public static ResultModel resultQuery(boolean flag){
-        return resultMsg(flag, flag ? ResultMsg.QUERY_SUCCESS : ResultMsg.QUERY_FAIL);
+    public static ResultModel resultQuery(boolean flag, Object data){
+        return resultMsg(flag, flag ? ResultMsg.QUERY_SUCCESS : ResultMsg.QUERY_FAIL, data);
     }
     public static ResultModel resultInsert(boolean flag){
         return resultMsg(flag, flag ? ResultMsg.INSERT_SUCCESS : ResultMsg.INSERT_FAIL);
@@ -147,6 +151,13 @@ public class ResultModel<T> implements Serializable {
             return ok(msg);
         }
         return error(msg);
+    }
+
+    public static ResultModel resultMsg(boolean flag, String msg, Object data){
+        if (flag){
+            return ok(msg, data);
+        }
+        return error(msg, data);
     }
 
 }
