@@ -253,6 +253,30 @@ java后台的权限模块相关项目，如shiro，springdata，sso，oauth2等�
 
 
 
+## 运行项目
+
+1. git clone https://github.com/longxiaonan/java-sea.git
+
+2. 建议使用 Intellij IDEA 打开，并确保你的 Intellij IDEA 下载了 lombok 插件。
+
+3. <font color=red>打开项目时，在IDEA中请独立打开二级项目，或者别的独立的子模块。**请不要一下子打开父项目`java-sea`**</font>，因为`java-sea`是整个java体系的全知识栈项目，已经收集了30多个子项目，第一次加载需要下载依赖花费很长时间。有耐心的可以试试，哈哈。
+
+   下图是打开`java-sea`中的其中一个子模块项目示例：
+
+4. ![1568773988059](images/1568773988059.png)
+
+5. 
+
+6. 
+
+7. 
+
+8. 
+
+![1568773988059](images/1568773988059.png)
+
+4. 里面的大部分目录都是基于springboot构建，只需要运行相应子项目下的Application.java即可。
+
 ## 参与项目
 
 项目很多地方未完善，我一个人的精力时间有限，如果你愿意跟我一起来完善，我将非常荣幸。
@@ -272,15 +296,7 @@ java后台的权限模块相关项目，如shiro，springdata，sso，oauth2等�
 
 ## 相关说明
 
-#### 第一次打开项目卡顿问题
-
-先用[TortoiseGit小乌龟](https://tortoisegit.org/download/)下载整个项目(大概50M)后。<font color=red>打开项目时，在IDEA中请独立打开二级module，或者别的独立的子模块。**请不要一下子打开父项目`java-sea`**</font>，因为`java-sea`是整个java体系的全知识栈项目，已经收集了30多个子项目，第一次加载需要下载依赖花费很长时间。有耐心的可以试试，哈哈。
-
-下图是打开`java-sea`中的其中一个子模块项目示例：
-
-![1568773988059](images/1568773988059.png)
-
-#### 已经打开`java-sea`项目卡顿问题
+#### 已经打开的`java-sea`项目卡顿问题
 
 在idea中关闭不启用(加载)的module。<br/>
 <img src="images/2019-06-15-22-22-51.png" width = 50% height = 50% /><br/>
