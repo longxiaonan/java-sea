@@ -62,6 +62,15 @@ public class TestSpringCacheService {
         return p;
     }
 
+    @Cacheable(value = "testcachename", key = "'cachennnn'+'aa'")
+    public Student testcachename(Integer id) {
+        Student p = new Student();
+        p.setId(id);
+        p.setName("zhangsan");
+        p.setBirth(new Date());
+        return p;
+    }
+
     @CacheEvict(value = "thisredis22", key = "#root.target.getTenantId()+#id", condition = "#id!=2")
     public void delStudent22(Integer id) {
         // 删除user

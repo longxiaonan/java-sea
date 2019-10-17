@@ -23,7 +23,7 @@ import java.util.zip.ZipInputStream;
  * @Date 2019/8/21 0021 12:38
  */
 @RestController
-@RequestMapping("/process-definition")
+@RequestMapping("")
 public class ProcessDefinitionController {
 
     @Autowired
@@ -90,19 +90,29 @@ public class ProcessDefinitionController {
 
         //4.设置条件，并查询当前定义的所有流程
         //查询条件：流程定义的key=holiday
+//        processDefinitionQuery.deploymentId("");
+//        processDefinitionQuery.processDefinitionNameLike("");
+//        processDefinitionQuery.processDefinitionKey("");
         //返回结果：比如请教流程修改了三次，那么list的size就是3
+//        processDefinitionQuery.listPage();
         List<ProcessDefinition> holidayList = processDefinitionQuery.processDefinitionKey("holiday")
                 .orderByProcessDefinitionVersion()   //设置排序方式，根据流程定义的版本号进行排序
                 .desc()
                 .list();
 
         //5.数量流程定义的信息
-        for (ProcessDefinition pd : holidayList) {
-            System.out.println("流程定义的id："+pd.getId());
-            System.out.println("流程定义的名称："+pd.getName());
-            System.out.println("流程定义的key："+pd.getKey());
-            System.out.println("流程定义的版本号："+pd.getVersion());
-            System.out.println("流程定义的部署id："+pd.getDeploymentId());
+        for (ProcessDefinition processDefinition : holidayList) {
+            //设置和删除启动的用户或者用户组
+//            repositoryService.addCandidateStarterUser(processDefinition.getId(),"userId");
+//            repositoryService.addCandidateStarterGroup(processDefinition.getId(),"userGroup");
+//            repositoryService.deleteCandidateStarterUser(processDefinition.getId(),"userId");
+//            repositoryService.deleteCandidateStarterGroup(processDefinition.getId(),"userGroup");
+
+            System.out.println("流程定义的id："+processDefinition.getId());
+            System.out.println("流程定义的名称："+processDefinition.getName());
+            System.out.println("流程定义的key："+processDefinition.getKey());
+            System.out.println("流程定义的版本号："+processDefinition.getVersion());
+            System.out.println("流程定义的部署id："+processDefinition.getDeploymentId());
         }
     }
 
@@ -138,8 +148,5 @@ public class ProcessDefinitionController {
         }
 
     }
-
-
-
 
 }

@@ -57,6 +57,11 @@ public class TestSpringCacheController {
         return testSpringCacheService.findStudent21(id);
     }
 
+    @GetMapping("testcachename")
+    public Student testcachename(@PathVariable Integer id){
+        return testSpringCacheService.testcachename(id);
+    }
+
     @GetMapping("testSpringCache4")
     public void test4(@PathVariable Integer id){
         testSpringCacheService.delStudent22(id);

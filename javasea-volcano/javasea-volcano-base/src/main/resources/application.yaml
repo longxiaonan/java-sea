@@ -15,8 +15,8 @@ custom:
     default:
       expire-time: 200
     user:
-      expire-time: 180
-      name: test
+      expire-time: 100
+      name: testcachename
   login:
     token:
       valid:
