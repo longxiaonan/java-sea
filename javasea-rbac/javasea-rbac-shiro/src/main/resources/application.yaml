@@ -54,7 +54,7 @@ spring:
 ## mytatis配置
 mybatis:
     ##定义pojo类
-    type-aliases-package: com.iee.rbac.shiro.entity
+    type-aliases-package: com.iee.rbac.shiro.system.entity
     mapper-locations:
       - classpath:mapper/*.xml
     configuration:

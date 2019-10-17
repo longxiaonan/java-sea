@@ -1,8 +1,8 @@
 package com.iee.rbac.shiro.shiro;
 
-import com.iee.rbac.shiro.entity.User;
-import com.iee.rbac.shiro.service.RoleService;
-import com.iee.rbac.shiro.service.UserService;
+import com.iee.rbac.shiro.system.entity.User;
+import com.iee.rbac.shiro.system.service.RoleService;
+import com.iee.rbac.shiro.system.service.UserService;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;

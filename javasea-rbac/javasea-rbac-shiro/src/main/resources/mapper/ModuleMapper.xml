@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.iee.rbac.shiro.mapper.ModuleMapper" >
-  <resultMap id="BaseResultMap" type="com.iee.rbac.shiro.entity.Module" >
+<mapper namespace="com.iee.rbac.shiro.system.mapper.ModuleMapper" >
+  <resultMap id="BaseResultMap" type="com.iee.rbac.shiro.system.entity.Module" >
     <id column="mid" property="mid" jdbcType="INTEGER" />
     <result column="mname" property="mname" jdbcType="VARCHAR" />
   </resultMap>
@@ -66,7 +66,7 @@
   <sql id="Base_Column_List" >
     mid, mname
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.iee.rbac.shiro.entity.ModuleExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.iee.rbac.shiro.system.entity.ModuleExample" >
     select
     <if test="distinct" >
       distinct
@@ -91,17 +91,17 @@
     delete from module
     where mid = #{mid,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.iee.rbac.shiro.entity.ModuleExample" >
+  <delete id="deleteByExample" parameterType="com.iee.rbac.shiro.system.entity.ModuleExample" >
     delete from module
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.iee.rbac.shiro.entity.Module" >
+  <insert id="insert" parameterType="com.iee.rbac.shiro.system.entity.Module" >
     insert into module (mid, mname)
     values (#{mid,jdbcType=INTEGER}, #{mname,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.iee.rbac.shiro.entity.Module" >
+  <insert id="insertSelective" parameterType="com.iee.rbac.shiro.system.entity.Module" >
     insert into module
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="mid != null" >
@@ -120,7 +120,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.iee.rbac.shiro.entity.ModuleExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.iee.rbac.shiro.system.entity.ModuleExample" resultType="java.lang.Integer" >
     select count(*) from module
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -148,7 +148,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.iee.rbac.shiro.entity.Module" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.iee.rbac.shiro.system.entity.Module" >
     update module
     <set >
       <if test="mname != null" >
@@ -157,7 +157,7 @@
     </set>
     where mid = #{mid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.iee.rbac.shiro.entity.Module" >
+  <update id="updateByPrimaryKey" parameterType="com.iee.rbac.shiro.system.entity.Module" >
     update module
     set mname = #{mname,jdbcType=VARCHAR}
     where mid = #{mid,jdbcType=INTEGER}
