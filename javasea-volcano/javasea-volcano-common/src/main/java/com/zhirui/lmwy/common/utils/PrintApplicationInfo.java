@@ -35,23 +35,24 @@ public class PrintApplicationInfo {
 
 
     /**
-     * 执行之前，打印前置条件提示。设计网址为：http://patorjk.com/software/taag/#p=testall&c=bash&f=Graffiti&t=lmwy
+     * 执行之前，打印前置条件提示。设计网址为：http://patorjk.com/software/taag/#p=testall&c=bash&f=Graffiti&t=volcano
      */
     public static void printTip() {
         StringBuffer tip = new StringBuffer();
         tip.append("=====================================================================================\n");
         tip.append("                                                                                   \n");
         tip.append("                                                                                   \n");
-        tip.append("                       ██╗     ███╗   ███╗██╗    ██╗██╗   ██╗                      \n");
-        tip.append("                       ██║     ████╗ ████║██║    ██║╚██╗ ██╔╝                      \n");
-        tip.append("                       ██║     ██╔████╔██║██║ █╗ ██║ ╚████╔╝                       \n");
-        tip.append("                       ██║     ██║╚██╔╝██║██║███╗██║  ╚██╔╝                        \n");
-        tip.append("                       ███████╗██║ ╚═╝ ██║╚███╔███╔╝   ██║                         \n");
-        tip.append("                       ╚══════╝╚═╝     ╚═╝ ╚══╝╚══╝    ╚═╝                         \n");
-        tip.append("                                                                2.1.0                   \n");
+        tip.append("           ██╗   ██╗ ██████╗ ██╗      ██████╗ █████╗ ███╗   ██╗ ██████╗     \n");
+        tip.append("           ██║   ██║██╔═══██╗██║     ██╔════╝██╔══██╗████╗  ██║██╔═══██╗    \n");
+        tip.append("           ██║   ██║██║   ██║██║     ██║     ███████║██╔██╗ ██║██║   ██║    \n");
+        tip.append("           ╚██╗ ██╔╝██║   ██║██║     ██║     ██╔══██║██║╚██╗██║██║   ██║    \n");
+        tip.append("            ╚████╔╝ ╚██████╔╝███████╗╚██████╗██║  ██║██║ ╚████║╚██████╔╝    \n");
+        tip.append("             ╚═══╝   ╚═════╝ ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝     \n");
+        tip.append("                                                                         2.1.0                \n");
         tip.append("                                                                                   \n");
         tip.append("=====================================================================================\n");
         log.info("\n{}", Ansi.ansi().eraseScreen().fg(Ansi.Color.YELLOW).a(tip.toString()).reset().toString());
+
     }
 
     /**
