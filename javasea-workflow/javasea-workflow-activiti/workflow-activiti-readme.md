@@ -1,3 +1,33 @@
+## activity建表
+
+### 创建数据库
+
+```sql
+DROP DATABASE activiti;
+CREATE DATABASE activiti;
+```
+
+### 创建表
+
+## API操作：
+
+### 流程定义相关
+
+### 流程实例相关
+
+
+
+### 任务相关
+
+```java
+//没参与者，但是候选人是该user
+List<Task> taskList = taskService.createTaskQuery().taskCandidateUser(user.getId()).list();
+//本人就是参与者
+List<Task> assigneeList = taskService.createTaskQuery().taskAssignee(user.getId()).list(); 
+//没有参与者，但是候选人相同group的
+List<Task> candidateGroup = taskService.createTaskQuery().taskCandidateGroupIn(roleString).list(); 
+```
+
 流程变量设置方式：
 
 ![1568801494196](media/1568801494196.png)
