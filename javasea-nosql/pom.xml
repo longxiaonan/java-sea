@@ -18,7 +18,7 @@
         <module>javasea-nosql-elasticsearch</module>
         <module>javasea-nosql-redis-jedis</module>
         <module>javasea-nosql-redis-subscription</module>
-        <module>javasea-nosql-redis-distributedlocks</module>
+        <module>javasea-nosql-zookeeper</module>
     </modules>
 
 
