@@ -2,7 +2,6 @@ package com.lance.mail.springbootmail.queue;
 
 import com.lance.mail.springbootmail.bean.MailBean;
 import com.lance.mail.springbootmail.util.MailUtil;
-import jdk.nashorn.internal.ir.annotations.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

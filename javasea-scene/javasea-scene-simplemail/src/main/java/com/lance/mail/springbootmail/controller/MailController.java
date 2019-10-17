@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MailController {
 
     @Autowired
-    MailUtil mailUtil;
+    private MailUtil mailUtil;
 
     @GetMapping("/send1")
     public void test(){
