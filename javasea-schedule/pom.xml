@@ -14,6 +14,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>javasea-schedule-quartz</module>
+        <module>javasea-schedule-xxljob</module>
     </modules>
 
 

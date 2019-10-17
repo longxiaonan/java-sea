@@ -1,0 +1,44 @@
+# common config
+server:
+  port: 8080
+  servlet:
+    context-path: /
+  tomcat:
+    max-threads: 1000
+    min-spare-threads: 30
+    uri-encoding: UTF-8
+
+spring:
+  application:
+    name: javasea-file-openApi${WMS_DEVELOPER_NAME:}
+  banner:
+    charset: UTF-8
+    location: classpath:config/banner.txt
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/my?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+#    url: jdbc:mysql://192.168.1.230:3306/lmwy2?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver  #com.mysql.jdbc.Driver
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: AUTO
+
+# 丝袜哥的配置，访问地址为：`ip:port/swagger-ui.html`
+swagger:
+  #  open: true              #是否开启swagger,在生产环境下需要关闭
+  protocol: http          #协议，http或https
+  base-package: com.file.openApi   #一定要写对，会在这个路径下扫描controller定义
+  title: openApi测试项目
+  version: 1.0
+  description: openApi和swagger的测试项目，项目github地址：https://github.com/longxiaonan/java-sea
+
+#logging:
+#  level:
+#    root: debug #warn
+#    # 打印sql的log
+#    com.zhirui.lmwy.wms: debug
+#    org.springframework.web: debug

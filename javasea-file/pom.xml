@@ -19,6 +19,7 @@
         <module>javasea-upload-server</module>
         <module>javasea-upload-client</module>
         <module>javasea-file-excel</module>
+        <module>javasea-file-openApi</module>
     </modules>
 
 

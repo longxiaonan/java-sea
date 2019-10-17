@@ -1,0 +1,13 @@
+registry: 11111111
+redis:
+  password: zhirui888
+  sentinel:
+    master: rds-poto
+    nodes:
+      - 127.0.0.1: 6379
+  database: 4
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0

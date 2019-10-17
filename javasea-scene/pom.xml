@@ -15,5 +15,6 @@
     <modules>
         <module>javasea-scene-simplemail</module>
         <module>javasea-scene-repeatsubmit</module>
+        <module>javasea-scene-distributed-locks</module>
     </modules>
 </project>

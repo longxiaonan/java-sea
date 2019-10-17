@@ -1,0 +1,619 @@
+= openApi测试项目
+
+
+[[_overview]]
+== 概览
+openApi和swagger的测试项目，项目github地址：https://github.com/longxiaonan/java-sea
+
+
+=== 版本信息
+[%hardbreaks]
+__版本__ : 1.0
+
+
+=== 许可信息
+[%hardbreaks]
+__服务条款__ : http://github.com/longxiaonan
+
+
+=== URI scheme
+[%hardbreaks]
+__域名__ : localhost:8080
+__基础路径__ : /
+__方案__ : HTTP
+
+
+=== 标签
+
+* sys-log-controller : Sys Log Controller
+
+
+
+
+[[_paths]]
+== 资源
+
+[[_sys-log-controller_resource]]
+=== Sys-log-controller
+Sys Log Controller
+
+
+[[_getsyslogpagelistusingget]]
+==== 获取SysLog分页列表
+....
+GET /sysLog/page
+....
+
+
+===== 说明
+系统日志分页列表
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**syslog** +
+__可选__|syslog|ref
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_6c4b5ba44713293ee83fc2cbf077e62b,返回值类型对象«分页«SysLogQueryVo对象»»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== 安全
+
+[options="header", cols=".^3a,.^4a,.^13a"]
+|===
+|类型|名称|作用域
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/sysLog/page
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : {
+    "records" : [ {
+      "content" : "string",
+      "createId" : 0,
+      "createTime" : "string",
+      "logId" : 0,
+      "type" : true
+    } ],
+    "total" : 0
+  },
+  "msg" : "string",
+  "time" : "string"
+}
+----
+
+
+[[_addsysuserusingpost]]
+==== 添加SysLog对象
+....
+POST /sysLog/sysLog
+....
+
+
+===== 说明
+添加系统日志
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**sysLog** +
+__必填__|sysLog|<<_c35747db3914102793f84142abe67730,SysLog对象>>
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_657436e8ddbd34677ebeb49391af0965,返回值类型对象>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== 安全
+
+[options="header", cols=".^3a,.^4a,.^13a"]
+|===
+|类型|名称|作用域
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/sysLog/sysLog
+----
+
+
+====== 请求 body
+[source,json]
+----
+{
+  "content" : "string",
+  "createId" : 0,
+  "createTime" : "string",
+  "logId" : 0,
+  "type" : true
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string",
+  "time" : "string"
+}
+----
+
+
+[[_getsysuserusingget]]
+==== 获取SysLog对象详情
+....
+GET /sysLog/sysLog
+....
+
+
+===== 说明
+查看系统日志
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__可选__||string
+|**Query**|**pageNum** +
+__必填__|每页个数|integer (int32)
+|**Query**|**pageSize** +
+__可选__|pageSize|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_ff34a3b653ad1c11b74ec92653f54f20,SysLogQueryVo对象>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== 安全
+
+[options="header", cols=".^3a,.^4a,.^13a"]
+|===
+|类型|名称|作用域
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/sysLog/sysLog?pageNum=0
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "content" : "string",
+  "createId" : 0,
+  "createTime" : "string",
+  "logId" : 0,
+  "type" : true
+}
+----
+
+
+[[_updatesysuserusingput]]
+==== 修改SysLog对象
+....
+PUT /sysLog/sysLog
+....
+
+
+===== 说明
+修改系统日志
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**sysLog** +
+__必填__|sysLog|<<_c35747db3914102793f84142abe67730,SysLog对象>>
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_657436e8ddbd34677ebeb49391af0965,返回值类型对象>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== 安全
+
+[options="header", cols=".^3a,.^4a,.^13a"]
+|===
+|类型|名称|作用域
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/sysLog/sysLog
+----
+
+
+====== 请求 body
+[source,json]
+----
+{
+  "content" : "string",
+  "createId" : 0,
+  "createTime" : "string",
+  "logId" : 0,
+  "type" : true
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string",
+  "time" : "string"
+}
+----
+
+
+[[_deletesysuserusingdelete]]
+==== 删除SysLog对象
+....
+DELETE /sysLog/sysLog
+....
+
+
+===== 说明
+删除系统日志
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**idParam** +
+__必填__|idParam|<<_50d497bbf7852ba194bc412f672c13ca,ID参数>>
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_657436e8ddbd34677ebeb49391af0965,返回值类型对象>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== 安全
+
+[options="header", cols=".^3a,.^4a,.^13a"]
+|===
+|类型|名称|作用域
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/sysLog/sysLog
+----
+
+
+====== 请求 body
+[source,json]
+----
+{
+  "id" : "string"
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string",
+  "time" : "string"
+}
+----
+
+
+
+
+[[_definitions]]
+== 定义
+
+[[_50d497bbf7852ba194bc412f672c13ca]]
+=== ID参数
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**id** +
+__可选__|**样例** : `"string"`|string
+|===
+
+
+[[_ff34a3b653ad1c11b74ec92653f54f20]]
+=== SysLogQueryVo对象
+系统日志查询参数
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**content** +
+__可选__|内容 +
+**样例** : `"string"`|string
+|**createId** +
+__可选__|创建人ID +
+**样例** : `0`|integer (int64)
+|**createTime** +
+__可选__|创建时间 +
+**样例** : `"string"`|string (date-time)
+|**logId** +
+__可选__|主键 +
+**样例** : `0`|integer (int64)
+|**type** +
+__可选__|类型 +
+**样例** : `true`|boolean
+|===
+
+
+[[_c35747db3914102793f84142abe67730]]
+=== SysLog对象
+系统日志
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**content** +
+__可选__|内容 +
+**样例** : `"string"`|string
+|**createId** +
+__可选__|创建人ID +
+**样例** : `0`|integer (int64)
+|**createTime** +
+__可选__|创建时间 +
+**样例** : `"string"`|string (date-time)
+|**logId** +
+__可选__|主键 +
+**样例** : `0`|integer (int64)
+|**type** +
+__可选__|类型 +
+**样例** : `true`|boolean
+|===
+
+
+[[_ef6f2f4f458699f2f59268c89519e25e]]
+=== 分页«SysLogQueryVo对象»
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**records** +
+__可选__|数据列表 +
+**样例** : `[ "<<_ff34a3b653ad1c11b74ec92653f54f20>>" ]`|< <<_ff34a3b653ad1c11b74ec92653f54f20,SysLogQueryVo对象>> > array
+|**total** +
+__可选__|总行数 +
+**样例** : `0`|integer (int64)
+|===
+
+
+[[_657436e8ddbd34677ebeb49391af0965]]
+=== 返回值类型对象
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**code** +
+__必填__|返回的code +
+**样例** : `0`|integer (int32)
+|**data** +
+__可选__|**样例** : `"object"`|object
+|**msg** +
+__可选__|响应的消息 +
+**样例** : `"string"`|string
+|**time** +
+__可选__|**样例** : `"string"`|string (date-time)
+|===
+
+
+[[_0b4451254de0e422025c8a2cc2caed05]]
+=== 返回值类型对象«SysLogQueryVo对象»
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**code** +
+__必填__|返回的code +
+**样例** : `0`|integer (int32)
+|**data** +
+__可选__|**样例** : <<_ff34a3b653ad1c11b74ec92653f54f20>>|<<_ff34a3b653ad1c11b74ec92653f54f20,SysLogQueryVo对象>>
+|**msg** +
+__可选__|响应的消息 +
+**样例** : `"string"`|string
+|**time** +
+__可选__|**样例** : `"string"`|string (date-time)
+|===
+
+
+[[_5d2f65102ba0c79dab49ee7aea1ea57d]]
+=== 返回值类型对象«boolean»
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**code** +
+__必填__|返回的code +
+**样例** : `0`|integer (int32)
+|**data** +
+__可选__|**样例** : `true`|boolean
+|**msg** +
+__可选__|响应的消息 +
+**样例** : `"string"`|string
+|**time** +
+__可选__|**样例** : `"string"`|string (date-time)
+|===
+
+
+[[_6c4b5ba44713293ee83fc2cbf077e62b]]
+=== 返回值类型对象«分页«SysLogQueryVo对象»»
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**code** +
+__必填__|返回的code +
+**样例** : `0`|integer (int32)
+|**data** +
+__可选__|**样例** : <<_ef6f2f4f458699f2f59268c89519e25e>>|<<_ef6f2f4f458699f2f59268c89519e25e,分页«SysLogQueryVo对象»>>
+|**msg** +
+__可选__|响应的消息 +
+**样例** : `"string"`|string
+|**time** +
+__可选__|**样例** : `"string"`|string (date-time)
+|===
+
+
+
+
+[[_securityscheme]]
+== 安全
+
+[[_authorization]]
+=== Authorization
+[%hardbreaks]
+__类型__ : apiKey
+__名称__ : Authorization
+__在__ : HEADER
+
+
+

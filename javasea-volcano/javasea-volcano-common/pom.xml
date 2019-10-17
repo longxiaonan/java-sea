@@ -53,6 +53,12 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.9.2</version>
         </dependency>
+        <!-- 在swagger的基础上实现美化 -->
+        <dependency>
+            <groupId>com.github.caspar-chen</groupId>
+            <artifactId>swagger-ui-layer</artifactId>
+            <version>1.1.3</version>
+        </dependency>
         <!-- swagger end -->
         <!-- 工具依赖  start -->
         <!-- httpclient start -->
