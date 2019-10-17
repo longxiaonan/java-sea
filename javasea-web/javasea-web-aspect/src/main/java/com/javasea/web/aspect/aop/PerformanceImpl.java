@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class PerformanceImpl implements Performance {
+    @Override
     public void perform() {
         System.out.println("the perform is good");
 //        throw new RuntimeException("ssss");
