@@ -24,6 +24,7 @@
         <module>javasea-web-junit</module>
         <module>javasea-web-aspect</module>
         <module>javasea-web-config</module>
+        <module>javasea-web-websocket</module>
     </modules>
 
 

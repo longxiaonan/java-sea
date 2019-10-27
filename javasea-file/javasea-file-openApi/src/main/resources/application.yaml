@@ -1,4 +1,4 @@
-# common config
+# mgr config
 server:
   port: 8080
   servlet:
