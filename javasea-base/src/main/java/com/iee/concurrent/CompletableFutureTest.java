@@ -1,8 +1,11 @@
 package com.iee.concurrent;
 
+import org.junit.Test;
+
 import java.util.Random;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @ClassName: CompletableFutureTest
@@ -13,20 +16,10 @@ import java.util.concurrent.ExecutionException;
  * @version 1.0
  */
 public class CompletableFutureTest {
-	public static void main(String[] args) {
-		// runAsync无返回值
-//		 testRunAsync();
 
-		// supplyAsync有返回值
-		 testSupplyAsync();
-
-//		 testComplete();
-
-//		testApplyToEither();
-
-	}
-
-	private static void testApplyToEither() {
+	//runAsync无返回值
+	@Test
+	public void testApplyToEither() {
 		Random random = new Random();
 		CompletableFuture<String> future1 = CompletableFuture.supplyAsync(() -> {
 			try {
@@ -63,7 +56,8 @@ public class CompletableFutureTest {
 		}
 	}
 
-	private static void testComplete() {
+	@Test
+	public void testComplete() {
 		CompletableFuture<String> future = CompletableFuture.supplyAsync(() ->
 				"Hello");
 		future.complete("Woｄｄｄrld");// 如果supplyAsync没执行完, 就直接输出"Woｄｄｄrld",
@@ -77,7 +71,8 @@ public class CompletableFutureTest {
 		}
 	}
 
-	private static void testSupplyAsync() {
+	@Test
+	public void testSupplyAsync() {
 		CompletableFuture<String> future2 = CompletableFuture.supplyAsync(() -> "Hello");
 		try {
 			Thread.sleep(5000);
@@ -100,7 +95,7 @@ public class CompletableFutureTest {
 		}
 	}
 
-	private static void testRunAsync() {
+	public  void testRunAsync() {
 		CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
 			try {
 				Thread.sleep(5000);
@@ -117,5 +112,28 @@ public class CompletableFutureTest {
 			e.printStackTrace();
 		}
 		System.out.println("CompletableFuture");
+	}
+
+	@Test
+	public void test10() throws Exception {
+		String result = CompletableFuture.supplyAsync(() -> {
+			try {
+				TimeUnit.SECONDS.sleep(2);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			if (1 == 1) {
+				throw new RuntimeException("an RuntimeException");
+			}
+			return "s1";
+		}).whenComplete((s, t) -> {
+			System.out.println("whenComplete s:"+s);
+			System.out.println("whenComplete exception:"+t.getMessage());
+		}).exceptionally(e -> {
+			System.out.println("exceptionally exception:"+e.getMessage());
+			return "hello ijiangtao";
+		}).join();
+
+		System.out.println(result);
 	}
 }
