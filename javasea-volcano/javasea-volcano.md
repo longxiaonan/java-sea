@@ -9,11 +9,6 @@
 ![](https://img.shields.io/badge/Swagger-2.9.2-brightgreen.svg?style=plastic)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-TODO
-整合shiro
-https://blog.csdn.net/liugh_xian2016/article/details/80298453
-https://blog.csdn.net/qq_23250633/article/details/81236523
-https://blog.csdn.net/qq_23250633/article/details/81063762
 ## 概述
 
 Volcano是一个基于springboot后台开发简易脚手架。能实现当作一个单独项目或者作为微服务的一个节点进行快速开发和部署。
