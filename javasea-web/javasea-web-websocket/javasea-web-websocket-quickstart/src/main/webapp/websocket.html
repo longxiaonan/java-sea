@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <title>Title</title>
+</head>
+<body>
+<script>
+    const socket = new WebSocket("ws://localhost:8082/websocket/1");
+    // 连接建立时触发
+    socket.onopen = (ws) => {
+        console.log("建立连接！", ws);
+    };
+    // 客户端接收服务端数据时触发
+    socket.onmessage = (ws) => {
+        console.log("接收到消息 >> ", ws.data);
+    };
+    // 连接关闭时触发
+    socket.onclose = (ws) => {
+        console.log("连接已断开！", ws);
+    };
+    // 通信发生错误时触发
+    socket.onerror = (ws) => {
+        console.log("发送错误！", ws);
+    };
+    // 2秒后向服务端发送消息
+    setTimeout(() => {
+        // 使用连接发送数据
+        socket.send("发送一条消息试试");
+    }, 2000);
+    // 5秒后断开连接
+    setTimeout(() => {
+        // 关闭连接
+        socket.close();
+    }, 5000);
+</script>
+</body>
+</html>
