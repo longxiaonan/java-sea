@@ -21,6 +21,7 @@
         <module>javasea-orm-pagehelper</module>
         <module>javasea-orm-mybatisgenerator-pomplugin</module>
         <module>javasea-orm-springdata-multidatasource</module>
+        <module>javasea-orm-mybatis-Interceptor</module>
     </modules>
 
 </project>
