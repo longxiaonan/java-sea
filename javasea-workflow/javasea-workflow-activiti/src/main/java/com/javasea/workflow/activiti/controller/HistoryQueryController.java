@@ -23,6 +23,7 @@ public class HistoryQueryController {
     @Autowired
     StandaloneProcessEngineConfiguration standaloneProcessEngineConfiguration;
 
+    /** 查询的是`act_hi_actinst`表中的记录 */
     @GetMapping("/historyQuery")
     public void historyQuery(){
 

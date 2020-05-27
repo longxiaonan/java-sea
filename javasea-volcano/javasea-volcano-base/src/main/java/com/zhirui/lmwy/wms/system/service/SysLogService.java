@@ -31,4 +31,5 @@ public interface SysLogService extends BaseService<SysLog> {
      */
     Paging<SysLogQueryVo> getSysLogPageList(SysLogQueryParam sysLogQueryParam) throws Exception;
 
+    void testProcedure(String str);
 }

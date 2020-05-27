@@ -25,7 +25,7 @@ import java.util.Date;
  * "msgqueue":"直接展示给终端用户的错误信息",
  * "code":"业务错误码",
  * "msg":"供开发者查看的错误信息",
- * "data":"响应中的数据"
+ * "data":"响应中的数据"entityObjectName
  * "debug":["错误堆栈，必须开启 debug 才存在"  ]
  * }
  *

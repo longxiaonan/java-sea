@@ -30,7 +30,7 @@ public class TestDateConverterAndJson {
      ** `@DatetimeFormat(pattern="yyyy-MM-dd")` 是将String转换成Date，一般前台给后台传值时用
      ** `@JsonFormat(pattern="yyyy-MM-dd")` 将Date转换成String  一般后台传值给前台时
      * 方式二：
-     * 在common包的com.zhirui.lmwy.common.converter配置了通用的 参数转换器，如果是日期类型的话相当于方式一的@DatetimeFormat，且属性上的@DatetimeFormat不再起作用。
+     * 在common包的com.zhirui.lmwy.mgr.converter配置了通用的 参数转换器，如果是日期类型的话相当于方式一的@DatetimeFormat，且属性上的@DatetimeFormat不再起作用。
      * http://localhost:8080/testDateConverter?createTime=123455 可以将`123455`通过转换类{@link StringToDateConverter}转换成 具体的日期
      *
      *  如果对字段单独 serializer 和 deserializer 参考：https://www.cnblogs.com/jifeng/p/9700911.html

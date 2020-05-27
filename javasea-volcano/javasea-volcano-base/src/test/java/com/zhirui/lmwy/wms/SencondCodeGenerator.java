@@ -29,7 +29,7 @@ public class SencondCodeGenerator {
                 .setOutputDir(projectPath + "/src/main/java" + "/com/zhirui/lmwy/wms")//输出目录
 //                .setActiveRecord(true)// 开启 activeRecord 模式
                 .setEnableCache(false)// XML 二级缓存
-                .setFileOverride(true)  //文件覆盖
+                .setFileOverride(false)  //文件覆盖
                 .setIdType(IdType.AUTO) //主键策略 自增
                 .setServiceName("%sService")    //设置生成的servic接口的名字首字目去除I
                 .setBaseResultMap(true)     //生成sql mapper映射文件

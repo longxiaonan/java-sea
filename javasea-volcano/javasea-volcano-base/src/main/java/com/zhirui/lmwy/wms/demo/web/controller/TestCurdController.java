@@ -23,7 +23,7 @@ import java.util.Map;
  * @Author longxiaonan@163.com
  * @Date 2019/9/3 0003 0:34
  */
-@RequestMapping("sys")
+@RequestMapping("/sys")
 @RestController
 @Api(tags = { "一个用来测试curd和swagger注解的控制器" })
 public class TestCurdController {
@@ -33,9 +33,9 @@ public class TestCurdController {
 
     @GetMapping("/users/{id}")
     @ApiOperation(value = "通过id获取用户")
-    public ResultModel getAccount(@ApiParam(name = "id", value = "用户id", required = true)
-                                          @Positive(message = "主键必须大于0")
-                                          @PathVariable int id) {
+    public ResultModel getUser(@ApiParam(name = "id", value = "用户id", required = true)
+                                  @Positive(message = "主键必须大于0")
+                                  @PathVariable Long id) {
         return ResultModel.ok(userService.getById(id));
     }
 

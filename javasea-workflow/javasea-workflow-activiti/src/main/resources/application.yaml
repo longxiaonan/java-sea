@@ -1,7 +1,7 @@
 spring:
   ######  sql数据源相关配置 ######
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/activiti?serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true
+    url: jdbc:mysql://127.0.0.1:3306/activiti_lxn?serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver

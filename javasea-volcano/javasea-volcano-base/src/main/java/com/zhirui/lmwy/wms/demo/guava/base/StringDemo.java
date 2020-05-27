@@ -12,7 +12,7 @@ import com.google.common.base.Strings;
  */
 public class StringDemo {
     public static void main(String[] args) {
-//        1. 使用com.google.common.base.Strings类的isNullOrEmpty(input)方法判断字符串是否为空
+//        1. 使用com.google.mgr.base.Strings类的isNullOrEmpty(input)方法判断字符串是否为空
 //        Strings.isNullOrEmpty(input) demo
         String input = "";
         boolean isNullOrEmpty = Strings.isNullOrEmpty(input);
@@ -23,13 +23,13 @@ public class StringDemo {
         String a = "com.jd.coo.Hello";
         String b = "com.jd.coo.Hi";
         String ourCommonPrefix = Strings.commonPrefix(a,b);
-        System.out.println("a,b common prefix is " + ourCommonPrefix);//a,b common prefix is com.jd.coo.H
+        System.out.println("a,b mgr prefix is " + ourCommonPrefix);//a,b mgr prefix is com.jd.coo.H
 
         //Strings.commonSuffix(a,b) demo
         String c = "com.google.Hello";
         String d = "com.jd.Hello";
         String ourSuffix = Strings.commonSuffix(c,d);
-        System.out.println("c,d common suffix is " + ourSuffix);//c,d common suffix is .Hello
+        System.out.println("c,d mgr suffix is " + ourSuffix);//c,d mgr suffix is .Hello
 
         //3. Strings的padStart和padEnd方法来补全字符串
         int minLength = 4;

@@ -1,7 +1,6 @@
 package com.javasea.workflow.activiti.controller;
 
 import org.activiti.engine.ProcessEngine;
-import org.activiti.engine.ProcessEngineConfiguration;
 import org.activiti.engine.RepositoryService;
 import org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration;
 import org.activiti.engine.repository.Deployment;
@@ -28,6 +27,8 @@ public class ProcessDefinitionController {
 
     @Autowired
     StandaloneProcessEngineConfiguration standaloneProcessEngineConfiguration;
+
+
     /** 部署流程 涉及到的表：
      * act_re_deployment： 部署信息
      * act_re_procdef：流程定义的一些信息
@@ -40,11 +41,10 @@ public class ProcessDefinitionController {
 
         //2.获取repositoryService实例
         RepositoryService repositoryService = processEngine.getRepositoryService();
-
         //3.进行部署
         Deployment deploy = repositoryService.createDeployment()
-                .addClasspathResource("diagram/holiday4.bpmn")//添加bpmn资源
-                .addClasspathResource("diagram/holiday4.png") //添加png资源
+                .addClasspathResource("diagram/holiday-exclusive.bpmn")//添加bpmn资源
+//                .addClasspathResource("diagram/holiday4.png") //添加png资源
                 .name("请假流程-流程变量")//部署的名字
                 .deploy();//执行部署
         System.out.println(deploy.getId());
@@ -56,7 +56,7 @@ public class ProcessDefinitionController {
     public void deployByZip(){
         //1.获取processEngine实例
         ProcessEngine processEngine = standaloneProcessEngineConfiguration.buildProcessEngine();
-
+//
         //2.获取repositoryService实例
         RepositoryService repositoryService = processEngine.getRepositoryService();
 
@@ -122,6 +122,10 @@ public class ProcessDefinitionController {
      *     1、如果流程没走完，会删除失败
      *     2、如果公司层面要强制删除，可以使用repositoryService.deleteDeployment(deploymentId,true);
      *     进行级联删除，此时就会先删除没有完成的流程节点，最后再删除流程定义信息。默认是false
+     *
+     *     `act_ge_bytearray`： 流程定义文件被删除
+     *     `act_re_deployment`：部署表信息被删除
+     *      `act_re_procdef`：流程定义信息被删除
      * */
     @GetMapping("/delete")
     public void delete(){

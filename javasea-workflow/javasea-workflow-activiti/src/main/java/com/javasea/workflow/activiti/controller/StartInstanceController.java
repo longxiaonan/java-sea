@@ -25,12 +25,13 @@ public class StartInstanceController {
     @Autowired
     StandaloneProcessEngineConfiguration standaloneProcessEngineConfiguration;
 
-    /** 启动实例 涉及到的表：
-     * act_hi_actinst：已完成的活动信息
-     * act_hi_identitylink：参与者信息
+    /**
+     * 启动实例 涉及到的表：
+     * act_hi_actinst：已完成的活动信息，若任务没完成，则没END_TIME
+     * act_hi_identitylink：参与者信息, user_id记录参与者
      * act_hi_procinst：流程实例
      * act_hi_taskinst：任务实例
-     * act_ru_execution：执行表
+     * act_ru_execution：执行表, businessKey存入业务id
      * act_ru_identitylink：当前参与者信息
      * act_ru_task：任务
      *
@@ -56,7 +57,7 @@ public class StartInstanceController {
         //第一个参数是部署id，第二个参数是act_ru_execution表中的业务id，用于关联业务表的记录id
 //        ProcessInstance instance = runtimeService.startProcessInstanceByKey("holiday", "1001");
 
-        //3.3 创建流程实例方式3: 通过key启动，且设置流程变量
+        //3.3 创建流程实例方式3: 通过key启动，且设置流程变量 businessKey
         //设置Assignee UEL的值，在bpmn的流程图（见holiday2.bpmn），各个流程的执行人分别是${assignee0},${assignee1},${assignee2}
 //        Map<String,Object> map = new HashMap<>();
 //        map.put("assignee0","zhangsan");
@@ -68,28 +69,33 @@ public class StartInstanceController {
 
         //3.4 创建流程实例方式4：通过key启动，且设置流程变量，且流程变量是java对象类型
         //设置条件的UEL值，在bpmn的流程图（见holiday4.bpmn），在流程连线上设置${holiday.num<=3}，${holiday.num>3}
-        String key = "myProcess_1"; //holiday4.bpmn的流程定义id
+        String key = "holiday-exclusive"; //holiday4.bpmn的流程定义id，画bpmn图中的id
         Map<String,Object> map = new HashMap<>();
         Holiday holiday = new Holiday();
-        holiday.setNum(1F);
+        holiday.setNum(5F);
+        // ${holiday.num<=3}
         map.put("holiday", holiday);
         //在实例启动的时候设置流程变量
         //通过部署id进行启动
 //        runtimeService.startProcessInstanceById()
         //通过key进行启动
         ProcessInstance instance = runtimeService.startProcessInstanceByKey(key,"10002", map);
-        //还可以在通过实例id设置流程变量
-//        runtimeService.setVariable(instance.getId(), "holiday", map);
+        //还可以在通过实例id设置流程变量，一次一个变量
+//        runtimeService.setVariable(instance.getId(), "holiday", holiday);
+        //一次多个变量
+//        runtimeService.setVariables(instance.getId(), map);
 
         //3.5 创建流程实例方式5：通过instanceBuilder进行启动
         ProcessInstanceBuilder processInstanceBuilder = runtimeService.createProcessInstanceBuilder();
-        ProcessInstance instance2 = processInstanceBuilder.businessKey("businessKey001")
-                .processDefinitionKey("process")
-                .variables(map)
-                .start();
+//        ProcessInstance instance2 = processInstanceBuilder.businessKey("businessKey001")
+//                .processDefinitionKey("process")
+//                .variables(map)
+//                .start();
 
         //3.6 获取刚刚设置的流程变量，一般的excution id会和启动实例的id一致
-        Map<String, Object> variables = runtimeService.getVariables(instance2.getId());
+//        Map<String, Object> variables = runtimeService.getVariables(instance2.getId());
+        // 可以在启动的时候不设置流程变量，然后通过runtimeService设置流程变量
+//        runtimeService.setVariable(instance2.getId(), "holiday", map);
 
         //4.输出相关信息, 在表`act_hi_taskinst`可以找到流程实例相关的信息
         System.out.println("流程部署id："+instance.getDeploymentId());//null

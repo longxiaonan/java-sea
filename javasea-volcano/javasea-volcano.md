@@ -17,9 +17,9 @@ Volcano是一个基于springboot后台开发简易脚手架。能实现当作一
 
 javasea-volcano 父项目, 用于springcloud和springboot的版本管控, maven插件, 仓库统一管控等.
 
-|--javasea-volcano-base:  测试类和相关业务配置， 依赖`common`项目中的组件，开发的时候在该项目的基础上添                            加添加业务代码即可。
+|--javasea-volcano-base:  测试类和相关业务配置， 依赖`mgr`项目中的组件，开发的时候在该项目的基础上添                            加添加业务代码即可。
 
-|--javasea-volcano-common:常用组件和工具类
+|--javasea-volcano-mgr:常用组件和工具类
 
 ## 项目环境
 
@@ -83,7 +83,7 @@ Optional.ofNullable(order).filter(o -> {
 > public Student testDateConverter(@PathVariable Integer id){...}
 > ```
 
-`com.zhirui.lmwy.common.converter`包下定义了很多转换类：
+`com.zhirui.lmwy.mgr.converter`包下定义了很多转换类：
 
 * StringToDateConverter
 
@@ -106,7 +106,7 @@ Optional.ofNullable(order).filter(o -> {
 > public Student testDateConverter2(@RequestBody Student student){...}
 > ```
 
-`com.zhirui.lmwy.common.json.jackson`包下定义了JSON的序列化和反序列化方式：
+`com.zhirui.lmwy.mgr.json.jackson`包下定义了JSON的序列化和反序列化方式：
 
 * deserializer 包下的序列化类
 
@@ -118,7 +118,7 @@ Optional.ofNullable(order).filter(o -> {
 
 #### 后端传值给前端
 
-`com.zhirui.lmwy.common.json.jackson.serializer`包下的定义了序列化类 。
+`com.zhirui.lmwy.mgr.json.jackson.serializer`包下的定义了序列化类 。
 
 在Controller类上添加注解@ResponseBody或者@RestController，那么后端传值给前端是JSON方式。
 
@@ -141,7 +141,7 @@ Optional.ofNullable(order).filter(o -> {
 
 ### 异常处理
 
-在`com.zhirui.lmwy.common.exception.impl`中定义了三大类异常：
+在`com.zhirui.lmwy.mgr.exception.impl`中定义了三大类异常：
 
 ```
 BusinessException： 通用业务异常
@@ -219,7 +219,7 @@ controller的返回前端使用`ResultModel`类进行封装，里面有`code`，
 
 2. 定义AOP类实现彩色日志输出
 
-参考：`com.zhirui.lmwy.common.aop.LogAop`
+参考：`com.zhirui.lmwy.mgr.aop.LogAop`
 
 ### 集成 丝袜哥
 
@@ -246,9 +246,9 @@ controller的返回前端使用`ResultModel`类进行封装，里面有`code`，
 
    两个配置类：
 
-   com.zhirui.lmwy.common.swagger.SwaggerConfiguration
+   com.zhirui.lmwy.mgr.swagger.SwaggerConfiguration
 
-   com.zhirui.lmwy.common.swagger.SwaggerProperties
+   com.zhirui.lmwy.mgr.swagger.SwaggerProperties
 
 3. 设置自定义显示参数
 
@@ -279,6 +279,38 @@ swagger:
    * <http://localhost:8080/docs>
 
      通过controller 重定向后的访问方式
+     
+     > swagger在2.9.2可能会报错如下：
+     > ```shell
+     > Illegal DefaultValue null for parameter type integer
+     > ```
+     >
+     > 根据上面这句报错信息，点进去AbstractSerializableParameter.java:412可以看到
+     >
+     > ```java
+     > if(BaseIntegerProperty.TYPE.equals(type)){
+     >     return Long.valueOf(example);
+     > }
+     > ```
+     >
+     > 就是说如果实体属性类型是Integer，就把example转为Long类型，而example默认为"",导致转换错误。
+     >
+     > **解决办法**
+     >
+     > 方法一：
+     > 实体类中，Integer类型的属性加@ApiModelProperty时，必须要给example参数赋值，且值必须为数字类型。
+     >
+     > ``` java
+     > `@ApiModelProperty(value = ``"试卷ID"``,example = ``"1"``)``private` `int` `pageId;`
+     > ```
+     >
+     > 方法二：
+     >
+     > 将版本改成2.8.0
+     >
+     > ```
+     > `<!--swagger依赖-->` `<dependency>` `    ``<groupId>io.springfox</groupId>` `    ``<artifactId>springfox-swagger2</artifactId>` `    ``<version>2.9.2</version>` `  ``<exclusions>` `      ``<exclusion>` `        ``<groupId>io.swagger</groupId>` `        ``<artifactId>swagger-annotations</artifactId>` `      ``</exclusion>` `      ``<exclusion>` `        ``<groupId>io.swagger</groupId>` `        ``<artifactId>swagger-models</artifactId>` `      ``</exclusion>` `  ``</exclusions>` `</dependency>` `<!--解决进入swagger页面报类型转换错误，排除2.9.2中的引用，手动增加1.5.21版本-->` `<dependency>` `  ``<groupId>io.swagger</groupId>` `  ``<artifactId>swagger-annotations</artifactId>` `  ``<version>1.5.21</version>` `</dependency>` `<dependency>` `  ``<groupId>io.swagger</groupId>` `  ``<artifactId>swagger-models</artifactId>` `  ``<version>1.5.21</version>` `</dependency>`
+     > ```
 
 ### 集成 mybatis-plus（下文中称为MP）
 
@@ -410,15 +442,15 @@ spring:
 
    * 定义redis的RedisTemplate
 
-     > 详见：com.zhirui.lmwy.common.redis.RedisTemplateConfig
+     > 详见：com.zhirui.lmwy.mgr.redis.RedisTemplateConfig
 
    * 开启springcache
 
-     >  详见：com.zhirui.lmwy.common.redis.RedisCacheConfig
+     >  详见：com.zhirui.lmwy.mgr.redis.RedisCacheConfig
 
    * redis工具类
 
-     > 详见：com.zhirui.lmwy.common.redis.RedisUtils
+     > 详见：com.zhirui.lmwy.mgr.redis.RedisUtils
 
 ### 集成 JWT
 

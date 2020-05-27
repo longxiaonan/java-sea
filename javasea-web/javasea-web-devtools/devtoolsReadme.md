@@ -1,5 +1,11 @@
 ## <center>热部署</center>
+
 ### 在idea中，修改后，需要关闭编辑的文件，才能自动重启
+
+
+
+![1587348372742](media/1587348372742.png)
+
 ### 设置配置文件
 application.properties或application.yml中禁用缓存
 

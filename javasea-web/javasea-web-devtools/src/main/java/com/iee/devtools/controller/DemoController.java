@@ -16,7 +16,7 @@ public class DemoController {
 
     @GetMapping("/test")
     public void test() {
-        System.out.println("sssdf000");
+        System.out.println("sssdf11112222");
     }
 
     @GetMapping("/test2")

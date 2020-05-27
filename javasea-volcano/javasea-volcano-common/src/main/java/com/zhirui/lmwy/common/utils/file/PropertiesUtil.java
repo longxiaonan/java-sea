@@ -84,7 +84,7 @@ public class PropertiesUtil {
 	 */
 	public static void main(String[] args) throws Exception {
 
-		System.out.println(getProperties("E:\\project\\vdp-cloud3\\vdp-common\\aa.init"));
+		System.out.println(getProperties("E:\\project\\vdp-cloud3\\vdp-mgr\\aa.init"));
 	}
 
 }

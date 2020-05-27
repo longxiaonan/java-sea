@@ -46,4 +46,9 @@ public class SysLogServiceImpl extends BaseServiceImpl<SysLogMapper, SysLog> imp
         return new Paging(iPage);
     }
 
+    @Override
+    public void testProcedure(String _tenantId) {
+        this.sysLogMapper.testProcedure(_tenantId);
+    }
+
 }

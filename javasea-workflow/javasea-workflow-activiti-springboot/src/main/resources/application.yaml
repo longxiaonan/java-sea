@@ -1,10 +1,12 @@
+server:
+  port: 8277
 spring:
   activiti:
     history-level: full
     db-history-used: true
   ######  sql数据源相关配置 ######
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/activiti?serverTimezone=GMT%2B8
+    url: jdbc:mysql://127.0.0.1:3306/activiti_lxn?serverTimezone=GMT%2B8
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
@@ -60,10 +62,6 @@ pagehelper:
     supportMethodsArguments: true
     params: count=countSql
 ##################### mybatis 相关配置 ###### end ###################
-
-
-server:
-  port: 8080
 
 logging:
   level:

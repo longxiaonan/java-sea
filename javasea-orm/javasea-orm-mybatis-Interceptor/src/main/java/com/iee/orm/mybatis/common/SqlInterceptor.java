@@ -39,7 +39,9 @@ public class SqlInterceptor implements Interceptor {
             return invocation.proceed();
         }
         // 拼接sql执行
-        getSqlByInvocation(metaObject, invocation);
+        String targetSql = getSqlByInvocation(metaObject, invocation);
+        //重新设置sql
+        metaObject.setValue(PluginUtils.DELEGATE_BOUNDSQL_SQL, targetSql);
         return invocation.proceed();
     }
 

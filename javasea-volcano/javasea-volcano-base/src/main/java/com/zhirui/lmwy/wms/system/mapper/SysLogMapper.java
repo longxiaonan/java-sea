@@ -37,4 +37,10 @@ public interface SysLogMapper extends BaseMapper<SysLog> {
      */
     IPage<SysLogQueryVo> getSysLogPageList(@Param("page") Page page, @Param("param") SysLogQueryParam sysLogQueryParam);
 
+    /**
+     * 测试存储过程
+     *
+     * @param _tenantId
+     */
+    void testProcedure(String _tenantId);
 }

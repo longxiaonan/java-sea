@@ -9,23 +9,6 @@ import java.io.IOException;
 @RequestMapping("/checkcenter")
 public class CheckCenterController {
 
-//    @GetMapping("/socket/{cid}")
-//    public String  socket(@PathVariable String cid) {
-//        String a = "aaas";
-//        return a;
-//    }
-
-    /**
-     * 页面请求
-     * @param cid
-     * @return
-     */
-    @GetMapping("/socket/{cid}")
-    public ModelAndView socket(@PathVariable String cid) {
-        ModelAndView mav=new ModelAndView("/socket");
-        mav.addObject("cid", cid);
-        return mav;
-    }
     /**
      * 推送数据接口
      * @param cid

@@ -33,6 +33,7 @@ import java.util.Date;
  * @date 2018-11-08
  */
 public class JacksonDateSerializer extends JsonSerializer<Date> {
+
     @Override
     public void serialize(Date date, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException, JsonProcessingException {
         if (date != null){

@@ -21,8 +21,17 @@ public class SwaggerProperties {
     private String protocol;
     private String basePackage;
     private String title;
+    private boolean enable;
     private String version;
     private String description;
+
+    public boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(boolean enable) {
+        this.enable = enable;
+    }
 
     public String getProtocol() {
         return protocol;

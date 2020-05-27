@@ -18,7 +18,10 @@ public class ActivitiTest extends BaseTest {
     @Autowired
     StandaloneProcessEngineConfiguration standaloneProcessEngineConfiguration;
 
-    /** 生成表：生成25张表 */
+    /** 生成表：生成25张表
+     * DROP DATABASE `activiti_lxn`;
+     * CREATE DATABASE `activiti_lxn`;
+     * */
     @Test
     public void testGenTable(){
         ProcessEngine processEngine = standaloneProcessEngineConfiguration.buildProcessEngine();

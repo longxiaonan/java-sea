@@ -72,7 +72,6 @@ public class JacksonConfig implements WebMvcConfigurer {
 
         jackson2HttpMessageConverter.setSupportedMediaTypes(mediaTypes);
 
-
         ObjectMapper objectMapper = jackson2HttpMessageConverter.getObjectMapper();
         objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
         objectMapper.disable(DeserializationFeature.ADJUST_DATES_TO_CONTEXT_TIME_ZONE);

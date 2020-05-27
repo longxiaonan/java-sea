@@ -87,5 +87,11 @@ public class SysLogController extends BaseController {
         return ResultModel.ok(paging);
     }
 
+    @GetMapping("/testp/{tenantId}")
+    public boolean test(@PathVariable String tenantId){
+        this.sysLogService.testProcedure(tenantId);
+        return false;
+    }
+
 }
 

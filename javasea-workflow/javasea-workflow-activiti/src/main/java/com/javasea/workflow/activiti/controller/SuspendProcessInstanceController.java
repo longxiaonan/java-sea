@@ -57,7 +57,9 @@ public class SuspendProcessInstanceController {
 
     }
 
-    /** 单个启动或者暂停 实例， 当对单个实例审批操作的时候使用 */
+    /** 单个启动或者暂停 实例， 当对单个实例审批操作的时候使用
+     * 如果在挂起的情况下，去complate会抛异常ActivitiException， 提示为 Cannot complate a suspended task
+     * */
     @GetMapping("/suspendProcessOneInstance")
     public void suspendProcessOneInstance() {
         //1.得到processEngine

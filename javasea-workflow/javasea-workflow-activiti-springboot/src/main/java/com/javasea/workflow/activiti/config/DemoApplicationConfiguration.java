@@ -20,6 +20,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/** 配置类 */
 @Configuration
 @EnableWebSecurity
 public class DemoApplicationConfiguration extends WebSecurityConfigurerAdapter {

@@ -36,7 +36,7 @@ public class FileUpload2LocalController {
         System.out.println(file.getName());
         System.out.println(file.getSize());
 
-        File localFile = new File(filePath, new Date().getTime()+file.getOriginalFilename());
+        File localFile = new File(filePath, System.currentTimeMillis()+file.getOriginalFilename());
 
         file.transferTo(localFile);
         return localFile.getAbsolutePath();

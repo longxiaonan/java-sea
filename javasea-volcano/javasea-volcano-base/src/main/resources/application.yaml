@@ -1,4 +1,4 @@
-# common config
+# mgr config
 server:
   port: 8080
   servlet:
@@ -42,7 +42,7 @@ custom:
 
 
 business:
-  tenant-id: b45551e5f8de4efc800e3677ef68cb39
+  tenant-id: a1
 
 #eureka:
 #  instance:
@@ -64,7 +64,6 @@ spring:
     location: classpath:config/banner.txt
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/my?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
-#    url: jdbc:mysql://192.168.1.230:3306/lmwy2?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver  #com.mysql.jdbc.Driver
@@ -89,7 +88,7 @@ mybatis-plus:
 
 # 丝袜哥的配置，访问地址为：`ip:port/swagger-ui.html`
 swagger:
-  #  open: true              #是否开启swagger,在生产环境下需要关闭
+  enable: true              #是否开启swagger,在生产环境下需要关闭(false)
   protocol: http          #协议，http或https
   base-package: com.zhirui.lmwy.wms   #一定要写对，会在这个路径下扫描controller定义
   title: volcano-base项目

@@ -32,6 +32,14 @@ public class TestListMap2 {
                 );
         System.out.println(result);
 
+        Map<String, Integer> summingInt =
+                list.stream().collect(
+                        Collectors.groupingBy(
+                                Student::getName, Collectors.summingInt(Student::getAge)
+                        )
+                );
+        System.out.println("summingInt>>>" + summingInt);
+
         Map<String, List<Student>> result2 =
                 list.stream().collect(
                         Collectors.groupingBy(x -> x.getName())

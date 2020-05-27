@@ -1,0 +1,11 @@
+spring:
+  servlet:
+    multipart:
+      maxFileSize: 100MB
+      maxRequestSize: 100MB
+
+
+file:
+  template: E:/tmp/template/
+  temp: E:/tmp/temp
+  outFold: E:/tmp/outFold

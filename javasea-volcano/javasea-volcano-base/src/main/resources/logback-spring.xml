@@ -75,11 +75,11 @@
         <logger name="com.zhirui.lmwy.wms" level="DEBUG"/>
     </springProfile>
 
-    <root level="DEBUG">
+    <root level="INFO">
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="ASYNC" />
     </root>
 
-    <logger name="com.zhirui.lmwy.wms" level="DEBUG" />
+    <logger name="com.zhirui.lmwy.wms" level="INFO" />
 
 </configuration>

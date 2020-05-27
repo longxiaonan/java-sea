@@ -1,0 +1,19 @@
+spring:
+  rabbitmq:
+    host: 192.168.1.234
+    port: 5672
+    username: admin
+    password: admin
+    publisherConfirms: true #是否开启发布确认，如果开启，那么生产者发布成功到队列后会通过MsgSendConfirmCallBack进行回调
+    virtualHost: /
+    #"transferQ: topic.scdata.SC.VLR_EVENT"我们定义为队列转发规则
+    #格式为:"exchange类型.数据类型.生产者.消费者", "数据类型"作为exchange, "生产者.消费者"作为routeKey,  整个作为queue名称
+    #冒号前面的"dataUpdateQ"用于队列的发送端, 在队列的发送端, 通过调用"Producers"类的send()方法时指定, 指定后,就确定了队列的转发规则"topic.scdata.SC.VLR_EVENT"
+    queueNames:
+      dataUpdateQ: topic.scdata.sc.vlr
+      eventCalculateQ: topic.rtinfo.sc.event
+      transferQ: topic.scdata.SC.VLR_EVENT
+      transferObjQ: topic.scdata.SC.Obj
+logging:
+  level:
+    tomcat: TRACE

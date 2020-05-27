@@ -66,6 +66,6 @@ public interface CommonConstant {
 
     String ADMIN_LOGIN = "adminLogin";
 
-    String COMMON_PACKAGE = "com.zhirui.lmwy.common";
+    String COMMON_PACKAGE = "com.zhirui.lmwy.mgr";
 
 }

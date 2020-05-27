@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件预览测试</title>
+    <h2>github地址：github.com/longxiaonan</h2>
+</head>
+<body>
+    <h1>CHOOSE</h1>
+    <br/>
+    <p>word doc测试数据</p><button id="show1">点击预览</button>
+    <p>word docx测试数据</p><button id="show2">点击预览</button>
+    <p>pdf 测试数据</p><button id="show3">点击预览</button>
+    <p>word doc to pdf 测试数据</p><button id="show4">点击预览</button>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $("#show1").click(function(){
+            window.open("http://localhost:8080/test/read/"+"server.doc");
+        });
+        $("#show2").click(function(){
+            window.open("http://localhost:8080/test/read/"+"server.docx");
+        });
+        $("#show3").click(function(){
+            window.open("http://localhost:8080/test/read/"+"server.pdf");
+        });
+        $("#show4").click(function(){
+            window.open("http://localhost:8080/test/convert/"+"a.doc");
+        });
+    </script>
+</body>
+</html>

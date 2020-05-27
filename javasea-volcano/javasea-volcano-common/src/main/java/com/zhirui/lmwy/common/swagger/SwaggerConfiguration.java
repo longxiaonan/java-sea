@@ -43,7 +43,7 @@ public class SwaggerConfiguration {
                 .build()
                 //配置下面两个后在swagger中的右边就会多出一个Authorize的按钮
                 .securitySchemes(securitySchemes())
-                .securityContexts(securityContexts());
+                .securityContexts(securityContexts()); //.enable(swaggerProperties.isEnable())
     }
 
     /**

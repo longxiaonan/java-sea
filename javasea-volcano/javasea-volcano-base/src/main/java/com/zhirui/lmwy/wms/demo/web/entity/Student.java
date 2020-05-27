@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Id;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -18,6 +19,7 @@ import java.util.Date;
 @Data
 //@Builder
 @ApiModel
+@Accessors(chain = true)
 public class Student implements Serializable {
 
     private Integer id;

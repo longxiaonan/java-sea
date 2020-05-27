@@ -4,4 +4,5 @@ spring:
       maxFileSize: 100Mb
       maxRequestSize: 100Mb
 
-filePath: E:/tmp
+filePath: E:/tmp/
+filePathTemp: D:/wms/temp2/

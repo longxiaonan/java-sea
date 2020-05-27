@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>bpmn-js-properties-panel extension demo</title>
+
+  <link rel="stylesheet" href="css/diagram-js.css" />
+  <link rel="stylesheet" href="vendor/bpmn-font/css/bpmn-embedded.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <div class="content" id="js-drop-zone">
+
+    <div class="message intro">
+      <div class="note">
+        <b>拖拽 BPMN 流程图文件到这里</b> 或者 <b><a id="js-create-diagram" href>在线创建一个流程图</a></b>.
+      </div>
+    </div>
+
+    <div class="message error">
+      <div class="note">
+        <p>Ooops, we could not display the BPMN 2.0 diagram.</p>
+
+        <div class="details">
+          <span>cause of the problem</span>
+          <pre></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="canvas" id="js-canvas"></div>
+    <div id="js-properties-panel"></div>
+  </div>
+
+  <ul class="buttons">
+    <li  style="color: red;">
+      <b>下载</b>
+    </li>
+    <li>
+      <a id="js-download-diagram" href title="下载 BPMN 文件">
+        BPMN 文件
+      </a>
+    </li>
+    <li>
+      <a id="js-download-svg" href title="下载 SVG 矢量图">
+        SVG 图片
+      </a>
+    </li>
+    <li><b>温馨提醒：在线绘图功能仅供参考，更多流程图功能请使用专业软件（如：Eclipse 插件 Activiti Designer）绘制。</b></li>
+  </ul>
+
+  <script src="index.js"></script>
+</html>
