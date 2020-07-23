@@ -24,41 +24,46 @@ import java.util.List;
 
 public class ActivitiTest extends BaseTest {
 
+    //activiti7新api 实现流程定义相关操作
     @Autowired
-    private ProcessRuntime processRuntime; //实现流程定义相关操作
+    private ProcessRuntime processRuntime;
 
+    //activiti7新api 任务相关操作
     @Autowired
-    private TaskRuntime taskRuntime; //任务相关操作
+    private TaskRuntime taskRuntime;
 
+    //springsecurity相关的工具类
     @Autowired
-    private SecurityUtil securityUtil; //springsecurity相关的工具类
+    private SecurityUtil securityUtil;
 
     /**
-     * 流程部署
+     * bpm放置到resources/processes就会自动部署
      **/
     @Test
     public void testDefinition(){
-        securityUtil.logInAs("salaboy");
+        securityUtil.logInAs("zhangsan");
+        // 分页查询流程定义信息
         Page<ProcessDefinition> processDefinition = processRuntime.processDefinitions(Pageable.of(0, 10));
+        // 查看部署的流程数
         int totalItems = processDefinition.getTotalItems();
-        System.out.println(totalItems);
+        System.out.println("流程定义的个数" + totalItems);
+        // 得到当前部署的每一个流程定义信息
         List<ProcessDefinition> content = processDefinition.getContent();
         content.forEach((a) -> {
-            System.out.println(a);
+            System.out.println("流程定义" + a);
         });
     }
 
     /** 启动流程实例 */
     @Test
     public void testStartInstance(){
-        securityUtil.logInAs("salaboy");
+        securityUtil.logInAs("zhangsan");
 
         ProcessInstance processInstance = processRuntime
                 .start(ProcessPayloadBuilder
                         .start()
                         .withProcessDefinitionKey("myProcess_1")
                         .build());
-
     }
 
     /**

@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 /**
  * TODO
  *
- * @author ck
  */
 @Configuration
 public class BeanTools implements ApplicationContextAware {

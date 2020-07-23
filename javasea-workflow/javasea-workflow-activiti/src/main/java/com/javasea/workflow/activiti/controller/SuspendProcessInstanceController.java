@@ -44,6 +44,7 @@ public class SuspendProcessInstanceController {
 //                .list();
         //是否被暂停， true：是，false：否
         boolean suspended = holiday.isSuspended();
+        // ProcessDefinitionId 就是 `act_re_procdef`表的id
         String instId = holiday.getId();
         if(suspended){
             //激活指定部署id的全部实例，参数1：流程定义id，参数2：是否激活，参数3，激活时间点

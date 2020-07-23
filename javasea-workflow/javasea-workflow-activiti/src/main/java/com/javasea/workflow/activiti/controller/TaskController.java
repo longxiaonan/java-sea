@@ -106,7 +106,6 @@ public class TaskController {
 //            taskService.claim(taskId, "zhangsan");
             //组任务时，给某个用户领取任务后，想要退回, 直接设置assignee为null就可以了。如果交接给别的候选人，那么用别的候选人(如lisi)替换掉null即可
 //            taskService.setAssignee(taskId, null);
-
             Map<String,Object> map = new HashMap<>();
             Holiday holiday = new Holiday();
             holiday.setNum(1F);
@@ -123,7 +122,6 @@ public class TaskController {
 
             //5.通过流程实例id得到流程实例对象。查询的表是act_hi_procinst
             ProcessInstance processInstance = runtimeService.createProcessInstanceQuery().processInstanceId(processInstanceId).singleResult();
-
             //6.通过流程实例对象得到BusinessKey
             String businessKey = processInstance.getBusinessKey();
 

@@ -43,6 +43,8 @@ public class ProcessDefinitionController {
         RepositoryService repositoryService = processEngine.getRepositoryService();
         //3.进行部署
         Deployment deploy = repositoryService.createDeployment()
+//                .addBytes("fileName", file.getBytes()) // 如果是上传的MultipartFile等，可以通过该方式进行部署
+//                .tenantId("tenantId")   // 添加租户id
                 .addClasspathResource("diagram/holiday-exclusive.bpmn")//添加bpmn资源
 //                .addClasspathResource("diagram/holiday4.png") //添加png资源
                 .name("请假流程-流程变量")//部署的名字
@@ -95,6 +97,9 @@ public class ProcessDefinitionController {
 //        processDefinitionQuery.processDefinitionKey("");
         //返回结果：比如请教流程修改了三次，那么list的size就是3
 //        processDefinitionQuery.listPage();
+//        processDefinitionQuery.processDefinitionTenantId("众科建筑");
+        // 查询出最新版本的定义列表
+//        processDefinitionQuery.latestVersion().list();
         List<ProcessDefinition> holidayList = processDefinitionQuery.processDefinitionKey("holiday")
                 .orderByProcessDefinitionVersion()   //设置排序方式，根据流程定义的版本号进行排序
                 .desc()
@@ -137,7 +142,6 @@ public class ProcessDefinitionController {
 
         //得到ProcessDefinitionQuery对象,可以认为就是一个查询器
         ProcessDefinitionQuery processDefinitionQuery = repositoryService.createProcessDefinitionQuery();
-
         //4.设置查询参数，查询出定义的流程，流程定义的部署id， id在act_re_deployment
         List<ProcessDefinition> holidayList = processDefinitionQuery.processDefinitionKey("holiday")
                 .orderByProcessDefinitionVersion()   //设置排序方式，根据流程定义的版本号进行排序

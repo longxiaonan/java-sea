@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
 /**
- * @Description 排除掉去扫描 yml配置文件，因为是自己配置的，无需再去扫描
+ * @Description 排除掉去扫描 Security配置，那样就在controller中无需去配置security执行登陆了
  * @Author longxiaonan@163.com
  * @Date 22:03 2019/9/19 0019
  **/

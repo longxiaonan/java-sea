@@ -23,6 +23,12 @@ Candidate-user：设置候选用户，格式：wangwu,zhangsan,zhaoliu
 
 Candidate-Groups：特点，不需要知道具体的用户信息，只需要知道组名就可以了
 
+组名需要对应组信息
+
+![1590545547489](media/1590545547489.png)
+
+![1590545608747](media/1590545608747.png)
+
 ### 使用新的类来实现工作流开发
 
 ### 使用新的API实现工作流开发，主要包括
@@ -37,3 +43,18 @@ Candidate-Groups：特点，不需要知道具体的用户信息，只需要知�
 ### ProcessRuntime
 
 ### TaskRuntime
+
+## 测试
+
+### 部署和查看
+
+com.javasea.workflow.activiti.ActivitiTest#testDefinition
+
+### 启动流程实例
+
+com.javasea.workflow.activiti.ActivitiTest#testStartInstance
+
+### 查询任务，并且完成任务
+
+com.javasea.workflow.activiti.ActivitiTest#testTask
+
