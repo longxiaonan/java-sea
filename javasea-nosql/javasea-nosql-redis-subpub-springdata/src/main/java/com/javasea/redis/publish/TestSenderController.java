@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 /**
  * 定时器模拟消息发布者
  */
-//@EnableScheduling
-//@Component
+@EnableScheduling
+@Component
 public class TestSenderController {
     @Autowired
         private StringRedisTemplate stringRedisTemplate;
