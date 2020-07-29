@@ -22,7 +22,6 @@ public class RedisConfig2{
      */
     @Bean
     RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory) {
-
         RedisMessageListenerContainer container = new RedisMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
         //订阅了一个叫pmp和channel 的通道，多通道
@@ -35,8 +34,6 @@ public class RedisConfig2{
 
     /**
      * 配置消息接收处理类
-     *
-     *
      * @param redisMsg  自定义消息接收类
      * @return
      */
