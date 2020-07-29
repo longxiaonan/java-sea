@@ -16,10 +16,8 @@
         <module>javasea-nosql-redis-springdata</module>
         <module>javasea-nosql-mongodb</module>
         <module>javasea-nosql-elasticsearch</module>
-        <module>javasea-nosql-redis-jedis</module>
-        <module>javasea-nosql-redis-subscription</module>
         <module>javasea-nosql-zookeeper</module>
+        <module>javasea-nosql-redis-springdata</module>
     </modules>
-
 
 </project>
