@@ -22,6 +22,7 @@
         <module>javasea-orm-mybatisgenerator-pomplugin</module>
         <module>javasea-orm-springdata-multidatasource</module>
         <module>javasea-orm-mybatis-Interceptor</module>
+        <module>javasea-orm-generateDoc</module>
     </modules>
 
 </project>

@@ -1,7 +1,6 @@
-package com.iee.redis.service;
+package com.javasea.redis.service;
 
-import com.iee.redis.entity.Person;
-import com.iee.redis.entity.User;
+import com.javasea.redis.entity.Person;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;

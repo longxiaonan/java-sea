@@ -1,7 +1,7 @@
-package com.iee.redis.controller;
+package com.javasea.redis.controller;
 
-import com.iee.redis.entity.User;
-import com.iee.redis.utils.RedisUtil;
+import com.javasea.redis.entity.User;
+import com.javasea.redis.utils.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.SetOperations;
@@ -61,5 +61,12 @@ public class TestRedisController {
 		System.out.println(redisUtil.hset("bbb","b111",user));
 		String aa = (String)redisUtil.get("aaa");
 		System.out.println(redisUtil.hget("bbb","b111"));
+	}
+
+	@GetMapping("/testRemove")
+	public void testRemove(){
+    	for(int i = 0; i <= 140; i++) {
+			redisUtil.del("xiao"+i);
+		}
 	}
 }

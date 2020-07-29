@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.ibatis.annotations.Insert;
 
+import javax.validation.GroupSequence;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 

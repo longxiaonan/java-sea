@@ -25,6 +25,7 @@
         <module>javasea-web-aspect</module>
         <module>javasea-web-config</module>
         <module>javasea-web-websocket</module>
+        <module>javasea-web-springevent</module>
     </modules>
 
 

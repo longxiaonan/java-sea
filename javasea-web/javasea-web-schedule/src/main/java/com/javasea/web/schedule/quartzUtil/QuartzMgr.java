@@ -1,11 +1,17 @@
-package com.zhirui.lmwy.common.utils;
+package com.javasea.web.schedule.quartzUtil;
 
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
+import org.quartz.impl.matchers.GroupMatcher;
+import org.quartz.impl.triggers.CronTriggerImpl;
+import org.springframework.util.StringUtils;
 
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -57,7 +63,7 @@ public class QuartzMgr {
 	public void addSimpleJob(String jobname, Class<? extends Job> jobClass, IntervalMode intervalMode, int value,
 			boolean isStartNow) throws SchedulerException {
 
-		if (org.apache.commons.lang3.StringUtils.isBlank(jobname) || jobClass == null) {
+		if (StringUtils.isEmpty(jobname) || jobClass == null) {
 			return;
 		}
 
@@ -112,7 +118,7 @@ public class QuartzMgr {
 	 */
 	public void addCronJob(String jobname,Class<? extends Job> jobClass,String cronExpression) throws SchedulerException {
 
-		if(StringUtils.isBlank(jobname) || jobClass == null || StringUtils.isBlank(cronExpression) ) {
+		if(StringUtils.isEmpty(jobname) || jobClass == null || StringUtils.isEmpty(cronExpression) ) {
 			return;
 		}
 
@@ -138,7 +144,7 @@ public class QuartzMgr {
 	 */
 	public void removeJob(String jobname) throws SchedulerException {
 
-		if(StringUtils.isBlank(jobname)){
+		if(StringUtils.isEmpty(jobname)){
 			return;
 		}
 
@@ -155,6 +161,28 @@ public class QuartzMgr {
 
 	}
 
+	/** 获取cron模式下的jobtrigger */
+	public List<CronTriggerImpl> getJobList() throws SchedulerException {
+
+		Scheduler scheduler =  SF.getScheduler();
+		Set<JobKey> jobKeySet = scheduler.getJobKeys(GroupMatcher.anyGroup());
+		Set<TriggerKey> triggerKeys = scheduler.getTriggerKeys(GroupMatcher.anyGroup());
+		List<CronTriggerImpl> triggerList = new ArrayList<>();
+		triggerKeys.forEach(a -> {
+			System.out.println(a.getName());
+			try {
+				Trigger trigger = scheduler.getTrigger(a);
+				if (trigger instanceof CronTriggerImpl) {
+					CronTriggerImpl cronTrigger = (CronTriggerImpl)scheduler.getTrigger(a);
+					triggerList.add(cronTrigger);
+				}
+			} catch (SchedulerException e) {
+				log.error("",e);
+			}
+		});
+		return triggerList;
+	}
+
 
 	/**
 	 * 修改某个job的cron设置的时间
@@ -165,7 +193,7 @@ public class QuartzMgr {
 	 */
 	public void modifyJobTime(String jobname,String time) throws SchedulerException, ParseException {
 
-		if(StringUtils.isBlank(jobname) || StringUtils.isBlank(time)){
+		if(StringUtils.isEmpty(jobname) || StringUtils.isEmpty(time)){
 			return;
 		}
 
@@ -185,11 +213,17 @@ public class QuartzMgr {
 //		QuartzMgr.getInstance().addSimpleJob("a",QuartzMgr.TestJob.class, IntervalMode.Seconds, 2, false);
 		//添加cron任务
 		QuartzMgr.getInstance().addCronJob("b", QuartzMgr.TestJob.class, "* * * * * ?");
-		Thread.sleep(10_000);
+		Thread.sleep(3000);
+
+//		QuartzMgr.getInstance().addCronJob("c", QuartzMgr.TestJob.class, "* * * * * ?");
+//		Thread.sleep(3000);
 		//修改cron任务
 		QuartzMgr.getInstance().modifyJobTime("b", "0/3 * * * * ? ");
-		Thread.sleep(10_000);
+
+		QuartzMgr.getInstance().getJobList();
+
 		QuartzMgr.getInstance().removeJob("b");
+		QuartzMgr.getInstance().getJobList();
 	}
 
 

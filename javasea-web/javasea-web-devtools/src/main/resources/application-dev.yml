@@ -6,12 +6,14 @@ spring:
     username: root
     schema: classpath:db/schema.sql
     data: classpath:db/data.sql
+  # springboot 2.3.0后可以不用手动下面这些配置，会自动默认
   devtools:
     livereload:
       enabled: true #是否支持livereload
       port: 2000
     restart:
       enabled: true #是否支持热部署
+      additional-paths: src/main/java  # 额外新增的热加载目录
       exclude: static/**,templates/**
       include:
         mapper: /mapper-[\\w-\\.]+jar

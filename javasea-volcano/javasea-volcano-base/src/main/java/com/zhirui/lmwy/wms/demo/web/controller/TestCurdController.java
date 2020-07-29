@@ -41,7 +41,7 @@ public class TestCurdController {
 
     @GetMapping("/users")
     @ApiOperation(value = "按照条件分页查询")
-    public ResultModel getAccount(@RequestParam @Valid User user) { //如果是需要安装User实体的校验注解进行校验，那么需要在controller添加@Validated
+    public ResultModel getAccount(@RequestParam @Valid User user) { //如果是需要按照User实体的校验注解进行校验，那么需要在controller添加@Validated
         IPage<User> pageList = userService.lambdaQuery().like(User::getUsername, "long").page(new Page<>(1, 2));
         return ResultModel.ok(pageList);
     }

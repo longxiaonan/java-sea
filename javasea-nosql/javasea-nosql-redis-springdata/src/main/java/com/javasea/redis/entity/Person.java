@@ -1,4 +1,4 @@
-package com.iee.redis.entity;
+package com.javasea.redis.entity;
 
 import java.io.Serializable;
 

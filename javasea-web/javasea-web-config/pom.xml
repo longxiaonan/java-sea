@@ -31,7 +31,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.javasea.web.config.APPlication</mainClass>
+                    <mainClass>com.javasea.web.config.event.APPlication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

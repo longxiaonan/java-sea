@@ -1,7 +1,7 @@
-package com.iee.redis.controller;
+package com.javasea.redis.controller;
 
-import com.iee.redis.entity.Person;
-import com.iee.redis.service.TestCacheService;
+import com.javasea.redis.entity.Person;
+import com.javasea.redis.service.TestCacheService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

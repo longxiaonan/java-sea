@@ -1,0 +1,7 @@
+### 通过流程分类获取部署的流程信息
+GET {{baseUrl}}/sendMsg?category=原材料采购&orderCode=CG0001&flowId=288592001&state=2
+Accept: */*
+Cache-Control: no-cache
+Authorization: {{auth}}
+
+###

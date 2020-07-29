@@ -14,14 +14,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoController {
 
+    private Integer i = 0;
+
     @GetMapping("/test")
     public void test() {
-        System.out.println("sssdf11112222");
+        System.out.println(i ++ );
+    }
+
+    public void test3() {
+        String path = "1.txt";
+
+
     }
 
     @GetMapping("/test2")
     public void test2() {
-        System.out.println("aab22bbcccc");
+        System.out.println("bbbbbb");
     }
 
 }

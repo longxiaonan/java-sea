@@ -1,4 +1,4 @@
-package com.iee.redis.config;
+package com.javasea.redis.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
@@ -22,7 +22,6 @@ import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
-import org.springframework.util.StringUtils;
 import redis.clients.jedis.JedisPoolConfig;
 
 import java.lang.reflect.Method;
@@ -36,9 +35,7 @@ public class RedisConfig extends CachingConfigurerSupport {
     @Autowired
     private RedisProperties redisProperties;
 
-    /**
-     * 配置application.yaml下spring.redis.jedis.pool参数,如max-idle等
-     **/
+
     @Bean
     public JedisPoolConfig jedisPoolConfig() {
         RedisProperties.Pool pool = redisProperties.getJedis().getPool();
@@ -56,7 +53,7 @@ public class RedisConfig extends CachingConfigurerSupport {
      * application.yaml关闭redis的自动配置功能，需要手动创建bean
      */
     @Bean
-    public JedisConnectionFactory getJedisConnectionFactory(JedisPoolConfig jedisPoolConfig) {
+    public JedisConnectionFactory getJedisConnectionFactory() {
         JedisConnectionFactory jedisConnectionFactory = null;
         String password = redisProperties.getPassword();
 //		 集群模式或者单机模式都行
@@ -72,16 +69,13 @@ public class RedisConfig extends CachingConfigurerSupport {
         } else if (serverArray.length % 2 == 0) {//集群模式
             RedisClusterConfiguration clusterConfig = new
                     RedisClusterConfiguration(Arrays.asList(serverArray));
-//            if(!StringUtils.isEmpty(redisProperties.getPassword())){
             clusterConfig.setPassword(RedisPassword.of(password));
-//            }
-            jedisConnectionFactory = new JedisConnectionFactory(clusterConfig, jedisPoolConfig);
+            jedisConnectionFactory = new JedisConnectionFactory(clusterConfig, jedisPoolConfig());
         } else {//错误的节点数量
             throw new RuntimeException("错误的节点数量,无法创建连接");
         }
         //设置密码
         return jedisConnectionFactory;
-
     }
 
     /**
