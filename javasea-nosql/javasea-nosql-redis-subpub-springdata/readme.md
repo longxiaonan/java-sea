@@ -31,6 +31,7 @@ public class RedisChannelSub implements RedisMsg {
         System.out.println("这是RedisChannelSub"+"-----"+message);
     }
 }
+```
 ```java
 public class RedisPmpSub implements RedisMsg{
 
