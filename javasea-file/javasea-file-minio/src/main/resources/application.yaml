@@ -4,7 +4,7 @@ javasea:
       accessKey: root
       secretKey: longxiaonan
       bucketName: javasea
-      url: http://106.12.11.240:9000
+      url: http://localhost:9000
 spring:
   application:
     name: javasea-minio
