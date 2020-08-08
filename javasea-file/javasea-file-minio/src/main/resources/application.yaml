@@ -1,0 +1,20 @@
+javasea:
+  module:
+    minio:
+      accessKey: root
+      secretKey: longxiaonan
+      bucketName: javasea
+      url: http://106.12.11.240:9000
+spring:
+  application:
+    name: javasea-minio
+  jackson:
+    dateFormat: yyyy-MM-dd HH:mm:ss
+    generator:
+      writeNumbersAsStrings: true
+    timeZone: GMT+8
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
