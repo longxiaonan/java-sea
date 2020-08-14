@@ -2,7 +2,7 @@ package com.javasea.easyexcel.relase;
 
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelReader;
-import com.alibaba.excel.analysis.ExcelExecutor;
+import com.alibaba.excel.analysis.ExcelReadExecutor;
 import com.alibaba.excel.read.metadata.ReadSheet;
 import com.javasea.easyexcel.entity.Teacher;
 import com.javasea.easyexcel.relase.entity.ImportFile;
@@ -127,8 +127,8 @@ public class EasyExcelUtils {
     public static <T> void importExcel(InputStream inputStream, Class<T> tClass, Integer headRowNumber, Map<Integer, String> headNameMap, HandeSheetExecutor sheetExecutor) throws IOException {
         ExcelReader reader = EasyExcel.read(inputStream).build();
 
-        ExcelExecutor excelExecutor = reader.excelExecutor();
-        List<ReadSheet> readSheets = excelExecutor.sheetList();
+        ExcelReadExecutor excelReadExecutor = reader.excelExecutor();
+        List<ReadSheet> readSheets = excelReadExecutor.sheetList();
         if (null == headRowNumber) {
             headRowNumber = 1;
         }
@@ -176,7 +176,7 @@ public class EasyExcelUtils {
     private static List<ReadSheet> getReadSheets(MultipartFile file) {
         ExcelImportDataListener excelListener = new ExcelImportDataListener();
         ExcelReader reader = getReader(file, excelListener);
-        ExcelExecutor excelExecutor = reader.excelExecutor();
+        ExcelReadExecutor excelExecutor = reader.excelExecutor();
         List<ReadSheet> readSheets = excelExecutor.sheetList();
         return readSheets;
     }
