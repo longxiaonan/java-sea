@@ -1,0 +1,24 @@
+server:
+  port: 9998
+
+spring:
+  datasource:
+    #    type: com.alibaba.druid.pool.DruidDataSource
+    ### 可读数据源
+    select:
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/my
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: 123456
+
+    ### 可写数据源
+    update:
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/my1
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: 123456
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/**/*.xml
+  typeAliasesPackage: com.javasea.orm.rw.entity.*
