@@ -14,6 +14,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>javasea-cache-ehcache</module>
+        <module>javasea-cache-threadlocal</module>
     </modules>
 
 

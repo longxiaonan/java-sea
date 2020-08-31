@@ -18,6 +18,8 @@
         <module>javasea-nosql-elasticsearch</module>
         <module>javasea-nosql-zookeeper</module>
         <module>javasea-nosql-redis-springdata</module>
+        <module>javasea-nosql-redis-springdata2</module>
+        <module>javasea-nosql-redis-springdata2</module>
     </modules>
 
 </project>

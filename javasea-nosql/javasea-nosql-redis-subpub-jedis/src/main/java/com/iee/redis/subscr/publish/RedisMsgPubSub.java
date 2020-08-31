@@ -15,7 +15,9 @@ import java.util.Map;
  */
 public class RedisMsgPubSub extends JedisPubSub {
     private static Logger logger = LoggerFactory.getLogger(RedisMsgPubSub.class);
-    private Map<String , ICacheUpdate> updates = new HashMap<String , ICacheUpdate>();
+    private Map<String , ICacheUpdate> updates = new HashMap<>();
+
+
     //1、由updates统一管理ICacheUpdate
     public boolean addListener(String key , ICacheUpdate update) {
         if(update == null)

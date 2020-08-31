@@ -3,10 +3,7 @@ package com.iee.lambda.collectors.toMap;
 import com.google.common.collect.Lists;
 import com.iee.common.entity.Student;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class TestListMap2 {
@@ -23,6 +20,12 @@ public class TestListMap2 {
         list.add(new Student(6, "randomdemo2.com", 80000));
         list.add(new Student(7, "randomdemo2.com", 80000));
         list.add(new Student(8, "163.com", 100));
+
+
+        TreeSet<Student> set = list.stream().collect(Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(Student::getName))));
+        ArrayList<Student> distinctList = Lists.newArrayList();
+        distinctList.addAll(set);
+        System.out.println("distinctList>>>" + distinctList);
 
         Map<String, Map<Integer,Integer>> result =
                 list.stream().collect(

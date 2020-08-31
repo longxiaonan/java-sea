@@ -126,6 +126,8 @@ public class NumericUtils {
 		return sbd.toString();
 	}
 
+
+
 	public static String asciiStringToHexString(String s) {
 		int length = s.length();
 		byte[] bs = s.getBytes();
@@ -139,16 +141,19 @@ public class NumericUtils {
 	}
 
 	public static void main(String[] args) {
-		String vin = "LB9KB8KG9GENJL221";
-		String vinByteString = NumericUtils.hexStringToAsciiString("4C 42 39 4B 42 38 4B 47 39 47 45 4E 4A 4C 32 32 31");
-		String valueOf = Integer.toBinaryString(12);
 
-		byte[] hexStringToByteArray = hexStringToByteArray("23 23 01 1A");
-		System.out.println(hexStringToByteArray);
-		for (byte b : hexStringToByteArray) {
-			System.out.println(b);
-		}
-		System.out.println(valueOf);
+		byte[] aa = {12, 10, 8, 9, 15, 88};
+		System.out.println(byteArrayToHexString(aa));
+//		String vin = "LB9KB8KG9GENJL221";
+//		String vinByteString = NumericUtils.hexStringToAsciiString("4C 42 39 4B 42 38 4B 47 39 47 45 4E 4A 4C 32 32 31");
+//		String valueOf = Integer.toBinaryString(12);
+//
+//		byte[] hexStringToByteArray = hexStringToByteArray("23 23 01 1A");
+//		System.out.println(hexStringToByteArray);
+//		for (byte b : hexStringToByteArray) {
+//			System.out.println(b);
+//		}
+//		System.out.println(valueOf);
 	}
 
 	public static void generateAndReplaceLengthByte(byte[] b) {

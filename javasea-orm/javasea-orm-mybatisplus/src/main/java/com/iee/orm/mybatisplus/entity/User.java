@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 @Data
-@TableName("user")  //默认是实体类名，如果不一致必须指定，括号里面的表名
+@TableName("test_user")  //默认是实体类名，如果不一致必须指定，括号里面的表名
 public class User {
 
     //ALTER TABLE USER CHANGE COLUMN uid uid BIGINT(20) AUTO_INCREMENT

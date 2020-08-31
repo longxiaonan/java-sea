@@ -129,7 +129,7 @@ public class LambdaTest {
 	}
 
 	private static void setForEach() {
-		List<String> features = Arrays.asList("Lambdas", "Default Method", "Stream API", "Date and Time API");
+		List<String> features = Arrays.asList("Lambdas", "Default Method", "StreamCreate API", "Date and Time API");
 		Set<String> set = new HashSet<>();
 		set.addAll(features);
 		set.forEach(n -> System.out.println(n));
@@ -137,7 +137,7 @@ public class LambdaTest {
 
 	private static void listForEach() {
 		// Java 8之前：
-		List<String> features = Arrays.asList("Lambdas", "Default Method", "Stream API", "Date and Time API");
+		List<String> features = Arrays.asList("Lambdas", "Default Method", "StreamCreate API", "Date and Time API");
 		for (String feature : features) {
 			System.out.println(feature);
 		}

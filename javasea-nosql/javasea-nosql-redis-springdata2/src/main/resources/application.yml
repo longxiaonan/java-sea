@@ -1,0 +1,13 @@
+server:
+    port: 8001
+spring:
+    redis:
+      database: 7
+      host: 127.0.0.1
+      port: 6379
+      password: zhirui888
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+      timeout: 5000

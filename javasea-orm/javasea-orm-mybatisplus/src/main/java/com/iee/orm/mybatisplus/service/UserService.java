@@ -16,7 +16,7 @@ public interface UserService extends IService<User> {
     int updateUserByWrapper(User user);
 
     // 删
-    int deleteById(User user);
+    int deleteById(Long user);
 
     List<User> selectByMap();
 

@@ -55,9 +55,9 @@ public class UserContorller {
     }
 
     // 删
-    @PostMapping( value = "/delete")
-    public Object delete( @RequestBody User user ) {
-        return userService.deleteById( user );
+    @DeleteMapping( value = "/delete/{id}")
+    public Object delete( @PathVariable Long id ) {
+        return userService.deleteById( id );
     }
 
     // 查

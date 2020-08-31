@@ -14,6 +14,8 @@ public class PubSubManager extends Thread{
     RedisMsgPubSub msgPubSub = new RedisMsgPubSub();
     //频道
     public static final String PUNSUB_CONFIG = "pubsub_config";
+
+
     //1.将所有需要刷新加载的Service类（实现ICacheUpdate接口）添加到RedisMsgPubSub的updates中
     public boolean addListener(String key, ICacheUpdate listener){
         return msgPubSub.addListener(key,listener);

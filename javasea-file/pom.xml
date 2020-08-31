@@ -22,6 +22,7 @@
         <module>javasea-file-preview</module>
         <module>javasea-file-easyexcel</module>
         <module>javasea-file-easyexel</module>
+        <module>javasea-file-minio</module>
     </modules>
 
 

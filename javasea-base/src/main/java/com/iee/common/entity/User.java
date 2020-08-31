@@ -18,6 +18,10 @@ public class User {
 		super();
 	}
 
+	public User(String id) {
+		this.id = id;
+	}
+
 	public User(String name, int age) {
 		super();
 		this.name = name;

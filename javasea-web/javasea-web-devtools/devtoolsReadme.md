@@ -5,7 +5,7 @@
 
 相关设置：
 开启程序运行时编译
-
+操作： ctrl + shift + alt + /，选择Registry，勾选勾上 Compiler autoMake allow when app running
 ![1587348372742](media/1587348372742.png)
 
 取消选中，否则可能每敲一个字符都会去编译

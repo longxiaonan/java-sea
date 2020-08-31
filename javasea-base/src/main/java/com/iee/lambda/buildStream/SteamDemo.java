@@ -40,7 +40,7 @@ public class SteamDemo {
     }
 
     /** map() 方法接收的是一个 Function（Java 8 新增的一个函数式接口，接受一个输入参数 T，返回一个结果 R）类型的参数，
-     * 此时参数 为 String 类的 length 方法，也就是把 Stream<String> 的流转成一个 Stream<Integer> 的流。
+     * 此时参数 为 String 类的 length 方法，也就是把 StreamCreate<String> 的流转成一个 StreamCreate<Integer> 的流。
      */
     @Test
     public void test2(){

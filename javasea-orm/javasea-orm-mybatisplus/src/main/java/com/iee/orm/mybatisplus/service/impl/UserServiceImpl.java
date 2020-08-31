@@ -1,10 +1,8 @@
 package com.iee.orm.mybatisplus.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
@@ -60,8 +58,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     // 删
     @Override
-    public int deleteById(User user) {
-        return baseMapper.deleteById( 1L);
+    public int deleteById(Long id) {
+        return baseMapper.deleteById( id);
     }
 
     // 删

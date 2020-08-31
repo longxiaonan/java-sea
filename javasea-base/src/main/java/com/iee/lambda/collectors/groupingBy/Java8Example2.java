@@ -13,8 +13,8 @@ import java.util.stream.Collectors;
 
 public class Java8Example2 {
     public static void main(String[] args) {
-        test1();
-//        test2();
+//        test1();
+        test2();
     }
 
     private static void test2() {

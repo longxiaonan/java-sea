@@ -23,6 +23,7 @@
         <module>javasea-orm-springdata-multidatasource</module>
         <module>javasea-orm-mybatis-Interceptor</module>
         <module>javasea-orm-generateDoc</module>
+        <module>javasea-orm-RWSeparation</module>
     </modules>
 
 </project>
