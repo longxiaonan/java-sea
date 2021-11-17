@@ -1,4 +1,8 @@
 # JAVA SEA
+
+github经常访问不上，且速度慢，所以把项目迁移到gitee了，github这里不再维护：
+https://gitee.com/longxiaonan0505/java-sea
+
 ![img](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568022926280&di=f43efa6166ceae0fbea4e2166a7c7d33&imgtype=0&src=http%3A%2F%2Fimg0.yododo.com.cn%2Ffiles%2Fblog%2F2017-05-14%2F015C056388521DD4FF8080815C03844A.jpg)
 
 ![](https://img.shields.io/badge/jdk-1.8-brightgreen.svg?style=plastic)
